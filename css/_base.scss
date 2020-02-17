@@ -1,0 +1,33 @@
+$primary-colour: rgb(225, 225, 225);
+$secondary-colour: rgb(25, 25, 25);
+$complimentary-colour: rgb(200, 200, 0);
+$separator-colour: rgb(150, 150, 150);
+
+%abstract-font-stack {
+    font-family: 'Agency FB', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+%heading-font-stack {
+    font-family: bebas-neue-by-fontfabric, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+%paragraph-font-stack {
+    font-family: roboto, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+%space-around-and-center {
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+%flex-and-center {
+    display: flex;
+    justify-content: center;
+}

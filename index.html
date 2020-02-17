@@ -6,11 +6,307 @@
     <meta name="description" content="Zac Vukovic professional software development portfolio">
     <meta name="keywords" content="Zac Vukovic, Zac Madden, Cyn1x, Portfolio">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Zac Vukovic</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/qdl2ebq.css">
+    <link href="http://allfont.net/allfont.css?fonts=abstract" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/2b34a96195.js" crossorigin="anonymous"></script>
+    <script src="/js/app.js"></script>
 </head>
 
 <body>
+    <nav class="header-nav">
+        <div class="logo">
+            <h4>zacvukovic.com</h4>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="https://www.zacvukovic.com">Home</a>
+            </li>
+            <li>
+                <a href="#about-anchor">About</a>
+            </li>
+            <li>
+                <a href="#projects-anchor">Projects</a>
+            </li>
+            <li>
+                <a href="#skills-anchor">Skills</a>
+            </li>
+            <li>
+                <a href="#education-anchor">Education</a>
+            </li>
+            <li>
+                <a href="#work-anchor">Work</a>
+            </li>
+            <li>
+                <a href="#contact-anchor">Contact</a>
+            </li>
+        </ul>
+        <i class="fas fa-bars"></i>
+    </nav>
+
+    <section class="feature">
+        <img src="/img/features/breakwater-lighthouse.JPG">
+        <div class="feature-text">Zac V.</div>
+    </section>
     
+    <section class="article-wrapper">
+        <article class="about">
+            <h1 class="article-headers anchor" id="about-anchor">About Me</h1>
+            <span>
+                <p>
+                    I am currently studying the Bachelor of Computer Science (BCompSc)  at the University of New England, 
+                    Armidale. I previously worked as an IT Professional in the Information Technology industry.
+                </p>
+            </span>
+            <br/>
+            <span>
+                <p>
+                    I am transitioning into the Software Development industry as programming resonates with my analytical and 
+                    creative nature. I have enjoyed creating things since I was able to do so, from; computer networks, software, 
+                    and music. All areas of the stack are interesting to me; from web development to systems programming. 
+                    Clean, maintainable, and optimised code is very important to me when developing a project.
+                </p>
+            </span>
+            <br/>
+            <span>
+                <p>
+                    When I am not working, you'll find me at the gym, dabbling in game engine architecture, playing 
+                    guitar, or shamelessly immersing myself in some RPG.
+                </p>
+            </span>
+        </article>
+    </section>
+
+    <section class="article-wrapper">
+        <article class="projects">
+            <h1 class="article-headers anchor" id="projects-anchor">Featured Projects</h1>
+            <h3 class="project-status">Completed</h3>
+
+            <h3 class="project-name">UniChess Chess Engine</h3>
+            <div class="project-wrapper">
+                <div class="image-wrapper border">
+                    <img src="img/portfolio/unichess-chess-engine.jpg">
+                </div>
+                <span>
+                    <p>
+                        Real-time chess engine simulation that detects valid moves for an active piece, before the 
+                        player has requested a position to move to.
+                    </p>
+                    <br>
+                    <p>Written with TypeScript and rendered with React + HTML5 Canvas.</p>
+                    <br/>
+                    <p><a href="https://github.com/Cyn1x/UniChessChessEngine" target="_blank" rel=noopener>Source code</a></p>
+                </span>
+            </div>
+
+            <h3 class="project-name">QuadtreeFX</h3>
+            <div class="project-wrapper">
+                <div class="image-wrapper border">
+                    <img src="img/portfolio/QuadtreeFX.JPG">
+                </div>
+                <span>
+                    <p>
+                        Quadtree that isolates areas on the cartesian plane for collision detection, so each individual 
+                        entity is not wasting system resources by checking if it is colliding with every other entity in 
+                        memory. Instead, each entity is placed into a node depending on which cardinal direction the entity 
+                        is in, and then the collision detection is computed with other entities in their respective leaf node.
+                    </p>
+                    <br/>
+                    <p>Written with Java and rendered with JavaFX.</p>
+                    <br/>
+                    <p><a href="https://gitlab.com/Cyn1x/quadtreefx" target="_blank" rel=noopener>Source code</a></p>
+                </span>
+            </div>
+
+            <h3 class="project-name">Genetic Algorithm</h3>
+            <div class="project-wrapper">
+                <div class="image-wrapper border">
+                    <img src="img/portfolio/genetic-algorithm.jpg">
+                </div>
+                <span>
+                    <p>
+                        Solves a logic puzzle after the clues of the logic puzzle are given to the program. The application 
+                        is comprised of a population containing many DNA objects, that may be potential solutions. For 
+                        this particular example, the genetic algorithm is set to hold multiple tournaments to find the fittest 
+                        DNA, which leads to the puzzle solution
+                    </p>
+                    <br/>
+                    <p>Written in Python.</p>
+                    <br/>
+                    <p><a href="https://gitlab.com/Cyn1x/GeneticAlgorithm" target="_blank" rel=noopener>Source code</a></p>
+                </span>
+            </div>
+
+            <h3 class="project-name">Professional Portfolio</h3>
+            <div class="project-wrapper">
+                <div class="image-wrapper border">
+                    <img src="img/portfolio/professional-portfolio.jpg">
+                </div>
+                <span>
+                    <p>
+                        The website you are currently viewing. Since  this is a static website that isn't too large, I thought 
+                        I'd do without a JavaScript framework. There is something refreshing about not using JavaScript 
+                        frameworks for simple static websites.
+                    </p>
+                    <br/>
+                    <p>Written in HTML5, Sass, and JavaScript.</p>
+                    <br/>
+                    <p><a href="https://github.com/Cyn1x/zacvukovic.github.io" target="_blank" rel=noopener>Source code</a></p>
+                </span>
+            </div>
+
+            <h3 class="project-status">In Development</h3>
+            <h3 class="project-name">UniChess</h3>
+            <div class="project-wrapper">
+                <div class="image-wrapper border">
+                    <img src="img/portfolio/unichess.jpg">
+                </div>
+                <span>
+                    <p>
+                        Multiplayer chess web application that uses the UniChess Chess Engine as a dependency. The aim of this 
+                        site is to learn more about full stack web technologies, and have university students be able to 
+                        compete against each other.
+                    </p>
+                    <br/>
+                    <p>Currently being written in TypeScript, React, Redux, Socket.IO, Express, and MongoDB.</p>
+                    <br/>
+                    <p><a href="https://github.com/Cyn1x/UniChess" target="_blank" rel=noopener>Source code</a></p>
+                </span>
+            </div>
+
+            <h3 class="project-name">CNXEngine2D</h3>
+            <div class="project-wrapper">
+                <div class="image-wrapper border">
+                    <img src="img/portfolio/cnxengine2d.JPG">
+                </div>
+                <span>
+                    <p>
+                        A 2D game engine, very early in development. I am currently writing my graphics API and reading 
+                        more theory than programming, so it may be some time before any noticable changes are reflected on 
+                        the GUI. The purpose of this project is to understand game engines from the ground up, and maybe put one
+                        of my ideas to life in the process.
+                    </p>
+                    <br/>
+                    <p>Currently being written in C++, OpenGL, and many more tehnologies.</p>
+                    <br/>
+                    <p><a href="https://github.com/Cyn1x/CNXEngine2D" target="_blank" rel=noopener>Source code</a></p>
+                </span>
+            </div>
+        </article>
+    </section>
+
+    <section class="article-wrapper">
+        <article class="skills">
+            <h1 class="article-headers anchor" id="skills-anchor">Skills</h1>
+            <span>
+                <p>React | TypeScript | Node.js</p>
+            </span>
+            <br/>
+            <span>
+                <p>HTML5 | CSS | JavaScript</p>
+            </span>
+            <br/>
+            <span>
+                <p>Python | Java</p>
+            </span>
+            <br/>
+            <span>
+                <p>C | C++ | OpenGL</p> 
+            </span>
+        </article>
+    </section>
+
+    <section class="article-wrapper">
+        <article class="education">
+            <h1 class="article-headers anchor" id="education-anchor">Education</h1>
+            <span>
+                <p>2017-Present</p>
+                <p>Bachelor of Computer Science (BCompSc), Software Development</p>
+                <p>The University of New England, Armidale, NSW, Australia</p>
+                <br/>
+                <p>2014-2014</p>
+                <p>ICT Training Package, Data Networking for Business Implementation</p>
+                <p>TAFE NSW, Campbelltown, NSW, Australia</p>
+                <br/>
+                <p>2006-2007</p>
+                <p>Diploma in Information Technology, Systems Administration</p>
+                <p>TAFE NSW, Campbelltown, NSW, Australia</p>
+                <br/>
+                <p>2005-2006</p>
+                <p>Certificate IV in Information Technology, Technical Support</p>
+                <p>TAFE NSW, Campbelltown, NSW, Australia</p>
+            </span>
+        </article>
+    </section>
+
+    <section class="article-wrapper">
+        <article class="work">
+            <h1 class="article-headers anchor" id="work-anchor">Work</h1>
+            <span>
+                <p>Farm Hand</p>
+                <p>2016-2020</p>
+                <p>Daisy Hill</p>
+                <p>Wollomombi, NSW, Australia</p>
+                <br/>
+                <p>2014-2016</p>
+                <p>IT Systems Support Officer</p>
+                <p>Wollondilly Shire Council</p>
+                <p>Picton, NSW, Australia</p>
+                <br/>
+                <p>2013-2014</p>
+                <p>IT Project Support Officer</p>
+                <p>Wollondilly Shire Council</p>
+                <p>Picton, NSW, Australia</p>
+                <br/>
+                <p>2009-2012</p>
+                <p>L3 Support</p>
+                <p>eNerds IT</p>
+                <p>North Sydney, NSW, Australia</p>
+                <br/>
+                <p>2008-2009</p>
+                <p>L1 Support</p>
+                <p>eNerds IT</p>
+                <p>North Sydney, NSW, Australia</p>
+                <br/>
+                <p>2006-2008</p>
+                <p>Process Worker</p>
+                <p>Country Valley</p>
+                <p>Picton, NSW, Australia</p>
+                <br/>
+                <p>2005-2005</p>
+                <p>Storeman</p>
+                <p>Pacific Helmets</p>
+                <p>Smeaton Grange, NSW, Australia</p>
+                <br/>
+                <p>2003-2004</p>
+                <p>Junior & Senior Soccer Referee</p>
+                <p>Macarthur District Football Referees Association</p>
+                <p>Greater Western Sydney, NSW, Australia</p>
+            </span>
+        </article>
+    </section>
+
+    <section class="article-wrapper">
+        <article class="contact">
+            <h1 class="article-headers anchor" id="contact-anchor">Contact Me</h1>
+            <div class="links">
+                <a href="https://au.linkedin.com/in/zacvukovic" target="_blank" rel=noopener><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/Cyn1x" target="_blank" rel=noopener><i class="fab fa-github"></i></a>
+                <a href="mailto:contact@cyn1x.com" target="_blank" rel=noopener><i class="fas fa-at"></i></a>
+            </div>
+        </article>
+    </section>
+
+    <section class="feature">
+        <img src="img/features/textbook-stack.JPG">
+    </section>
+
+    <footer>
+        &copy; Zac Vukovic 2020
+    </footer>
 </body>
 
 </html>
