@@ -178,6 +178,10 @@ i.fas, i.fab {
   text-decoration: underline;
 }
 
+.skills {
+  text-align: center;
+}
+
 .contact .links {
   font-size: 1.5em;
 }
