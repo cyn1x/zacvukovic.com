@@ -22,7 +22,7 @@ nav, footer {
   text-align: center;
 }
 
-.article-wrapper, .contact .links {
+.article-wrapper, .contact-article .links {
   display: flex;
   justify-content: center;
 }
@@ -178,14 +178,14 @@ i.fas, i.fab {
   text-decoration: underline;
 }
 
-.skills {
+.skills-article {
   text-align: center;
 }
 
-.contact .links {
+.contact-article .links {
   font-size: 1.5em;
 }
-.contact .links a {
+.contact-article .links a {
   margin: 15%;
 }
 

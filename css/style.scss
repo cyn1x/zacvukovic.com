@@ -165,9 +165,9 @@ i.fas, i.fab {
     a { text-decoration: underline; }
 }
 
-.skills { text-align: center; }
+.skills-article { text-align: center; }
 
-.contact {
+.contact-article {
     .links {
         @extend %flex-and-center;
         font-size: 1.5em;
