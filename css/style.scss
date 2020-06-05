@@ -1,4 +1,4 @@
-@use '_base.scss';
+@use 'base.scss';
 
 * {
     box-sizing: border-box;
@@ -17,7 +17,7 @@ html, body {
 
     a {
         text-decoration: none;
-        color: _base.$primary-colour;
+        color: base.$primary-colour;
         :hover { cursor: pointer; }
     }
 
@@ -31,10 +31,10 @@ nav {
     top: 0;
     z-index: 1;
     min-height: 10%;
-    background-color: _base.$secondary-colour;
-    border-bottom: 1px solid _base.$separator-colour;
+    background-color: base.$secondary-colour;
+    border-bottom: 1px solid base.$separator-colour;
 
-    .logo { color: _base.$primary-colour; }
+    .logo { color: base.$primary-colour; }
 
     .nav-links {
         position: absolute;
@@ -45,9 +45,9 @@ nav {
         width: 100%;
         right: 0px;
         top: 100%;
-        background-color: _base.$secondary-colour;
-        border-top: 1px solid _base.$separator-colour;
-        border-bottom: 1px solid _base.$separator-colour;
+        background-color: base.$secondary-colour;
+        border-top: 1px solid base.$separator-colour;
+        border-bottom: 1px solid base.$separator-colour;
         transition: transform 0.5s ease-in;
     }
 
@@ -64,7 +64,7 @@ nav {
 }
 
 i.fas, i.fab {
-    color: _base.$primary-colour;
+    color: base.$primary-colour;
     font-size: 1.5em;
     cursor: pointer;
 }
@@ -87,7 +87,7 @@ i.fas, i.fab {
         transform: translate(-50%, -50%);
         font-size: 5em;
         white-space: nowrap; 
-        color: _base.$complimentary-colour;
+        color: base.$complimentary-colour;
     }
 
     img {
@@ -114,13 +114,13 @@ i.fas, i.fab {
 }
 
 .article-wrapper:nth-child(odd) {
-    background-color: _base.$primary-colour;
-    color: _base.$secondary-colour;
+    background-color: base.$primary-colour;
+    color: base.$secondary-colour;
 }
 
 .article-wrapper:nth-child(even) {
-    background-color: _base.$secondary-colour;
-    color: _base.$primary-colour;
+    background-color: base.$secondary-colour;
+    color: base.$primary-colour;
 }
 
 .article-headers {
@@ -129,7 +129,7 @@ i.fas, i.fab {
     font-size: 2.5em;
 }
 
-.project-status { border-bottom: 1px solid _base.$separator-colour; }
+.project-status { border-bottom: 1px solid base.$separator-colour; }
 
 .project-name {
     margin-top: 2.5vh;
@@ -149,7 +149,7 @@ i.fas, i.fab {
     }
 
     .border {
-        border: 2.5px solid _base.$primary-colour; 
+        border: 2.5px solid base.$primary-colour; 
         padding: 1%;
     }
 
@@ -170,7 +170,7 @@ i.fas, i.fab {
 .contact-article {
     .links {
         @extend %flex-and-center;
-        font-size: 1.5em;
+        font-size: 2em;
 
         a { margin: 15%; }
     }
@@ -182,8 +182,8 @@ footer {
     min-height: 5%;
     font-size: 0.75em;
     display: flex;
-    background-color: _base.$secondary-colour;
-    color: _base.$primary-colour;
+    background-color: base.$secondary-colour;
+    color: base.$primary-colour;
 }
 
 @keyframes navLinkFade {
@@ -210,7 +210,7 @@ footer {
             justify-content: space-around;
             transform: translate(0%);
             width: 60%;
-            background-color: _base.$secondary-colour;
+            background-color: base.$secondary-colour;
             border: none;
 
             li {
