@@ -87,8 +87,8 @@ i.fas, i.fab {
 }
 
 .anchor {
-  padding-top: 100px;
-  margin-top: -100px;
+  padding-top: 75px;
+  margin-top: -75px;
 }
 
 .feature {
@@ -112,7 +112,7 @@ i.fas, i.fab {
 }
 
 .article-wrapper {
-  padding: 2.5vh 5vh 5vh 5vh;
+  padding: 2.5vh 5vh 5vh 2.5vh;
 }
 .article-wrapper img {
   border: 1px solid white;
@@ -154,7 +154,6 @@ i.fas, i.fab {
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-bottom: 5vh;
 }
 .project-wrapper .image-wrapper {
   width: 250px;
@@ -186,7 +185,8 @@ i.fas, i.fab {
   font-size: 2em;
 }
 .contact-article .links a {
-  margin: 15%;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 footer {
@@ -228,8 +228,13 @@ footer {
     display: none;
   }
 
+  .anchor {
+    padding-top: 75px;
+    margin-top: -75px;
+  }
+
   .article-wrapper {
-    padding: 2.5% 15% 5% 15%;
+    padding: 1.5% 15% 2.5% 15%;
   }
 
   .project-wrapper {
@@ -249,8 +254,13 @@ footer {
     font-size: 1.5em;
   }
 
+  .anchor {
+    padding-top: 100px;
+    margin-top: -100px;
+  }
+
   .article-wrapper {
-    padding: 2.5% 25% 5% 25%;
+    padding: 1.5% 25% 2.5% 25%;
   }
 }
 
