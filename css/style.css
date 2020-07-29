@@ -37,6 +37,7 @@ html, body {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
+  text-align: justify;
 }
 html a, body a {
   text-decoration: none;
@@ -112,7 +113,7 @@ i.fas, i.fab {
 }
 
 .article-wrapper {
-  padding: 2.5vh 5vh 5vh 2.5vh;
+  padding: 2.5vh 5vh 2.5vh 5vh;
 }
 .article-wrapper img {
   border: 1px solid white;
@@ -181,6 +182,14 @@ i.fas, i.fab {
   text-align: center;
 }
 
+.work-article {
+  text-align: center;
+}
+
+.education-article {
+  text-align: center;
+}
+
 .contact-article .links {
   font-size: 2em;
 }
@@ -245,6 +254,14 @@ footer {
     min-width: 50%;
     margin-right: 2.5vh;
   }
+
+  .education-article {
+    text-align: left;
+  }
+
+  .work-article {
+    text-align: left;
+  }
 }
 @media screen and (min-width: 1280px) {
   nav .logo {
@@ -261,6 +278,14 @@ footer {
 
   .article-wrapper {
     padding: 1.5% 25% 2.5% 25%;
+  }
+
+  .education-article {
+    text-align: left;
+  }
+
+  .work-article {
+    text-align: left;
   }
 }
 

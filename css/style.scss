@@ -10,6 +10,7 @@ html, body {
     width: 100%;
     height: 100%;
     overflow-x: hidden;
+    text-align: justify;
 
     h1, h4 { @extend %heading-font-stack; }
 
@@ -99,7 +100,7 @@ i.fas, i.fab {
 
 .article-wrapper {
     @extend %flex-and-center;
-    padding: 2.5vh 5vh 5vh 2.5vh;
+    padding: 2.5vh 5vh 2.5vh 5vh;
 
     img {
         border: 1px solid white;
@@ -165,6 +166,10 @@ i.fas, i.fab {
 }
 
 .skills-article { text-align: center; }
+
+.work-article { text-align: center; }
+
+.education-article { text-align: center; }
 
 .contact-article {
     .links {
@@ -241,6 +246,10 @@ footer {
         }
     }
 
+    .education-article { text-align: left; }
+
+    .work-article { text-align: left; }
+
 }
 
 @media screen and (min-width: 1280px) {
@@ -256,5 +265,9 @@ footer {
     }
 
     .article-wrapper { padding: 1.5% 25% 2.5% 25%; }
+
+    .education-article { text-align: left; }
+
+    .work-article { text-align: left; }
 
 }
