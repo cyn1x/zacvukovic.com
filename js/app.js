@@ -14,33 +14,47 @@ AddEventListeners = () => {
     const navLinksArray = document.querySelectorAll('.nav-links li');
 
     navLinksArray.forEach(link => {
+        const mobileView = window.innerWidth < 768;
+        
         link.addEventListener('click', () => {
-            if (window.innerWidth < 768) ToggleMenu(navMenuBars, navLinksContainer);
-        })
-    })
+            if (mobileView) ToggleMenu(navMenuBars, navLinksContainer);
+        });
+    });
 
     navMenuBars.addEventListener('click', () => {
         ToggleMenu(navMenuBars, navLinksContainer);
-    })
+    });
+
+    document.addEventListener('click', (event) => {
+        const menuOpened = navMenuBars.classList.contains('fa-times');
+        const menuBarsClicked = navMenuBars.contains(event.target);
+
+        if (menuOpened)
+            if (!menuBarsClicked)
+                ToggleMenu(navMenuBars, navLinksContainer);
+    });
 }
 
 ToggleMenu = (navMenuBars, navLinksContainer) => {
-    navMenuBars.classList.toggle("fa-times");
+    navMenuBars.classList.toggle('fa-times');
     navLinksContainer.classList.toggle('nav-active');
 
-    PerformAnimation();
+    PerformAnimation(navLinksContainer);
 }
 
-PerformAnimation = () => {
+PerformAnimation = (navLinksContainer) => {
     navLinks = document.querySelectorAll('.nav-links li');
+
+    controlAppearance(navLinksContainer, `navMenuFade 0.5s ease forwards`);
+
     navLinks.forEach((link, index) => {
-        if (link.style.animation) {
-            link.style.animation = "";
-        }
-        else {
-            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.25}s`;
-        }
+        controlAppearance(link, `navLinkFade 0.5s ease forwards ${index / 7 + 0.25}s`);
     });
+}
+
+controlAppearance = (item, animation) => {
+    if (item.style.animation) item.style.animation = "";
+    else item.style.animation = `${animation}`;
 }
 
 app();

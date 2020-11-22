@@ -49,7 +49,6 @@ nav {
         background-color: base.$secondary-colour;
         border-top: 1px solid base.$separator-colour;
         border-bottom: 1px solid base.$separator-colour;
-        transition: transform 0.5s ease-in;
     }
 
     .nav-active {
@@ -193,8 +192,16 @@ footer {
     color: base.$primary-colour;
 }
 
-@keyframes navLinkFade {
+@keyframes navMenuFade {
+    from {
+        transform: translate(100%);
+    }
+    to {
+        transform: translate(0%);
+    }
+}
 
+@keyframes navLinkFade {
     from {
         opacity: 0;
         transform: translateX(50px);
@@ -203,7 +210,6 @@ footer {
         opacity: 1;
         transform: translateX(0px);
     }
-
 }
 
 @media screen and (min-width: 768px) {
