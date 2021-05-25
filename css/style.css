@@ -10,7 +10,7 @@ html h1, html h4, body h1, body h4, nav li {
   font-style: normal;
 }
 
-html h3, body h3, html p, body p, footer {
+html h3, body h3, html label, html input, html textarea, html button, html span, html p, body label, body input, body textarea, body button, body span, body p, footer {
   font-family: roboto, sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -22,7 +22,7 @@ nav, footer {
   text-align: center;
 }
 
-.article-wrapper, .contact-article .links {
+.article-wrapper, .links-article .links {
   display: flex;
   justify-content: center;
 }
@@ -46,6 +46,14 @@ html a, body a {
 html a :hover, body a :hover {
   cursor: pointer;
 }
+html article, body article {
+  width: 100%;
+}
+html label, html input, html textarea, html button, html span, html p, body label, body input, body textarea, body button, body span, body p {
+  width: 100%;
+  font-size: 1em;
+}
+
 nav {
   position: sticky;
   display: flex;
@@ -181,20 +189,43 @@ i.fas, i.fab {
   text-align: center;
 }
 
-.work-article {
-  text-align: center;
-}
-
 .education-article {
   text-align: center;
 }
 
-.contact-article .links {
-  font-size: 2em;
+.work-article {
+  text-align: center;
 }
-.contact-article .links a {
-  margin-left: 5%;
-  margin-right: 5%;
+
+.links-article .links {
+  font-size: 2em;
+  flex-wrap: wrap;
+}
+.links-article .links a {
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+.contact-article .form-element {
+  padding: 2.5%;
+}
+.contact-article form fieldset {
+  border: none;
+}
+.contact-article form label {
+  display: block;
+  padding-bottom: 5px;
+}
+.contact-article form input, .contact-article form textarea {
+  padding: 5px;
+}
+.contact-article form textarea {
+  resize: none;
+}
+.contact-article form button {
+  background-color: #191919;
+  color: #e1e1e1;
+  padding: 10px;
 }
 
 footer {
@@ -203,6 +234,13 @@ footer {
   display: flex;
   background-color: #191919;
   color: #e1e1e1;
+  vertical-align: top;
+}
+footer span {
+  vertical-align: top;
+}
+footer span img {
+  vertical-align: top;
 }
 
 @keyframes navMenuFade {
@@ -268,6 +306,10 @@ footer {
 
   .work-article {
     text-align: left;
+  }
+
+  .contact-article {
+    width: 75%;
   }
 }
 @media screen and (min-width: 1280px) {

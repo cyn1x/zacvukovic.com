@@ -13,7 +13,6 @@ html, body {
     text-align: justify;
 
     h1, h4 { @extend %heading-font-stack; }
-
     h3 { @extend %paragraph-font-stack; }
 
     a {
@@ -22,7 +21,13 @@ html, body {
         :hover { cursor: pointer; }
     }
 
-    p { @extend %paragraph-font-stack; }
+    article { width: 100%; }
+
+    label, input, textarea, button, span, p {
+        @extend %paragraph-font-stack;
+        width: 100%;
+        font-size: 1em;
+    }
 }
 
 nav {
@@ -51,9 +56,7 @@ nav {
         border-bottom: 1px solid base.$separator-colour;
     }
 
-    .nav-active {
-        transform: translateX(0%);
-    }
+    .nav-active { transform: translateX(0%); }
 
     li {
         @extend %heading-font-stack;
@@ -166,18 +169,45 @@ i.fas, i.fab {
 
 .skills-article { text-align: center; }
 
-.work-article { text-align: center; }
-
 .education-article { text-align: center; }
 
-.contact-article {
+.work-article { text-align: center; }
+
+.links-article {
+    
     .links {
         @extend %flex-and-center;
         font-size: 2em;
+        flex-wrap: wrap;
 
         a {
-            margin-left: 5%;
-            margin-right: 5%;
+            margin-left: 2.5%;
+            margin-right: 2.5%;
+        }
+    }
+}
+
+.contact-article {
+
+    .form-element { padding: 2.5%; }
+
+    form {
+        fieldset { border: none }
+
+        label {
+            display: block;
+            padding-bottom: 5px;
+        }
+
+        input, textarea { padding: 5px; }
+
+        
+        textarea { resize: none; }
+
+        button {
+            background-color: base.$secondary-colour;
+            color: base.$primary-colour;
+            padding: 10px;
         }
     }
 }
@@ -190,6 +220,13 @@ footer {
     display: flex;
     background-color: base.$secondary-colour;
     color: base.$primary-colour;
+    vertical-align: top;
+
+    span {
+        vertical-align: top;
+
+        img { vertical-align: top; }
+    }
 }
 
 @keyframes navMenuFade {
@@ -255,6 +292,8 @@ footer {
     .education-article { text-align: left; }
 
     .work-article { text-align: left; }
+
+    .contact-article { width: 75%; }
 
 }
 
