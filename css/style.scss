@@ -21,9 +21,13 @@ html, body {
         :hover { cursor: pointer; }
     }
 
-    article { width: 100%; }
+    li {
+        list-style: none;
+    }
 
-    label, input, textarea, button, span, p {
+    section { width: 100%; }
+
+    label, input, textarea, button, p {
         @extend %paragraph-font-stack;
         width: 100%;
         font-size: 1em;
@@ -100,7 +104,7 @@ i.fas, i.fab {
     }
 }
 
-.article-wrapper {
+.section-wrapper {
     @extend %flex-and-center;
     padding: 2.5vh 5vh 2.5vh 5vh;
 
@@ -116,12 +120,12 @@ i.fas, i.fab {
     }
 }
 
-.article-wrapper:nth-child(odd) {
+.section-wrapper:nth-child(odd) {
     background-color: base.$primary-colour;
     color: base.$secondary-colour;
 }
 
-.article-wrapper:nth-child(even) {
+.section-wrapper:nth-child(even) {
     background-color: base.$secondary-colour;
     color: base.$primary-colour;
 }
@@ -167,13 +171,14 @@ i.fas, i.fab {
     a { text-decoration: underline; }
 }
 
-.skills-article { text-align: center; }
+.list-items { @extend %paragraph-font-stack; }
 
-.education-article { text-align: center; }
+.skills-article, .education-section, .work-section {
+    width: auto;
+    text-align: center;
+}
 
-.work-article { text-align: center; }
-
-.links-article {
+.links-section {
     
     .links {
         @extend %flex-and-center;
@@ -187,30 +192,36 @@ i.fas, i.fab {
     }
 }
 
-.contact-article {
+// .contact-section {
 
-    .form-element { padding: 2.5%; }
+//     .form-element { margin-bottom: 5%; }
 
-    form {
-        fieldset { border: none }
+//     form {
+//         fieldset { border: none; }
 
-        label {
-            display: block;
-            padding-bottom: 5px;
-        }
+//         label {
+//             display: block;
+//             padding-bottom: 5px;
+//         }
 
-        input, textarea { padding: 5px; }
+//         input, textarea {
+//             padding: 5px;
+//             border-radius: 5px;
+//             border-style: inset;
+//         }
 
-        
-        textarea { resize: none; }
+//         textarea {
+//             height: 150px;
+//             resize: none;
+//         }
 
-        button {
-            background-color: base.$secondary-colour;
-            color: base.$primary-colour;
-            padding: 10px;
-        }
-    }
-}
+//         button {
+//             background-color: base.$secondary-colour;
+//             color: base.$primary-colour;
+//             padding: 10px;
+//         }
+//     }
+// }
 
 footer {
     @extend %paragraph-font-stack;
@@ -277,7 +288,7 @@ footer {
         margin-top: -75px;
     }
 
-    .article-wrapper { padding: 1.5% 15% 2.5% 15%; }
+    .section-wrapper { padding: 1.5% 15% 2.5% 15%; }
 
     .project-wrapper {
         flex-direction: row;
@@ -289,11 +300,11 @@ footer {
         }
     }
 
-    .education-article { text-align: left; }
+    .education-section, .work-section { text-align: left; }
 
-    .work-article { text-align: left; }
-
-    .contact-article { width: 75%; }
+    // .contact-section {
+    //     .form-element { margin-bottom: 2.5%; }
+    // }
 
 }
 
@@ -309,10 +320,6 @@ footer {
         margin-top: -100px;
     }
 
-    .article-wrapper { padding: 1.5% 25% 2.5% 25%; }
-
-    .education-article { text-align: left; }
-
-    .work-article { text-align: left; }
+    .section-wrapper { padding: 1.5% 25% 2.5% 25%; }
 
 }
