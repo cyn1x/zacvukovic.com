@@ -215,6 +215,13 @@ i.fas, i.fab {
 //             resize: none;
 //         }
 
+//         .recaptcha-element {
+//             text-align: center;
+//             .g-recaptcha {
+//                 display: inline-block;
+//             }
+//         }
+
 //         button {
 //             background-color: base.$secondary-colour;
 //             color: base.$primary-colour;
@@ -232,12 +239,6 @@ footer {
     background-color: base.$secondary-colour;
     color: base.$primary-colour;
     vertical-align: top;
-
-    span {
-        vertical-align: top;
-
-        img { vertical-align: top; }
-    }
 }
 
 @keyframes navMenuFade {
