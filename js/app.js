@@ -91,15 +91,15 @@ sendMessage = (formData, captchaValue) => {
             captcha: captchaValue
         })
     }).then((data) => {
-        handleResult(data)
+        handleResult(data, formData)
     })
 }
 
-handleResult = (data) => {
+handleResult = (data, formData) => {
     if (data.status === 200) {
-        console.log("Form submission succeeded")
-    } else {
-        console.log("Form submission failed")
+        formData.reset()
+
+        return
     }
 }
 
