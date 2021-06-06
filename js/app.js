@@ -80,7 +80,7 @@ sendMessage = (formData) => {
         method: 'POST',
         headers: {
             'Accept': 'application/json, text/plain, */*',
-            'Content-type': 'application/json'
+            'Content-type': 'application/json, charset=utf-8'
         },
         body: JSON.stringify({
             fname: formData.fname.value,
