@@ -79,8 +79,7 @@ sendMessage = (formData, captchaValue) => {
     fetch('https://ifboivd0ih.execute-api.ap-southeast-2.amazonaws.com/dev/contact', {
         method: 'POST',
         headers: {
-            'Accept': 'application/json, text/plain, */*',
-            'Content-type': 'application/json, charset=UTF-8'
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({
             fname: formData.fname.value,
