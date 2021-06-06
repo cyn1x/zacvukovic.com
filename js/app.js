@@ -72,22 +72,23 @@ handleSubmit = (formData) => {
         return
     }
 
-    sendMessage(formData)
+    sendMessage(formData, captcha.value)
 }
 
-sendMessage = (formData) => {
+sendMessage = (formData, captchaValue) => {
     fetch('https://ifboivd0ih.execute-api.ap-southeast-2.amazonaws.com/dev/contact', {
         method: 'POST',
         headers: {
             'Accept': 'application/json, text/plain, */*',
-            'Content-type': 'application/json, charset=utf-8'
+            'Content-type': 'application/json, charset=UTF-8'
         },
         body: JSON.stringify({
             fname: formData.fname.value,
             lname: formData.lname.value,
             email: formData.email.value,
             subject: formData.subject.value,
-            body: formData.body.value
+            body: formData.body.value,
+            captcha: captchaValue
         })
     }).then((data) => {
         handleResult(data)
