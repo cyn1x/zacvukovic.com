@@ -29,7 +29,7 @@ AddEventListeners = () => {
     contactForm.addEventListener('submit', (event) => {
         event.preventDefault()
 
-        sendMessage(event.target)
+        handleSubmit(event.target)
     })
 
     document.addEventListener('click', (event) => {
@@ -62,6 +62,17 @@ PerformAnimation = (navLinksContainer) => {
 controlAppearance = (item, animation) => {
     if (item.style.animation) item.style.animation = ""
     else item.style.animation = `${animation}`
+}
+
+handleSubmit = (formData) => {
+    const captcha = document.getElementById('g-recaptcha-response')
+    
+    if (captcha.value === "" || captcha.value === null || captcha.value === undefined) {
+
+        return
+    }
+
+    sendMessage(formData)
 }
 
 sendMessage = (formData) => {
