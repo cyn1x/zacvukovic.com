@@ -64,8 +64,6 @@ controlAppearance = (item, animation) => {
     else item.style.animation = `${animation}`
 }
 
-const ok = true
-
 sendMessage = (formData) => {
     fetch('https://ifboivd0ih.execute-api.ap-southeast-2.amazonaws.com/dev/contact', {
         method: 'POST',
