@@ -4,57 +4,93 @@ const app = () => {
 
 const Initialise = () => {
     window.addEventListener("load", () => {
-        AddEventListeners();
+        AddEventListeners()
     });
 }
 
 AddEventListeners = () => {
-    const navMenuBars = document.querySelector('.fa-bars');
-    const navLinksContainer = document.querySelector('.nav-links');
-    const navLinksArray = document.querySelectorAll('.nav-links li');
+    const navMenuBars = document.querySelector('.fa-bars')
+    const navLinksContainer = document.querySelector('.nav-links')
+    const navLinksArray = document.querySelectorAll('.nav-links li')
+    const contactForm = document.getElementById('contact-form')
 
     navLinksArray.forEach(link => {
         const mobileView = window.innerWidth < 768;
         
         link.addEventListener('click', () => {
-            if (mobileView) ToggleMenu(navMenuBars, navLinksContainer);
+            if (mobileView) ToggleMenu(navMenuBars, navLinksContainer)
         });
     });
 
     navMenuBars.addEventListener('click', () => {
-        ToggleMenu(navMenuBars, navLinksContainer);
+        ToggleMenu(navMenuBars, navLinksContainer)
     });
 
+    contactForm.addEventListener('submit', (event) => {
+        event.preventDefault()
+
+        sendMessage(event.target)
+    })
+
     document.addEventListener('click', (event) => {
-        const menuOpened = navMenuBars.classList.contains('fa-times');
-        const menuBarsClicked = navMenuBars.contains(event.target);
+        const menuOpened = navMenuBars.classList.contains('fa-times')
+        const menuBarsClicked = navMenuBars.contains(event.target)
 
         if (menuOpened)
             if (!menuBarsClicked)
-                ToggleMenu(navMenuBars, navLinksContainer);
+                ToggleMenu(navMenuBars, navLinksContainer)
     });
 }
 
 ToggleMenu = (navMenuBars, navLinksContainer) => {
-    navMenuBars.classList.toggle('fa-times');
-    navLinksContainer.classList.toggle('nav-active');
+    navMenuBars.classList.toggle('fa-times')
+    navLinksContainer.classList.toggle('nav-active')
 
     PerformAnimation(navLinksContainer);
 }
 
 PerformAnimation = (navLinksContainer) => {
-    navLinks = document.querySelectorAll('.nav-links li');
+    navLinks = document.querySelectorAll('.nav-links li')
 
-    controlAppearance(navLinksContainer, `navMenuFade 0.5s ease forwards`);
+    controlAppearance(navLinksContainer, `navMenuFade 0.5s ease forwards`)
 
     navLinks.forEach((link, index) => {
-        controlAppearance(link, `navLinkFade 0.5s ease forwards ${index / 7 + 0.25}s`);
+        controlAppearance(link, `navLinkFade 0.5s ease forwards ${index / 7 + 0.25}s`)
     });
 }
 
 controlAppearance = (item, animation) => {
-    if (item.style.animation) item.style.animation = "";
-    else item.style.animation = `${animation}`;
+    if (item.style.animation) item.style.animation = ""
+    else item.style.animation = `${animation}`
 }
 
-app();
+const ok = true
+
+sendMessage = (formData) => {
+    fetch('https://ifboivd0ih.execute-api.ap-southeast-2.amazonaws.com/dev/contact', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify({
+            fname: formData.fname.value,
+            lname: formData.lname.value,
+            email: formData.email.value,
+            subject: formData.subject.value,
+            body: formData.body.value
+        })
+    }).then((data) => {
+        handleResult(data)
+    })
+}
+
+handleResult = (data) => {
+    if (data.status === 200) {
+        console.log("Form submission succeeded")
+    } else {
+        console.log("Form submission failed")
+    }
+}
+
+app()

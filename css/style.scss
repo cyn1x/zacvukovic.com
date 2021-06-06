@@ -192,43 +192,47 @@ i.fas, i.fab {
     }
 }
 
-// .contact-section {
+.contact-section {
+    .form-element { margin-bottom: 5%; }
 
-//     .form-element { margin-bottom: 5%; }
+    form {
+        .full-name > * { width: 100%; }
 
-//     form {
-//         fieldset { border: none; }
+        .error {
+            background: red;
+        }
 
-//         label {
-//             display: block;
-//             padding-bottom: 5px;
-//         }
+        fieldset { border: none; }
 
-//         input, textarea {
-//             padding: 5px;
-//             border-radius: 5px;
-//             border-style: inset;
-//         }
+        label {
+            display: block;
+            padding-bottom: 5px;
+        }
 
-//         textarea {
-//             height: 150px;
-//             resize: none;
-//         }
+        input, textarea {
+            padding: 5px;
+            border-radius: 5px;
+            border-style: inset;
+        }
 
-//         .recaptcha-element {
-//             text-align: center;
-//             .g-recaptcha {
-//                 display: inline-block;
-//             }
-//         }
+        textarea {
+            height: 150px;
+            resize: none;
+        }
 
-//         button {
-//             background-color: base.$secondary-colour;
-//             color: base.$primary-colour;
-//             padding: 10px;
-//         }
-//     }
-// }
+        .recaptcha-element {
+            text-align: center;
+
+            .g-recaptcha { display: inline-block; }
+        }
+
+        button {
+            background-color: base.$secondary-colour;
+            color: base.$primary-colour;
+            padding: 10px;
+        }
+    }
+}
 
 footer {
     @extend %paragraph-font-stack;
@@ -303,9 +307,16 @@ footer {
 
     .education-section, .work-section { text-align: left; }
 
-    // .contact-section {
-    //     .form-element { margin-bottom: 2.5%; }
-    // }
+    .contact-section {
+        .form-element { margin-bottom: 2.5%; }
+
+        .full-name {
+            display: inline-flex;
+            width: 100%;
+
+            #first { padding-right: 25px; }
+        }
+    }
 
 }
 

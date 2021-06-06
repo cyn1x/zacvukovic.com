@@ -202,6 +202,43 @@ i.fas, i.fab {
   margin-right: 2.5%;
 }
 
+.contact-section .form-element {
+  margin-bottom: 5%;
+}
+.contact-section form .full-name > * {
+  width: 100%;
+}
+.contact-section form .error {
+  background: red;
+}
+.contact-section form fieldset {
+  border: none;
+}
+.contact-section form label {
+  display: block;
+  padding-bottom: 5px;
+}
+.contact-section form input, .contact-section form textarea {
+  padding: 5px;
+  border-radius: 5px;
+  border-style: inset;
+}
+.contact-section form textarea {
+  height: 150px;
+  resize: none;
+}
+.contact-section form .recaptcha-element {
+  text-align: center;
+}
+.contact-section form .recaptcha-element .g-recaptcha {
+  display: inline-block;
+}
+.contact-section form button {
+  background-color: #191919;
+  color: #e1e1e1;
+  padding: 10px;
+}
+
 footer {
   min-height: 5%;
   font-size: 0.75em;
@@ -270,6 +307,17 @@ footer {
 
   .education-section, .work-section {
     text-align: left;
+  }
+
+  .contact-section .form-element {
+    margin-bottom: 2.5%;
+  }
+  .contact-section .full-name {
+    display: inline-flex;
+    width: 100%;
+  }
+  .contact-section .full-name #first {
+    padding-right: 25px;
   }
 }
 @media screen and (min-width: 1280px) {

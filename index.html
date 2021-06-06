@@ -2,7 +2,7 @@
 <html lang="en">
     
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="description" content="Zac Vukovic professional software development portfolio">
     <meta name="keywords" content="Zac Vukovic, Zac Madden, Cyn1x, Portfolio">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -318,37 +318,49 @@
         </section>
     </div>
 
-    <!-- <div class="section-wrapper">
+    <div class="section-wrapper">
         <section class="contact-section">
             <h1 class="article-headers anchor" id="contact">Contact Me</h1>
-            <form method="POST">
+            <form id="contact-form" method="POST">
                 <fieldset>
-                    <div class="form-element" id="from">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name">
+                    <div class="full-name">
+                        <div class="form-element" id="first">
+                            <label for="fname">First name*</label>
+                            <input type="text" id="fname" name="fname" required>
+                        </div>
+    
+                        <div class="form-element" id="last">
+                            <label for="lname">Last name</label>
+                            <input type="text" id="lname" name="lname">
+                        </div>
                     </div>
-                
+
                     <div class="form-element" id="reply">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" name="email" pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$" required>
+                    </div>
+
+                    <div class="form-element" id="greeting">
+                        <label for="subject">Subject*</label>
+                        <input type="text" id="subject" name="subject" minlength="2" required>
                     </div>
                 
                     <div class="form-element" id="message">
-                        <label for="msg">Message</label>
-                        <textarea id="msg" name="msg"></textarea>
+                        <label for="body">Message*</label>
+                        <textarea id="body" name="body" minlength="2" required></textarea>
                     </div>
 
                     <div class="recaptcha-element">
-                        <div class="g-recaptcha form-element" data-sitekey="6LfYHP0aAAAAAChzYdlmb84WsYlHn7AYnpBOTS0z"></div>
+                        <div class="g-recaptcha form-element" data-sitekey="6LeLDP0aAAAAAHsYiUZM3X5hV_08n2NC6fzIrELl"></div>
                     </div>
                 
                     <div class="form-element" id="button">
-                        <button disabled type="submit">Send</button>
+                        <button type="submit">Send</button>
                     </div>
                 </fieldset>
             </form>
         </section>
-    </div> -->
+    </div>
 
     <aside class="feature">
         <img src="img/features/textbook-stack.JPG" alt="">
