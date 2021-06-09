@@ -1,4 +1,6 @@
 const app = () => {
+    require('dotenv').config()
+
     Initialise();
 }
 
@@ -66,6 +68,8 @@ controlAppearance = (item, animation) => {
 
 handleSubmit = (formData) => {
     const captcha = document.getElementById('g-recaptcha-response')
+
+    console.log(process.env)
     
     if (captcha.value === "" || captcha.value === null || captcha.value === undefined) {
 
@@ -76,7 +80,7 @@ handleSubmit = (formData) => {
 }
 
 sendMessage = (formData, captchaValue) => {
-    fetch('https://ifboivd0ih.execute-api.ap-southeast-2.amazonaws.com/dev/contact', {
+    fetch(process.env.CONTACT_API_URL, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -90,6 +94,7 @@ sendMessage = (formData, captchaValue) => {
             captcha: captchaValue
         })
     }).then((data) => {
+        console.log(data)
         handleResult(data, formData)
     })
 }
@@ -97,9 +102,12 @@ sendMessage = (formData, captchaValue) => {
 handleResult = (data, formData) => {
     if (data.status === 200) {
         formData.reset()
-
+        alert("Message sent successfully")
+        
         return
     }
+
+    alert("Failed to send message")
 }
 
 app()

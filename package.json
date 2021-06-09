@@ -1,0 +1,30 @@
+{
+  "name": "zacvukovic.github.io",
+  "version": "1.0.0",
+  "description": "Professional software development portfolio",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cyn1x/zacvukovic.github.io.git"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "Zac Vukovic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cyn1x/zacvukovic.github.io/issues"
+  },
+  "homepage": "https://github.com/Cyn1x/zacvukovic.github.io#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0"
+  },
+  "devDependencies": {
+    "sass": "^1.34.1"
+  }
+}
