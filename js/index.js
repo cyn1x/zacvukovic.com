@@ -68,8 +68,6 @@ controlAppearance = (item, animation) => {
 
 handleSubmit = (formData) => {
     const captcha = document.getElementById('g-recaptcha-response')
-
-    console.log(process.env)
     
     if (captcha.value === "" || captcha.value === null || captcha.value === undefined) {
 
@@ -94,7 +92,6 @@ sendMessage = (formData, captchaValue) => {
             captcha: captchaValue
         })
     }).then((data) => {
-        console.log(data)
         handleResult(data, formData)
     })
 }
