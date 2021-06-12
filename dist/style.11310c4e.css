@@ -2,18 +2,21 @@
   font-family: roboto-condensed, sans-serif;
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 
 html h1, html h4, body h1, body h4, nav li {
   font-family: bebas-neue-by-fontfabric, sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
-html h3, body h3, html label, html input, html textarea, html button, html p, body label, body input, body textarea, body button, body p, .list-items, footer {
+html h2, body h2, html label, html input, html textarea, html button, html p, body label, body input, body textarea, body button, body p, .list-items, footer {
   font-family: roboto, sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 nav, footer {
@@ -91,15 +94,15 @@ nav li {
   opacity: 0;
 }
 
-i.fas, i.fab {
+i.fab, i.fa-bars {
   color: #e1e1e1;
   font-size: 1.5em;
   cursor: pointer;
 }
 
-.anchor {
-  padding-top: 75px;
-  margin-top: -75px;
+i.fa, i.fas {
+  margin-left: -2.5%;
+  margin-right: 2.5%;
 }
 
 .feature {
@@ -227,10 +230,10 @@ i.fas, i.fab {
   height: 150px;
   resize: none;
 }
-.contact-section form .recaptcha-element {
+.contact-section form #recaptcha-container {
   text-align: center;
 }
-.contact-section form .recaptcha-element .g-recaptcha {
+.contact-section form #recaptcha-container #recaptcha-element {
   display: inline-block;
 }
 .contact-section form button {
@@ -287,11 +290,6 @@ footer {
     display: none;
   }
 
-  .anchor {
-    padding-top: 75px;
-    margin-top: -75px;
-  }
-
   .section-wrapper {
     padding: 1.5% 15% 2.5% 15%;
   }
@@ -328,17 +326,9 @@ footer {
     font-size: 1.5em;
   }
 
-  .anchor {
-    padding-top: 100px;
-    margin-top: -100px;
-  }
-
   .section-wrapper {
     padding: 1.5% 25% 2.5% 25%;
   }
 }
 
-
-
-
-/*# sourceMappingURL=/style.0b5f6256.css.map */
+/*# sourceMappingURL=style.11310c4e.css.map */

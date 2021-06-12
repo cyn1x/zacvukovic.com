@@ -13,7 +13,7 @@ html, body {
     text-align: justify;
 
     h1, h4 { @extend %heading-font-stack; }
-    h3 { @extend %paragraph-font-stack; }
+    h2 { @extend %paragraph-font-stack; }
 
     a {
         text-decoration: none;
@@ -70,15 +70,15 @@ nav {
     }
 }
 
-i.fas, i.fab {
+i.fab, i.fa-bars {
     color: base.$primary-colour;
     font-size: 1.5em;
     cursor: pointer;
 }
 
-.anchor {
-    padding-top: 75px;
-    margin-top: -75px;
+i.fa, i.fas {
+    margin-left: -2.5%;
+    margin-right: 2.5%;
 }
 
 .feature {
@@ -220,10 +220,10 @@ i.fas, i.fab {
             resize: none;
         }
 
-        .recaptcha-element {
+        #recaptcha-container {
             text-align: center;
 
-            .g-recaptcha { display: inline-block; }
+            #recaptcha-element { display: inline-block; }
         }
 
         button {
@@ -288,11 +288,6 @@ footer {
         i.fa-bars { display: none; }
     }
 
-    .anchor {
-        padding-top: 75px;
-        margin-top: -75px;
-    }
-
     .section-wrapper { padding: 1.5% 15% 2.5% 15%; }
 
     .project-wrapper {
@@ -325,11 +320,6 @@ footer {
     nav {
         .logo { font-size: 1.5em; }
         .nav-links { li { font-size: 1.5em; } }
-    }
-
-    .anchor {
-        padding-top: 100px;
-        margin-top: -100px;
     }
 
     .section-wrapper { padding: 1.5% 25% 2.5% 25%; }

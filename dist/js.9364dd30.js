@@ -822,7 +822,7 @@ function config(options
 module.exports.config = config;
 module.exports.parse = parse;
 },{"fs":"B9X6","path":"uJHk","os":"r60S","process":"iv3N"}],"QvaY":[function(require,module,exports) {
-var app = function app() {
+var App = function App() {
   require('dotenv').config();
 
   Initialise();
@@ -830,13 +830,11 @@ var app = function app() {
 
 var Initialise = function Initialise() {
   window.addEventListener("load", function () {
-    document.getElementsByClassName('g-recaptcha form-element')[0].setAttribute('data-sitekey', "6LeLDP0aAAAAAHsYiUZM3X5hV_08n2NC6fzIrELl");
-    console.log(document.getElementsByClassName('g-recaptcha form-element')[0]);
     AddEventListeners();
   });
 };
 
-AddEventListeners = function AddEventListeners() {
+var AddEventListeners = function AddEventListeners() {
   var navMenuBars = document.querySelector('.fa-bars');
   var navLinksContainer = document.querySelector('.nav-links');
   var navLinksArray = document.querySelectorAll('.nav-links li');
@@ -861,13 +859,13 @@ AddEventListeners = function AddEventListeners() {
   });
 };
 
-ToggleMenu = function ToggleMenu(navMenuBars, navLinksContainer) {
+var ToggleMenu = function ToggleMenu(navMenuBars, navLinksContainer) {
   navMenuBars.classList.toggle('fa-times');
   navLinksContainer.classList.toggle('nav-active');
   PerformAnimation(navLinksContainer);
 };
 
-PerformAnimation = function PerformAnimation(navLinksContainer) {
+var PerformAnimation = function PerformAnimation(navLinksContainer) {
   navLinks = document.querySelectorAll('.nav-links li');
   controlAppearance(navLinksContainer, "navMenuFade 0.5s ease forwards");
   navLinks.forEach(function (link, index) {
@@ -875,21 +873,24 @@ PerformAnimation = function PerformAnimation(navLinksContainer) {
   });
 };
 
-controlAppearance = function controlAppearance(item, animation) {
+var controlAppearance = function controlAppearance(item, animation) {
   if (item.style.animation) item.style.animation = "";else item.style.animation = "".concat(animation);
 };
 
-handleSubmit = function handleSubmit(formData) {
+var handleSubmit = function handleSubmit(formData) {
   var captcha = document.getElementById('g-recaptcha-response');
-  console.log("https://ifboivd0ih.execute-api.ap-southeast-2.amazonaws.com/dev/contact");
 
   if (captcha.value === "" || captcha.value === null || captcha.value === undefined) {
     return;
-  } // sendMessage(formData, captcha.value)
+  }
 
+  sendMessage(formData, captcha.value);
 };
 
-sendMessage = function sendMessage(formData, captchaValue) {
+var sendMessage = function sendMessage(formData, captchaValue) {
+  var sendButton = document.getElementById('send-button');
+  sendButton.innerHTML = '<i class="fa fa-circle-o-notch fa-spin"></i>Sending';
+  sendButton.setAttribute('disabled', 'true');
   fetch("https://ifboivd0ih.execute-api.ap-southeast-2.amazonaws.com/dev/contact", {
     method: 'POST',
     headers: {
@@ -904,20 +905,33 @@ sendMessage = function sendMessage(formData, captchaValue) {
       captcha: captchaValue
     })
   }).then(function (data) {
-    handleResult(data, formData);
+    if (data.status === 200) {
+      sendButton.innerHTML = '<i class="fas fa-check"></i>Sent';
+      handleSuccess(formData, sendButton);
+      return;
+    }
+
+    sendButton.innerHTML = '<i class="fas fa-times"></i>Error';
+    sendButton.removeAttribute('disabled');
+    handleError(sendButton);
   });
 };
 
-handleResult = function handleResult(data, formData) {
-  if (data.status === 200) {
+var handleSuccess = function handleSuccess(formData, sendButton) {
+  setTimeout(function () {
     formData.reset();
-    alert("Message sent successfully");
-    return;
-  }
-
-  alert("Failed to send message");
+    sendButton.innerHTML = "Send";
+    sendButton.removeAttribute('disabled');
+  }, 5000);
 };
 
-app();
+var handleError = function handleError(sendButton) {
+  setTimeout(function () {
+    sendButton.innerHTML = "Send";
+    sendButton.removeAttribute('disabled');
+  }, 5000);
+};
+
+App();
 },{"dotenv":"Ig2k"}]},{},["QvaY"], null)
-//# sourceMappingURL=/js.12103d72.js.map
+//# sourceMappingURL=js.9364dd30.js.map

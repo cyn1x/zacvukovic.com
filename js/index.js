@@ -1,4 +1,4 @@
-const app = () => {
+const App = () => {
     require('dotenv').config()
 
     Initialise();
@@ -10,7 +10,7 @@ const Initialise = () => {
     });
 }
 
-AddEventListeners = () => {
+const AddEventListeners = () => {
     const navMenuBars = document.querySelector('.fa-bars')
     const navLinksContainer = document.querySelector('.nav-links')
     const navLinksArray = document.querySelectorAll('.nav-links li')
@@ -44,14 +44,14 @@ AddEventListeners = () => {
     });
 }
 
-ToggleMenu = (navMenuBars, navLinksContainer) => {
+const ToggleMenu = (navMenuBars, navLinksContainer) => {
     navMenuBars.classList.toggle('fa-times')
     navLinksContainer.classList.toggle('nav-active')
 
     PerformAnimation(navLinksContainer);
 }
 
-PerformAnimation = (navLinksContainer) => {
+const PerformAnimation = (navLinksContainer) => {
     navLinks = document.querySelectorAll('.nav-links li')
 
     controlAppearance(navLinksContainer, `navMenuFade 0.5s ease forwards`)
@@ -61,14 +61,14 @@ PerformAnimation = (navLinksContainer) => {
     });
 }
 
-controlAppearance = (item, animation) => {
+const controlAppearance = (item, animation) => {
     if (item.style.animation) item.style.animation = ""
     else item.style.animation = `${animation}`
 }
 
-handleSubmit = (formData) => {
+const handleSubmit = (formData) => {
     const captcha = document.getElementById('g-recaptcha-response')
-    
+
     if (captcha.value === "" || captcha.value === null || captcha.value === undefined) {
 
         return
@@ -77,7 +77,12 @@ handleSubmit = (formData) => {
     sendMessage(formData, captcha.value)
 }
 
-sendMessage = (formData, captchaValue) => {
+const sendMessage = (formData, captchaValue) => {
+    const sendButton = document.getElementById('send-button')
+
+    sendButton.innerHTML = ('<i class="fa fa-circle-o-notch fa-spin"></i>Sending')
+    sendButton.setAttribute('disabled', 'true')
+
     fetch(process.env.CONTACT_API_URL, {
         method: 'POST',
         headers: {
@@ -92,19 +97,32 @@ sendMessage = (formData, captchaValue) => {
             captcha: captchaValue
         })
     }).then((data) => {
-        handleResult(data, formData)
+        if (data.status === 200) {
+            sendButton.innerHTML = '<i class="fas fa-check"></i>Sent'
+            handleSuccess(formData, sendButton)
+
+            return
+        }
+
+        sendButton.innerHTML = '<i class="fas fa-times"></i>Error'
+        sendButton.removeAttribute('disabled')
+        handleError(sendButton)
     })
 }
 
-handleResult = (data, formData) => {
-    if (data.status === 200) {
+const handleSuccess = (formData, sendButton) => {
+    setTimeout(() => {
         formData.reset()
-        alert("Message sent successfully")
-        
-        return
-    }
-
-    alert("Failed to send message")
+        sendButton.innerHTML = "Send"
+        sendButton.removeAttribute('disabled')
+    }, 5000);
 }
 
-app()
+const handleError = (sendButton) => {
+    setTimeout(() => {
+        sendButton.innerHTML = "Send"
+        sendButton.removeAttribute('disabled')
+    }, 5000);
+}
+
+App()

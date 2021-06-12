@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "parcel index.html",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "parcel build index.html --public-url ./"
+    "build": "parcel build index.html --public-url ./ --no-minify",
+    "clean": "echo \"Error: no clean command\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -25,8 +26,8 @@
     "dotenv": "^10.0.0"
   },
   "devDependencies": {
-    "cssnano": "^5.0.5",
-    "postcss": "^8.3.0",
+    "cssnano": "^5.0.6",
+    "postcss": "^8.3.2",
     "sass": "^1.34.1"
   }
 }

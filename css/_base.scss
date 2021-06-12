@@ -7,18 +7,21 @@ $separator-colour: rgb(150, 150, 150);
     font-family: roboto-condensed, sans-serif; 
     font-weight: 300;
     font-style: normal;
+    font-display: swap;
 }
 
 %heading-font-stack {
     font-family: bebas-neue-by-fontfabric, sans-serif;
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
 %paragraph-font-stack {
     font-family: roboto, sans-serif;
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
 %space-around-and-center {

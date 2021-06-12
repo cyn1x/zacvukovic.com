@@ -2,19 +2,30 @@
 <html lang="en">
     
 <head>
-    <meta charset="utf-8" />
-    <meta name="description" content="Zac Vukovic professional software development portfolio" />
-    <meta name="keywords" content="Zac Vukovic, Zac Madden, Cyn1x, Portfolio" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Welcome to my home on the internet. I am a professional Software Developer and DevOps Engineer in the New England region of Australia. This is my portfolio." />
+    <meta name="keywords" content="Zac Vukovic, Zac Madden, Cyn1x, Portfolio, Armidale, New England" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <title>Zac Vukovic</title>
 
-    <link rel="stylesheet" href="/css/style.scss">
-    <link rel="stylesheet" href="https://use.typekit.net/qdl2ebq.css">
+    <link rel="preload" href="/css/style.scss" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="https://use.typekit.net/qdl2ebq.css" as="style" onload="this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="/css/style.scss">
+        <link rel="stylesheet" href="https://use.typekit.net/qdl2ebq.css">
+    </noscript>
 
-    <script src="/js/index.js" async></script>
+    <script src="/js/index.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=loadCaptcha&render=explicit" async defer></script>
+    <script>
+        const loadCaptcha = () => {
+            grecaptcha.render('recaptcha-element', {
+                'sitekey': process.env.CAPTCHA_SITE_KEY
+            });
+        };
+    </script>
     <script src="https://kit.fontawesome.com/2b34a96195.js" crossorigin="anonymous" async></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -82,9 +93,9 @@
         <article class="projects-article">
             <h1 class="article-headers anchor" id="projects">Featured Projects</h1>
             
-            <h3 class="project-status">Completed</h3>
+            <h2 class="project-status">Completed</h2>
 
-            <h3 class="project-name">UniChess Chess Engine</h3>
+            <h2 class="project-name">UniChess Chess Engine</h2>
             <div class="project-wrapper">
                 <div class="image-wrapper border">
                     <img src="img/portfolio/unichess-chess-engine.jpg" alt="">
@@ -308,13 +319,13 @@
         <section class="links-section">
             <h1 class="article-headers anchor" id="links">Links</h1>
             <div class="links">
-                <a href="https://au.linkedin.com/in/zacvukovic/" target="_blank" rel=noopener><i class="fab fa-linkedin"></i></a>
-                <a href="https://twitter.com/AlmightyZacPac/" target="_blank" rel="noopener"><i class="fab fa-twitter-square"></i></a>
-                <a href="https://github.com/Cyn1x/" target="_blank" rel=noopener><i class="fab fa-github-square"></i></a>
-                <a href="https://gitlab.com/Cyn1x/" target="_blank" rel=noopener><i class="fab fa-gitlab"></i></a>
-                <a href="https://bitbucket.org/cyn1x/" target="_blank" rel=noopener><i class="fab fa-bitbucket"></i></a>
-                <a href="https://soundcloud.com/crackimus" target="_blank" rel=noopener><i class="fab fa-soundcloud"></i></a>
-                <a href="https://www.goodreads.com/user/show/119858785-zac-vukovic" target="_blank" rel=noopener><i class="fab fa-goodreads"></i></a>
+                <a href="https://au.linkedin.com/in/zacvukovic/" aria-label="LinkedIn" target="_blank" rel=noopener><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/AlmightyZacPac/" aria-label="Twitter" target="_blank" rel="noopener"><i class="fab fa-twitter-square"></i></a>
+                <a href="https://github.com/Cyn1x/" aria-label="GitHub" target="_blank" rel=noopener><i class="fab fa-github-square"></i></a>
+                <a href="https://gitlab.com/Cyn1x/" aria-label="GitLab" target="_blank" rel=noopener><i class="fab fa-gitlab"></i></a>
+                <a href="https://bitbucket.org/cyn1x/" aria-label="Bitbucket" target="_blank" rel=noopener><i class="fab fa-bitbucket"></i></a>
+                <a href="https://soundcloud.com/crackimus" aria-label="SoundCloud" target="_blank" rel=noopener><i class="fab fa-soundcloud"></i></a>
+                <a href="https://www.goodreads.com/user/show/119858785-zac-vukovic" aria-label="Goodreads" target="_blank" rel=noopener><i class="fab fa-goodreads"></i></a>
             </div>
         </section>
     </div>
@@ -351,12 +362,12 @@
                         <textarea id="body" name="body" minlength="2" required></textarea>
                     </div>
 
-                    <div class="recaptcha-element">
-                        <div class="g-recaptcha form-element" data-sitekey="6LeLDP0aAAAAAHsYiUZM3X5hV_08n2NC6fzIrELl"></div>
+                    <div id="recaptcha-container" class="form-element">
+                        <div id="recaptcha-element"></div>
                     </div>
                 
                     <div class="form-element" id="button">
-                        <button type="submit">Send</button>
+                        <button type="submit" id="send-button">Send</button>
                     </div>
                 </fieldset>
             </form>
