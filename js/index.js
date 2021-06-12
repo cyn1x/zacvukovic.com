@@ -1,9 +1,6 @@
+require('dotenv').config()
+
 const App = () => {
-    require('dotenv').config()
-
-
-    console.log(process.env.CONTACT_API_URL)
-    console.log(process.env.CAPTCHA_SITE_KEY)
     Initialise();
 }
 
