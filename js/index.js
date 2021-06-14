@@ -33,11 +33,11 @@ const AddEventListeners = () => {
 
         handleSubmit(event.target)
     })
-
+    
     document.addEventListener('click', (event) => {
         const menuOpened = navMenuBars.classList.contains('fa-times')
         const menuBarsClicked = navMenuBars.contains(event.target)
-
+        
         if (menuOpened)
             if (!menuBarsClicked)
                 ToggleMenu(navMenuBars, navLinksContainer)
@@ -80,7 +80,7 @@ const handleSubmit = (formData) => {
 const sendMessage = (formData, captchaValue) => {
     const sendButton = document.getElementById('send-button')
 
-    sendButton.innerHTML = ('<i class="fa fa-circle-o-notch fa-spin"></i>Sending')
+    sendButton.innerHTML = ('<i class="fa fa-circle-o-notch fa-spin"></i>')
     sendButton.setAttribute('disabled', 'true')
 
     fetch(process.env.CONTACT_API_URL, {
@@ -98,31 +98,17 @@ const sendMessage = (formData, captchaValue) => {
         })
     }).then((data) => {
         if (data.status === 200) {
-            sendButton.innerHTML = '<i class="fas fa-check"></i>Sent'
-            handleSuccess(formData, sendButton)
-
-            return
+            handleSuccess(formData)
         }
-
-        sendButton.innerHTML = '<i class="fas fa-times"></i>Error'
+    
+        sendButton.innerHTML = "Send"
         sendButton.removeAttribute('disabled')
-        handleError(sendButton)
     })
 }
 
-const handleSuccess = (formData, sendButton) => {
-    setTimeout(() => {
-        formData.reset()
-        sendButton.innerHTML = "Send"
-        sendButton.removeAttribute('disabled')
-    }, 5000);
-}
-
-const handleError = (sendButton) => {
-    setTimeout(() => {
-        sendButton.innerHTML = "Send"
-        sendButton.removeAttribute('disabled')
-    }, 5000);
+const handleSuccess = (formData) => {
+    formData.reset()
+    grecaptcha.reset()
 }
 
 App()
