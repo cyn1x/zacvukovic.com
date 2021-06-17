@@ -15,6 +15,7 @@ const AddEventListeners = () => {
     const navLinksContainer = document.querySelector('.nav-links')
     const navLinksArray = document.querySelectorAll('.nav-links li')
     const contactForm = document.getElementById('contact-form')
+    const backButton = document.getElementById('back-button')
 
     navLinksArray.forEach(link => {
         const mobileView = window.innerWidth < 768;
@@ -32,6 +33,12 @@ const AddEventListeners = () => {
         event.preventDefault()
 
         handleSubmit(event.target)
+    })
+
+    backButton.addEventListener('click', (event) => {
+        event.preventDefault()
+
+        document.getElementById('contact-overlay').style.display = 'none'
     })
     
     document.addEventListener('click', (event) => {
@@ -107,6 +114,8 @@ const sendMessage = (formData, captchaValue) => {
 }
 
 const handleSuccess = (formData) => {
+    document.getElementById('contact-overlay').style.display = 'flex'
+
     formData.reset()
     grecaptcha.reset()
 }
