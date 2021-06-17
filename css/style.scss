@@ -1,4 +1,4 @@
-@use '_base.scss';
+@use '_base.scss' as *;
 
 * {
     box-sizing: border-box;
@@ -20,13 +20,19 @@ html, body {
         visibility: hidden;
     }
 
-    h1, h4 { @extend %heading-font-stack; }
-    h2, h3 { @extend %paragraph-font-stack; }
+    h1, h4 { @include heading-font-stack; }
+    h2, h3 { @include paragraph-font-stack; }
 
     a {
         text-decoration: none;
-        color: base.$primary-colour;
+        color: $primary-colour;
         :hover { cursor: pointer; }
+    }
+
+    button {
+        background-color: $secondary-colour;
+        color: $primary-colour;
+        padding: 10px;
     }
 
     li {
@@ -36,23 +42,23 @@ html, body {
     section { width: 100%; }
 
     label, input, textarea, button, p {
-        @extend %paragraph-font-stack;
+        @include paragraph-font-stack;
         width: 100%;
         font-size: 1em;
     }
 }
 
 nav {
-    @extend %space-around-and-center;
+    @include space-around-and-center;
     position: sticky;
     display: flex;
     top: 0;
-    z-index: 1;
+    z-index: 2;
     min-height: 50px;
-    background-color: base.$secondary-colour;
-    border-bottom: 1px solid base.$separator-colour;
+    background-color: $secondary-colour;
+    border-bottom: 1px solid $separator-colour;
 
-    .logo { color: base.$primary-colour; }
+    .logo { color: $primary-colour; }
 
     .nav-links {
         position: absolute;
@@ -63,17 +69,17 @@ nav {
         width: 100%;
         right: 0px;
         top: 100%;
-        background-color: base.$secondary-colour;
-        border-top: 1px solid base.$separator-colour;
-        border-bottom: 1px solid base.$separator-colour;
+        background-color: $secondary-colour;
+        border-top: 1px solid $separator-colour;
+        border-bottom: 1px solid $separator-colour;
 
-        #blog-link { color: base.$complimentary-colour; }
+        #blog-link { color: $complimentary-colour; }
     }
 
     .nav-active { transform: translateX(0%); }
 
     li {
-        @extend %heading-font-stack;
+        @include heading-font-stack;
         list-style: none;
         font-size: 2.5em;
         opacity: 0;
@@ -81,7 +87,7 @@ nav {
 }
 
 i.fab, i.fa-bars {
-    color: base.$primary-colour;
+    color: $primary-colour;
     font-size: 1.5em;
     cursor: pointer;
 }
@@ -92,14 +98,15 @@ i.fab, i.fa-bars {
     position: relative;
 
     .feature-text {
-        @extend %abstract-font-stack;
+        @include abstract-font-stack;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         font-size: 5em;
         white-space: nowrap; 
-        color: base.$complimentary-colour;
+        color: $complimentary-colour;
+        z-index: 1;
     }
 
     .feature-img {
@@ -108,20 +115,24 @@ i.fab, i.fa-bars {
         object-fit: cover;
     }
 
-    .overlay {
-        position: absolute;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.25);
-        width: 100%;
-        height: 100%;
-    }
-
     #feature-img { content:url('/img/features/small/breakwater-lighthouse-small.jpg'); }
     #textbook-stack { content:url('/img/features/small/textbook-stack-small.jpg'); }
 }
 
+.feature:first-of-type::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
 .section-wrapper {
-    @extend %flex-and-center;
+    position: relative;
+    
+    @include flex-and-center;
     padding: 2.5vh 5vh 2.5vh 5vh;
 
     img {
@@ -137,13 +148,13 @@ i.fab, i.fa-bars {
 }
 
 .section-wrapper:nth-child(odd) {
-    background-color: base.$primary-colour;
-    color: base.$secondary-colour;
+    background-color: $primary-colour;
+    color: $secondary-colour;
 }
 
 .section-wrapper:nth-child(even) {
-    background-color: base.$secondary-colour;
-    color: base.$primary-colour;
+    background-color: $secondary-colour;
+    color: $primary-colour;
 }
 
 .article-headers {
@@ -152,7 +163,7 @@ i.fab, i.fa-bars {
     font-size: 2.5em;
 }
 
-.project-status { border-bottom: 1px solid base.$separator-colour; }
+.project-status { border-bottom: 1px solid $separator-colour; }
 
 .project-name {
     margin-top: 2.5vh;
@@ -171,7 +182,7 @@ i.fab, i.fa-bars {
     }
 
     .border {
-        border: 2.5px solid base.$primary-colour; 
+        border: 2.5px solid $primary-colour; 
         padding: 1%;
     }
 
@@ -185,9 +196,10 @@ i.fab, i.fa-bars {
     img:hover { opacity: 1; }
 
     a { text-decoration: underline; }
+
 }
 
-.list-items { @extend %paragraph-font-stack; }
+.list-items { @include paragraph-font-stack; }
 
 .skills-article, .education-section, .work-section {
     width: auto;
@@ -195,9 +207,9 @@ i.fab, i.fa-bars {
 }
 
 .links-section {
-    
+
     .links {
-        @extend %flex-and-center;
+        @include flex-and-center;
         font-size: 2em;
         flex-wrap: wrap;
 
@@ -206,6 +218,7 @@ i.fab, i.fa-bars {
             margin-right: 2.5%;
         }
     }
+
 }
 
 .contact-section {
@@ -237,23 +250,43 @@ i.fab, i.fa-bars {
 
             #recaptcha-element { display: inline-block; }
         }
+    }
 
-        button {
-            background-color: base.$secondary-colour;
-            color: base.$primary-colour;
-            padding: 10px;
-        }
+}
+
+#contact-overlay {
+    @include paragraph-font-stack;
+    content: "";
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: $primary-colour;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+
+    i.far {
+        font-size: 5em;
+    }
+
+    #contact-overlay-wrapper {
+        width: 250px;
+        text-align: center;
+
+        > * { margin: 5% 0 5% 0; }
     }
 }
 
 footer {
-    @extend %paragraph-font-stack;
-    @extend %space-around-and-center;
+    @include paragraph-font-stack;
+    @include space-around-and-center;
     min-height: 5%;
     font-size: 0.75em;
     display: flex;
-    background-color: base.$secondary-colour;
-    color: base.$primary-colour;
+    background-color: $secondary-colour;
+    color: $primary-colour;
     vertical-align: top;
 }
 
@@ -288,10 +321,10 @@ footer {
             justify-content: space-around;
             transform: translate(0%);
             width: 60%;
-            background-color: base.$secondary-colour;
+            background-color: $secondary-colour;
             border: none;
 
-            #blog-link { color: base.$primary-colour; }
+            #blog-link { color: $primary-colour; }
 
             li {
                 opacity: 1;
@@ -358,6 +391,6 @@ footer {
         #textbook-stack { content:url('/img/features/large/textbook-stack-large.jpg'); }
     }
 
-    .section-wrapper { padding: 1.5% 25% 2.5% 25%; }
+    .section-wrapper { padding: 1.5% 30% 2.5% 30%; }
 
 }
