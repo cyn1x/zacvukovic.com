@@ -204,6 +204,11 @@ i.fab, i.fa-bars {
 .skills-article, .education-section, .work-section {
     width: auto;
     text-align: center;
+
+    #skills-remarks {
+        border-top: 1px solid $separator-colour; 
+        text-align: left;
+    }
 }
 
 .links-section {
