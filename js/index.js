@@ -76,7 +76,7 @@ const ToggleMenu = (navMenuBars, navLinksContainer) => {
 }
 
 const PerformAnimation = (navLinksContainer) => {
-    navLinks = document.querySelectorAll('.nav-links li');
+    const navLinks = document.querySelectorAll('.nav-links li');
 
     controlAppearance(navLinksContainer, `navMenuFade 0.5s ease forwards`);
 
