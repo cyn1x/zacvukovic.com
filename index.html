@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="description" content="Welcome to my home on the internet. I am a professional Software Developer and DevOps Engineer in the New England region of Australia. This is my portfolio." />
@@ -9,23 +9,12 @@
     
     <title>Zac Vukovic</title>
 
-    <link rel="preload" href="/css/style.scss" as="style" onload="this.rel='stylesheet'">
-    <link rel="preload" href="https://use.typekit.net/qdl2ebq.css" as="style" onload="this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="/css/style.scss">
-        <link rel="stylesheet" href="https://use.typekit.net/qdl2ebq.css">
-    </noscript>
+    <link rel="stylesheet" href="/css/style.scss" />
+    <link rel="stylesheet" href="https://use.typekit.net/qdl2ebq.css">
 
-    <script type="module" src="/js/index.js" async defer></script>
-    <script type="module" src="https://www.google.com/recaptcha/api.js?onload=loadCaptcha&render=explicit" async defer></script>
-    <script>
-        const loadCaptcha = () => {
-            grecaptcha.render('recaptcha-element', {
-                'sitekey': process.env.CAPTCHA_SITE_KEY
-            });
-        };
-    </script>
-    <script src="https://kit.fontawesome.com/2b34a96195.js" crossorigin="anonymous" async></script>
+    <script type="module" src="/js/index.js"></script>
+    <script src="https://kit.fontawesome.com/2b34a96195.js" crossorigin="anonymous"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -243,7 +232,7 @@
                     </div>
 
                     <div id="recaptcha-container" class="form-element">
-                        <div id="recaptcha-element"></div>
+                        
                     </div>
                 
                     <div class="form-element" id="button">
