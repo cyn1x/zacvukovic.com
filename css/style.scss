@@ -84,6 +84,7 @@ nav {
         font-size: 2.5em;
         opacity: 0;
     }
+    
 }
 
 i.fab, i.fa-bars {
@@ -130,10 +131,7 @@ i.fab, i.fa-bars {
 }
 
 .section-wrapper {
-    position: relative;
-    
-    @include flex-and-center;
-    padding: 2.5vh 5vh 2.5vh 5vh;
+    padding: 1.5vh 5vh 2.5vh 5vh;
 
     img {
         border: 1px solid white;
@@ -145,16 +143,22 @@ i.fab, i.fa-bars {
         backface-visibility: hidden;
         object-fit: scale-down;
     }
+
+    a { text-decoration: underline; }
 }
 
 .section-wrapper:nth-child(odd) {
     background-color: $primary-colour;
     color: $secondary-colour;
+
+    a { color: $secondary-colour; }
 }
 
 .section-wrapper:nth-child(even) {
     background-color: $secondary-colour;
     color: $primary-colour;
+    
+    a { color: $primary-colour; }
 }
 
 .article-headers {
@@ -171,12 +175,12 @@ i.fab, i.fa-bars {
 }
 
 .project-wrapper {
-    align-items: center;
+    align-items: flex-start;
     display: flex;
     flex-direction: column;
 
     .image-wrapper {
-        width: 250px;
+        width: 100%;
         height: 250px;
         margin-bottom: 2.5vh;
     }
@@ -195,20 +199,13 @@ i.fab, i.fa-bars {
 
     img:hover { opacity: 1; }
 
-    a { text-decoration: underline; }
-
 }
 
 .list-items { @include paragraph-font-stack; }
 
-.skills-article, .education-section, .work-section {
+.skills-article {
     width: auto;
     text-align: center;
-
-    #skills-remarks {
-        border-top: 1px solid $separator-colour;
-        text-align: justify;
-    }
 }
 
 .links-section {
@@ -315,7 +312,7 @@ footer {
     }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 768px) {
 
     nav {
         .logo { font-size: 1.25em; }
@@ -356,8 +353,6 @@ footer {
             margin-right: 2.5vh;
         }
     }
-
-    .education-section, .work-section { text-align: left; }
 
     .contact-section {
         .form-element { margin-bottom: 2.5%; }

@@ -45,9 +45,11 @@ const AddEventListeners = () => {
         const menuOpened = navMenuBars.classList.contains('fa-times')
         const menuBarsClicked = navMenuBars.contains(event.target)
         
-        if (menuOpened)
-            if (!menuBarsClicked)
+        if (menuOpened) {
+            if (!menuBarsClicked) {
                 ToggleMenu(navMenuBars, navLinksContainer)
+            }
+        }
     });
 }
 
@@ -76,10 +78,8 @@ const controlAppearance = (item, animation) => {
 const handleSubmit = (formData) => {
     const captcha = document.getElementById('g-recaptcha-response')
 
-    if (captcha.value === "" || captcha.value === null || captcha.value === undefined) {
-
+    if (captcha.value === "" || captcha.value === null || captcha.value === undefined)
         return
-    }
 
     sendMessage(formData, captcha.value)
 }

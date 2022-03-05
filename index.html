@@ -16,8 +16,8 @@
         <link rel="stylesheet" href="https://use.typekit.net/qdl2ebq.css">
     </noscript>
 
-    <script src="/js/index.js" async defer></script>
-    <script src="https://www.google.com/recaptcha/api.js?onload=loadCaptcha&render=explicit" async defer></script>
+    <script type="module" src="/js/index.js" async defer></script>
+    <script type="module" src="https://www.google.com/recaptcha/api.js?onload=loadCaptcha&render=explicit" async defer></script>
     <script>
         const loadCaptcha = () => {
             grecaptcha.render('recaptcha-element', {
@@ -86,7 +86,8 @@
             <br/>
             <p>
                 When I am not working, you'll find me at the gym, dabbling in game engine architecture, working on other 
-                personal projects, automating things, or catching up on my video game backlog.
+                personal projects, automating things, or catching up on my video game backlog. Check out my 
+                <a href="#skills">current stack</a> to get a gist of technologies I'm playing with in my personal and professional life.
             </p>
         </article>
     </div>
@@ -95,7 +96,29 @@
         <article class="projects-article">
             <h1 class="article-headers anchor" id="projects">Featured Projects</h1>
             
-            <h2 class="project-status">Completed</h2>
+            <h2 class="project-status">Professional</h2>
+
+            <h3 class="project-name">Interactable Anatomy Explorer</h3>
+            <div class="project-wrapper">
+                <div class="image-wrapper border">
+                    <img src="img/portfolio/anatomy-explorer-small.jpg" alt="">
+                </div>
+                <div class="project-description">
+                    <p>
+                        The purpose of this was to innovate 3D anatomy exploration in a way that existing solutions could not at the
+                        time of writing. This proved to be cost-effective and simple to rig for multiple models by templating the
+                        original prototype.
+                    </p>
+                    <br/>
+                    <p>Made with Unity.</p>
+                    <br/>
+                    <p><a href="https://www.youtube.com/watch?v=dggbzJRh8ac">Video Demonstration</a></p>
+                </div>
+            </div>
+
+            <br/>
+            
+            <h2 class="project-status">Personal</h2>
 
             <h3 class="project-name">UniChess Chess Engine</h3>
             <div class="project-wrapper">
@@ -109,7 +132,7 @@
                         a board state to play with. The README in the source code repository explains the functionality in more detail.
                     </p>
                     <br/>
-                    <p>Written in TypeScript and rendered with React + HTML5 Canvas.</p>
+                    <p>Written in React with TypeScript and HTML5 Canvas.</p>
                     <br/>
                     <p><a href="https://github.com/cyn1x/unichess-chess-engine" target="_blank" rel=noopener>Source Code</a></p>
                     <p><a href="https://unichesschessengine.netlify.com/">Live Demonstration</a></p>
@@ -132,18 +155,13 @@
                     <p>Written in Java and rendered with JavaFX.</p>
                     <br/>
                     <p><a href="https://gitlab.com/cyn1x/quadtreefx" target="_blank" rel=noopener>Source code</a></p>
-                    <p><a href="https://youtu.be/UP77biUdsIk">Video Demonstration</a></p>
                 </div>
             </div>
-
-            <br/>
-            
-            <h2 class="project-status">In Development</h2>
 
             <h3 class="project-name">Rakija</h3>
             <div class="project-wrapper">
                 <div class="image-wrapper border">
-                    <img src="" alt="">
+                    <img src="#" alt="">
                 </div>
                 <div class="project-description">
                     <p>
@@ -154,8 +172,6 @@
                     </p>
                     <br/>
                     <p>Currently being written in C</p>
-                    <br/>
-                    <p><a href="https://github.com/cyn1x/#" target="_blank" rel=noopener>Source code</a></p>
                 </div>
             </div>
 
@@ -169,8 +185,6 @@
                         The core of my home lab is currently powered by Proxmox on a HPE ProLiant MicroServer Gen8 with a number of VMs 
                         and containers serving different purposes.
                     </p>
-                    <br/>
-                    <p>I will hopefully soon update this space with a post that thoroughly details the configuration.</p>
                 </div>
             </div>
 
@@ -179,142 +193,14 @@
 
     <div class="section-wrapper">
         <section class="skills-article">
-            <h1 class="article-headers anchor" id="skills">Skills</h1>
+            <h1 class="article-headers anchor" id="skills">Current Stack</h1>
             <div class="list-items">
                 <ul>
                     <li>Python | C# | C | Go<br/><br/></li>
-                    <li>JavaScript | CSS | HTML<br/><br/></li>
+                    <li>JavaScript | TypeScript | CSS | HTML<br/><br/></li>
                     <li>React | Gatsby<br/><br/></li>
-                    <li>Git | Bash | Jenkins | AWS</li>
-                </ul>
-            </div>
-            <br/>
-            <div id="skills-remarks">
-                <br/>
-                <p>
-                    These are the technologies I'm currently focusing on now; either in my personal life or professional life. The amount
-                    of other languages, frameworks, and libraries I've played with aren't worth listing here, as I prefer to keep my stack
-                    focused. In short, I generally use what gets the job done in a professional setting but have a personal preference for
-                    building things from scratch in my own time.
-                </p>
-            </div>
-        </section>
-    </div>
-
-    <div class="section-wrapper">
-        <section class="education-section">
-            <h1 class="article-headers anchor" id="education">Education</h1>
-            <div class="list-items">
-                <ul>
-                    <li>2017-2020</li>
-                    <li>Bachelor of Computer Science (BCompSc), Software Development</li>
-                    <li>The University of New England</li>
-                    <li>Armidale, NSW, Australia</li>
-                </ul>
-                <br/>
-                <ul>
-                    <li>2014-2014</li>
-                    <li>ICT Training Package, Data Networking for Business Implementation</li>
-                    <li>TAFE NSW</li>
-                    <li>Campbelltown, NSW, Australia</li>
-                </ul>
-                <br/>
-                <ul>
-                    <li>2006-2007</li>
-                    <li>Diploma in Information Technology, Systems Administration</li>
-                    <li>TAFE NSW</li>
-                    <li>Campbelltown, NSW, Australia</li>
-                </ul>
-                <br/>
-                <ul>
-                    <li>2005-2006</li>
-                    <li>Certificate IV in Information Technology, Technical Support</li>
-                    <li>TAFE NSW</li>
-                    <li>Campbelltown, NSW, Australia</li>
-                </ul>
-            </div>
-        </section>
-    </div>
-
-    <div class="section-wrapper">
-        <section class="work-section">
-            <h1 class="article-headers anchor" id="work">Work</h1>
-            <div class="list-items">
-                <ul>
-                    <li>2020-Present</li>
-                    <li>AR/VR Support Specialist</li>
-                    <li>TAFE NSW</li>
-                    <li>Armidale, NSW, Australia</li>
-                </ul>
-                <br/>
-                <ul>
-                    <li>2020-2020</li>
-                    <li>Software Engineer</li>
-                    <li>University of New England (AU)</li>
-                    <li>Armidale, NSW, Australia</li>
-                </ul>
-                <br/>
-                <ul>
-                    <li>2016-2020</li>
-                    <li>Farm Hand</li>
-                    <li>Daisy Hill</li>
-                    <li>Wollomombi, NSW, Australia</li>
-                </ul>
-                <br/>
-                <ul>
-                    <li>Labourer & Welder</li>
-                    <li>2016-2019</li>
-                    <li>Herzog Engineering</li>
-                    <li>Wollomombi, NSW, Australia</li>
-                </ul>
-                <br/>
-                <ul>
-                    <li>2014-2016</li>
-                    <li>IT Systems Support Officer</li>
-                    <li> Wollondilly Shire Council</li>
-                    <li>Picton, NSW, Australia</li>
-                </ul>
-                <br/>
-                <ul>
-                    <li>2013-2014</li>
-                    <li>IT Project Support Officer</li>
-                    <li>Wollondilly Shire Council</li>
-                    <li> Picton, NSW, Australia</li>
-                </ul>
-                <br/>
-                <ul>
-                    <li>2009-2012</li>
-                    <li>L3 Support</li>
-                    <li>eNerds IT</li>
-                    <li>North Sydney, NSW, Australia</li>
-                </ul>
-                <br/>
-                <ul>
-                    <li>2008-2009</li>
-                    <li>L1 Support</li>
-                    <li>eNerds IT</li>
-                    <li>North Sydney, NSW, Australia</li>
-                </ul>
-                <br/>
-                <ul>
-                    <li>2006-2008</li>
-                    <li>Process Worker</li>
-                    <li>Country Valley</li>
-                    <li>Picton, NSW, Australia</li>
-                </ul>
-                <br/>
-                <ul>
-                    <li>2005-2005</li>
-                    <li>Storeman</li>
-                    <li>Pacific Helmets</li>
-                    <li>Smeaton Grange, NSW, Australia</li>
-                </ul>
-                <br/>
-                <ul>
-                    <li>2003-2004</li>
-                    <li>Junior & Senior Soccer Referee</li>
-                    <li>Macarthur District Football Referees Association</li>
-                    <li>Greater Western Sydney, NSW, Australia</li>
+                    <li>Git | Bash | Jenkins | AWS<br/><br/></li>
+                    <li>Unity | OpenGL</li>
                 </ul>
             </div>
         </section>
@@ -325,12 +211,10 @@
             <h1 class="article-headers anchor" id="links">Links</h1>
             <div class="links">
                 <a href="https://au.linkedin.com/in/zacvukovic/" aria-label="LinkedIn" target="_blank" rel=noopener><i class="fab fa-linkedin"></i></a>
-                <a href="https://twitter.com/AlmightyZacPac/" aria-label="Twitter" target="_blank" rel="noopener"><i class="fab fa-twitter-square"></i></a>
                 <a href="https://github.com/cyn1x/" aria-label="GitHub" target="_blank" rel=noopener><i class="fab fa-github-square"></i></a>
                 <a href="https://gitlab.com/cyn1x/" aria-label="GitLab" target="_blank" rel=noopener><i class="fab fa-gitlab"></i></a>
                 <a href="https://bitbucket.org/cyn1x/" aria-label="Bitbucket" target="_blank" rel=noopener><i class="fab fa-bitbucket"></i></a>
                 <a href="https://soundcloud.com/crackimus" aria-label="SoundCloud" target="_blank" rel=noopener><i class="fab fa-soundcloud"></i></a>
-                <a href="https://www.goodreads.com/user/show/119858785-zac-vukovic" aria-label="Goodreads" target="_blank" rel=noopener><i class="fab fa-goodreads"></i></a>
             </div>
         </section>
     </div>
@@ -392,7 +276,7 @@
 
     <footer>
         <span>
-            &copy; Zac Vukovic 2021
+            &copy; Zac Vukovic 2022
         </span>
         
     </footer>
