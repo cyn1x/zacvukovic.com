@@ -10,10 +10,12 @@
     <title>Zac Vukovic</title>
 
     <link rel="stylesheet" href="/css/style.scss" />
-    <link rel="stylesheet" href="https://use.typekit.net/qdl2ebq.css">
+    <link rel="preload" href="https://use.typekit.net/qdl2ebq.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <noscript><link rel="stylesheet" href="https://use.typekit.net/qdl2ebq.css"></noscript>
 
     <script type="module" src="/js/index.js"></script>
-    <script src="https://kit.fontawesome.com/2b34a96195.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2b34a96195.js" crossorigin="anonymous" async></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
@@ -67,7 +69,8 @@
             <p>
                 When I am not working, you'll find me at the gym, dabbling in game engine architecture, working on other 
                 personal projects, automating things, or catching up on my video game backlog. Check out my 
-                <a href="#skills">current stack</a> to get a gist of technologies I'm playing with in my personal and professional life.
+                <a href="#skills">current stack</a> to get a gist of technologies I'm currently playing with in my personal and
+                professional life.
             </p>
         </article>
     </div>
