@@ -22,7 +22,7 @@ $separator-colour: rgb(150, 150, 150);
 }
 
 @mixin space-around-and-center {
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
 }
