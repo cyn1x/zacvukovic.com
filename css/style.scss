@@ -116,8 +116,8 @@ i.fab, i.fa-bars {
         object-fit: cover;
     }
 
-    #feature-img { content:url('/img/features/small/breakwater-lighthouse-small.jpg'); }
-    #textbook-stack { content:url('/img/features/small/textbook-stack-small.jpg'); }
+    #feature-img { content:url('/img/features/breakwater-lighthouse.webp'); }
+    #textbook-stack { content:url('/img/features/textbook.stack.webp'); }
 }
 
 .feature:first-of-type::after {
@@ -337,11 +337,6 @@ footer {
         i.fa-bars { display: none; }
     }
 
-    .feature {
-        #feature-img { content:url('/img/features/medium/breakwater-lighthouse-medium.jpg'); }
-        #textbook-stack { content:url('/img/features/medium/textbook-stack-medium.jpg'); }
-    }
-
     .section-wrapper { padding: 1.5% 15% 2.5% 15%; }
 
     .project-wrapper {
@@ -384,11 +379,6 @@ footer {
         
         .logo { font-size: 1.5em; }
         .nav-links { li { font-size: 1.5em; } }
-    }
-
-    .feature {
-        #feature-img { content:url('/img/features/large/breakwater-lighthouse-large.jpg'); }
-        #textbook-stack { content:url('/img/features/large/textbook-stack-large.jpg'); }
     }
 
     .section-wrapper { padding: 1.5% 25% 2.5% 25%; }
