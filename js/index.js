@@ -3,7 +3,7 @@ const App = () => {
 }
 
 const Initialise = () => {
-    CreateCaptchaTickbox();
+    // CreateCaptchaTickbox();
 
     window.addEventListener("load", () => {
         AddEventListeners();
@@ -44,17 +44,17 @@ const AddEventListeners = () => {
         ToggleMenu(navMenuBars, navLinksContainer);
     });
 
-    contactForm.addEventListener('submit', (event) => {
-        event.preventDefault();
+    // contactForm.addEventListener('submit', (event) => {
+    //     event.preventDefault();
 
-        handleSubmit(event.target);
-    })
+    //     handleSubmit(event.target);
+    // })
 
-    backButton.addEventListener('click', (event) => {
-        event.preventDefault();
+    // backButton.addEventListener('click', (event) => {
+    //     event.preventDefault();
 
-        document.getElementById('contact-overlay').style.display = 'none';
-    })
+    //     document.getElementById('contact-overlay').style.display = 'none';
+    // })
     
     document.addEventListener('click', (event) => {
         const menuOpened = navMenuBars.classList.contains('fa-times');

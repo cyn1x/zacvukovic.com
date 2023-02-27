@@ -20,249 +20,43 @@
 </head>
 
 <body>
-    <nav class="header-nav">
-        <div class="logo">
-            <a href="https://www.zacvukovic.com"><h4>zacvukovic.com</h4></a>
-        </div>
-        <ul class="nav-links">
-            <li>
-                <a href="#about">About</a>
-            </li>
-            <li>
-                <a href="#projects">Projects</a>
-            </li>
-            <li>
-                <a href="#skills">Skills</a>
-            </li>
-            <li>
-                <a href="#links">Links</a>
-            </li>
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-        </ul>
-        <i class="fas fa-bars"></i>
-    </nav>
-
-    <aside class="feature">
-        <div id="feature-img" class="feature-img"></div>
-        <div class="overlay"></div>
-        <div class="feature-text">Zac V.</div>
-    </aside>
-    
-    <div class="section-wrapper">
-        <article class="about-article">
-            <h1 class="article-headers anchor" id="about">About Me</h1>
-            <p>
-                I am a currently working in the technology industry as a generalist, though I have a very high interest in Software
-                Engineering and Game Development. I obtained the Bachelor of Computer Science (BCompSc) at the University of New
-                England, Armidale. Previous to this, I worked as an IT Professional in the Information Technology industry before
-                making the change to Software Development.
-            </p>
-            <br/>
-            <p>
-                I have enjoyed creating things since I was able to do so, from; computer games, music, and computer networks. All areas
-                of the stack are interesting to me; from web development to systems programming, and the communication in between and
-                beyond. Clean, maintainable, and optimised code is very important to me when developing a project.
-            </p>
-            <br/>
-            <p>
-                When I am not working, you'll find me at the gym, dabbling in game engine architecture, working on other 
-                personal projects, automating things, or catching up on my video game backlog. Check out my 
-                <a href="#skills">current stack</a> to get a gist of technologies I'm currently playing with in my personal and
-                professional life.
-            </p>
-        </article>
-    </div>
-
-    <div class="section-wrapper">
-        <article class="projects-article">
-            <h1 class="article-headers anchor" id="projects">Featured Projects</h1>
-            
-            <h2 class="project-status">Professional</h2>
-
-            <h3 class="project-name">Interactable Anatomy Explorer</h3>
-            <div class="project-wrapper">
-                <div class="image-wrapper border">
-                    <img src="img/portfolio/anatomy-explorer.webp" alt="">
-                </div>
-                <div class="project-description">
-                    <p>
-                        The purpose of this was to innovate 3D anatomy exploration in a way that existing solutions could not at the
-                        time of writing. This proved to be cost-effective and simple to rig for multiple models by templating the
-                        original prototype.
-                    </p>
-                    <br/>
-                    <p>Made with Unity.</p>
-                    <br/>
-                    <p><a href="https://www.youtube.com/watch?v=dggbzJRh8ac">Video Demonstration</a></p>
-                </div>
+    <div id="root">
+        <nav class="header-nav">
+            <div class="logo">
+                <a href="https://www.zacvukovic.com"><h4>Zac Vukovic</h4></a>
+                <p>Software Development Portfolio</p>
             </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="/portfolio" class="data-link" onclick="route()">PROJECTS</a>
+                </li>
+                <li>
+                    <a href="/about" class="data-link" onclick="route()">ABOUT</a>
+                </li>
+                <li>
+                    <a href="/blog" class="data-link" onclick="route()">BLOG</a>
+                </li>
+                <li>
+                    <a href="/contact" class="data-link" onclick="route()">CONTACT</a>
+                </li>
+            </ul>
+            <i class="fas fa-bars"></i>
+        </nav>
 
-            <br/>
-            
-            <h2 class="project-status">Personal</h2>
+        <hr class="separator">
 
-            <h3 class="project-name">UniChess Chess Engine</h3>
-            <div class="project-wrapper">
-                <div class="image-wrapper border">
-                    <img src="img/portfolio/unichess-chess-engine.webp" alt="">
-                </div>
-                <div class="project-description">
-                    <p>
-                        Real-time chess engine simulation that detects valid moves for an active piece before the player has requested a
-                        position to move to. The board state is managed using Forsyth-Edwards Notation, with the added ability to specify
-                        a board state to play with. The README in the source code repository explains the functionality in more detail.
-                    </p>
-                    <br/>
-                    <p>Written in React with TypeScript and HTML5 Canvas.</p>
-                    <br/>
-                    <p><a href="https://github.com/cyn1x/unichess-chess-engine" target="_blank" rel=noopener>Source Code</a></p>
-                    <p><a href="https://unichesschessengine.netlify.com/">Live Demonstration</a></p>
-                </div>
-            </div>
-
-            <h3 class="project-name">QuadtreeFX</h3>
-            <div class="project-wrapper">
-                <div class="image-wrapper border">
-                    <img src="img/portfolio/quadtreefx.webp" alt="">
-                </div>
-                <div class="project-description">
-                    <p>
-                        Quadtree that isolates areas on the cartesian plane for collision detection, so each individual entity is not
-                        wasting system resources by checking if it is colliding with every entity in memory. Instead, each entity is
-                        placed into a leaf node depending on which cardinal direction the entity is in, and then the collision detection
-                        is computed with other entities in that leaf node.
-                    </p>
-                    <br/>
-                    <p>Written in Java and rendered with JavaFX.</p>
-                    <br/>
-                    <p><a href="https://gitlab.com/cyn1x/quadtreefx" target="_blank" rel=noopener>Source code</a></p>
-                </div>
-            </div>
-
-            <h3 class="project-name">Rakija</h3>
-            <div class="project-wrapper">
-                <div class="image-wrapper border">
-                    <img src="#" alt="">
-                </div>
-                <div class="project-description">
-                    <p>
-                        A 2D game framework that is very early in development. I am currently writing my graphics API and reading more
-                        theory than programming, so it may be some time before any noticable changes are reflected on the GUI. The purpose
-                        of this project is to understand game engines from the ground up, and maybe put one of my ideas to life in the
-                        process. The source code is currently set to private.
-                    </p>
-                    <br/>
-                    <p>Currently being written in C</p>
-                </div>
-            </div>
-
-            <h3 class="project-name">Home Network</h3>
-            <div class="project-wrapper">
-                <div class="image-wrapper border">
-                    <img src="img/portfolio/home-infrastructure.webp" alt="">
-                </div>
-                <div class="project-description">
-                    <p>
-                        The core of my home lab is currently powered by Proxmox on a HPE ProLiant MicroServer Gen8 with a number of VMs 
-                        and containers serving different purposes.
-                    </p>
-                </div>
-            </div>
-
-        </article>
-    </div>
-
-    <div class="section-wrapper">
-        <section class="skills-article">
-            <h1 class="article-headers anchor" id="skills">Current Stack</h1>
-            <div class="list-items">
-                <ul>
-                    <li>Python | C# | C | Go<br/><br/></li>
-                    <li>JavaScript | TypeScript | CSS | HTML<br/><br/></li>
-                    <li>React | Gatsby<br/><br/></li>
-                    <li>Git | Bash | Jenkins | AWS<br/><br/></li>
-                    <li>Unity | OpenGL</li>
-                </ul>
-            </div>
-        </section>
-    </div>
-
-    <div class="section-wrapper">
-        <section class="links-section">
-            <h1 class="article-headers anchor" id="links">Links</h1>
-            <div class="links">
-                <a href="https://au.linkedin.com/in/zacvukovic/" aria-label="LinkedIn" target="_blank" rel=noopener><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/cyn1x/" aria-label="GitHub" target="_blank" rel=noopener><i class="fab fa-github-square"></i></a>
-                <a href="https://gitlab.com/cyn1x/" aria-label="GitLab" target="_blank" rel=noopener><i class="fab fa-gitlab"></i></a>
-                <a href="https://bitbucket.org/cyn1x/" aria-label="Bitbucket" target="_blank" rel=noopener><i class="fab fa-bitbucket"></i></a>
-                <a href="https://soundcloud.com/crackimus" aria-label="SoundCloud" target="_blank" rel=noopener><i class="fab fa-soundcloud"></i></a>
-            </div>
-        </section>
-    </div>
-
-    <div class="section-wrapper">
-        <section class="contact-section">
-            <h1 class="article-headers anchor" id="contact">Contact Me</h1>
-            <form id="contact-form" method="POST">
-                <fieldset>
-                    <div class="full-name">
-                        <div class="form-element" id="first">
-                            <label for="fname">First name*</label>
-                            <input type="text" id="fname" name="fname" required>
-                        </div>
-    
-                        <div class="form-element" id="last">
-                            <label for="lname">Last name</label>
-                            <input type="text" id="lname" name="lname">
-                        </div>
-                    </div>
-
-                    <div class="form-element" id="reply">
-                        <label for="email">Email*</label>
-                        <input type="email" id="email" name="email" pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$" required>
-                    </div>
-
-                    <div class="form-element" id="greeting">
-                        <label for="subject">Subject*</label>
-                        <input type="text" id="subject" name="subject" minlength="2" required>
-                    </div>
-                
-                    <div class="form-element" id="message">
-                        <label for="body">Message*</label>
-                        <textarea id="body" name="body" minlength="2" required></textarea>
-                    </div>
-
-                    <div id="recaptcha-container" class="form-element">
-                        
-                    </div>
-                
-                    <div class="form-element" id="button">
-                        <button type="submit" id="send-button">Send</button>
-                    </div>
-                </fieldset>
-            </form>
-        </section>
-        <div id="contact-overlay">
-            <div id="contact-overlay-wrapper">
-                <p>Your message has been sent successfully</p>
-                <button type="submit" id="back-button">Back</button>
-            </div>
-        </div>
-
-    </div>
-
-    <aside class="feature">
-        <div id="textbook-stack" class="feature-img"></div>
-    </aside>
-
-    <footer>
-        <span>
-            &copy; Zac Vukovic 2022
-        </span>
+        <div id="main-page"></div>
         
-    </footer>
+        <hr class="separator">
+    
+        <footer>
+            <span>
+                &copy; Zac Vukovic 2022
+            </span>
+        </footer>
+    </div>
+    
+    <script src="js/router.js"></script>
 </body>
 
 </html>

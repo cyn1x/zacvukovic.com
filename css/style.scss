@@ -20,13 +20,20 @@ html, body {
         visibility: hidden;
     }
 
-    h1, h4 { @include heading-font-stack; }
+    h1 { @include heading-font-stack; }
     h2, h3 { @include paragraph-font-stack; }
+    h4 { @include logo-font-stack; }
 
     a {
         text-decoration: none;
-        color: $primary-colour;
+        color: $secondary-colour;
         :hover { cursor: pointer; }
+    }
+
+    hr.separator {
+        border-top: 1px solid $separator-colour;
+        margin: 0vh 35vw 0vh 35vw;
+        
     }
 
     button {
@@ -39,8 +46,6 @@ html, body {
         list-style: none;
     }
 
-    section { width: 100%; }
-
     label, input, textarea, button, p {
         @include paragraph-font-stack;
         width: 100%;
@@ -52,14 +57,22 @@ nav {
     @include space-around-and-center;
     position: sticky;
     display: flex;
-    padding: 0vh 5vh 0vh 5vh;
+    padding: 2.5vh 5vh 2.5vh 5vh;
     top: 0;
     z-index: 2;
     min-height: 50px;
-    background-color: $secondary-colour;
-    border-bottom: 1px solid $separator-colour;
+    background-color: $primary-colour;
 
-    .logo { color: $primary-colour; }
+    .logo { 
+        font-size: 1.5em;
+        text-align: start;
+
+        p {
+            @include paragraph-font-stack;
+            font-size: 0.5em;
+            color: #999;
+        }
+    }
 
     .nav-links {
         position: absolute;
@@ -70,11 +83,9 @@ nav {
         width: 100%;
         right: 0px;
         top: 100%;
-        background-color: $secondary-colour;
+        background-color: $primary-colour;
         border-top: 1px solid $separator-colour;
         border-bottom: 1px solid $separator-colour;
-
-        #blog-link { color: $complimentary-colour; }
     }
 
     .nav-active { transform: translateX(0%); }
@@ -89,207 +100,47 @@ nav {
 }
 
 i.fab, i.fa-bars {
-    color: $primary-colour;
+    color: $secondary-colour;
     font-size: 1.5em;
     cursor: pointer;
 }
 
-.feature {
-    width: 100%;
-    height: 50%;
-    position: relative;
+#main-page {
+    padding: 5vh 5vw 5vh 5vw;
 
-    .feature-text {
-        @include abstract-font-stack;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 5em;
-        white-space: nowrap; 
-        color: $complimentary-colour;
-        z-index: 1;
+    h1 {
+        text-align: center;
+        font-size: 1.5em;
+        padding-bottom: 2.5vh;
     }
 
-    .feature-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    #feature-img { content:url('/img/features/breakwater-lighthouse.webp'); }
-    #textbook-stack { content:url('/img/features/textbook.stack.webp'); }
-}
-
-.feature:first-of-type::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    background: rgba(0, 0, 0, 0.25);
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-}
-
-.section-wrapper {
-    padding: 1.5vh 5vh 2.5vh 5vh;
-
+    .project:nth-child(odd) { padding: 5vh 0vw 5vh 0vw; }
+    .paragraph-link { text-decoration: underline; }
+    
     img {
-        border: 1px solid white;
         opacity: 1;
         display: block;
-        width: 50%;
-        height: auto;
+        width: 100%;
         transition: .5s ease;
         backface-visibility: hidden;
-        object-fit: scale-down;
+        object-fit: contain;
     }
 
-    a { text-decoration: underline; }
-}
-
-.section-wrapper:nth-child(odd) {
-    background-color: $primary-colour;
-    color: $secondary-colour;
-
-    a { color: $secondary-colour; }
-}
-
-.section-wrapper:nth-child(even) {
-    background-color: $secondary-colour;
-    color: $primary-colour;
-    
-    a { color: $primary-colour; }
-}
-
-.article-headers {
-    margin-bottom: 2.5vh;
-    text-align: center;
-    font-size: 2.5em;
-}
-
-.project-status { border-bottom: 1px solid $separator-colour; }
-
-.project-name {
-    margin-top: 2.5vh;
-    margin-bottom: 2.5vh;
-}
-
-.project-wrapper {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-
-    .image-wrapper {
-        width: 100%;
-        height: 250px;
-        margin-bottom: 2.5vh;
-    }
-
-    .border {
-        border: 2.5px solid $primary-colour; 
-        padding: 1%;
-    }
-
-    img {
-        opacity: 0.75;
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-    }
-
-    img:hover { opacity: 1; }
-
-}
-
-.list-items { @include paragraph-font-stack; }
-
-.skills-article {
-    width: auto;
-    text-align: center;
-}
-
-.links-section {
-
-    .links {
-        @include flex-and-center;
-        font-size: 2em;
-        flex-wrap: wrap;
-
-        a {
-            margin-left: 2.5%;
-            margin-right: 2.5%;
-        }
-    }
-
-}
-
-.contact-section {
-    .form-element { margin-bottom: 5%; }
-
-    form {
-        .full-name > * { width: 100%; }
-
-        fieldset { border: none; }
-
-        label {
-            display: block;
-            padding-bottom: 5px;
-        }
-
-        input, textarea {
-            padding: 5px;
-            border-radius: 5px;
-            border-style: inset;
-        }
-
-        textarea {
-            height: 150px;
-            resize: none;
-        }
-
-        #recaptcha-container {
-            text-align: center;
-
-            #recaptcha-element { display: inline-block; }
-        }
-    }
-
-}
-
-#contact-overlay {
-    @include paragraph-font-stack;
-    content: "";
-    display: none;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: $primary-colour;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-
-    i.far {
-        font-size: 5em;
-    }
-
-    #contact-overlay-wrapper {
-        width: 250px;
+    .caption {
         text-align: center;
-
-        > * { margin: 5% 0 5% 0; }
+        padding-top: 1vh;
     }
+    
 }
 
 footer {
     @include paragraph-font-stack;
     @include space-around-and-center;
-    min-height: 5%;
+    padding: 2.5vh 0vw 2.5vh 0vw;
     font-size: 0.75em;
     display: flex;
-    background-color: $secondary-colour;
-    color: $primary-colour;
+    justify-content: center;
+    color: $secondary-colour;
     vertical-align: top;
 }
 
@@ -316,7 +167,7 @@ footer {
 @media screen and (min-width: 768px) {
 
     nav {
-        .logo { font-size: 1.25em; }
+        .logo { font-size: 1.75em; }
 
         .nav-links {
             position: relative;
@@ -324,10 +175,7 @@ footer {
             justify-content: space-around;
             transform: translate(0%);
             width: 60%;
-            background-color: $secondary-colour;
             border: none;
-
-            #blog-link { color: $primary-colour; }
 
             li {
                 opacity: 1;
@@ -338,27 +186,9 @@ footer {
         i.fa-bars { display: none; }
     }
 
-    .section-wrapper { padding: 1.5% 15% 2.5% 15%; }
+    #main-page {
+        .image-container { width: 35%; }
 
-    .project-wrapper {
-        flex-direction: row;
-        align-items: stretch;
-
-        .image-wrapper {
-            min-width: 50%;
-            margin-right: 2.5vh;
-        }
-    }
-
-    .contact-section {
-        .form-element { margin-bottom: 2.5%; }
-
-        .full-name {
-            display: inline-flex;
-            width: 100%;
-
-            #first { padding-right: 25px; }
-        }
     }
 
 }
@@ -378,10 +208,13 @@ footer {
     nav {
         min-height: 75px;
         
-        .logo { font-size: 1.5em; }
+        .logo { font-size: 2.0em; }
         .nav-links { li { font-size: 1.5em; } }
     }
 
-    .section-wrapper { padding: 1.5% 25% 2.5% 25%; }
+    #main-page {
+        .image-container:hover .image { opacity: 0.3; }
+        .image-container:hover { opacity: 1; }
+    }
 
 }

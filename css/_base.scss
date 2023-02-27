@@ -1,22 +1,22 @@
-$primary-colour: rgb(225, 225, 225);
+$primary-colour: rgb(255, 255, 255);
 $secondary-colour: rgb(25, 25, 25);
 $complimentary-colour: rgb(200, 200, 0);
-$separator-colour: rgb(150, 150, 150);
+$separator-colour: rgb(220, 220, 220);
 
-@mixin abstract-font-stack {
-    font-family: roboto-condensed, sans-serif; 
-    font-weight: 300;
+@mixin logo-font-stack {
+    font-family: bebas-neue-by-fontfabric, sans-serif; 
+    font-weight: 600;
     font-style: normal;
 }
 
 @mixin heading-font-stack {
-    font-family: bebas-neue-by-fontfabric, sans-serif;
+    font-family: montserrat, sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
 @mixin paragraph-font-stack {
-    font-family: roboto, sans-serif;
+    font-family: montserrat, sans-serif;
     font-weight: 400;
     font-style: normal;
 }
