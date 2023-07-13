@@ -55,7 +55,8 @@ async function handleLocation() {
         const match = routeToRegexExpression(path, route);
         const uri = route.url.replace(/:\w+/g, match[1]);
         
-        await fetch(`/search${uri}`).then((res) => {
+        const apiUrl = (typeof process !== 'undefined') ? uri : `/search${uri}`
+        await fetch(apiUrl).then((res) => {
             if (res.status === 200) {
                 render(uri);
                 dispatchEvent(path);
