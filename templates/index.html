@@ -6,15 +6,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zac Vukovic is a professional Software Developer in the New England region of New South Wales, Australia.">
+  <meta name="keywords" content="Zac Vukovic, Zac Madden, Portfolio, Blog">
+  <meta name="author" content="Zac Vukovic">
   <link rel="icon" href="/img/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
   <link rel="stylesheet" href="https://use.typekit.net/qdl2ebq.css">
 </head>
 
 <body>
   <header>
     <div id="logo-container">
-      <h1 id="logo">{{ author }}</h1>
+      <a href="{{ homepage_url }}">
+        <h1 id="logo">{{ author }}</h1>
+      </a>
       <p>Software Development Portfolio</p>
     </div>
     {% filter indent(width=4,first=False) -%}

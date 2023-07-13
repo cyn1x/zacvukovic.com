@@ -18,6 +18,11 @@ npm install
 
 The usage mode can be either set to development or production.
 
+The `apiUrl` in the `router.js` file uses the `/search` API for JotunPy in development mode, and just the URI in production mode. Cloudflare seems to handle this gracefully without the need for the developer to create a search API, where other platforms like Azure do not handle non-existent URIs gracefully.
+```javascript
+const apiUrl = (typeof process !== 'undefined') ? uri : `/search${uri}`
+```
+
 ### Development
 
 Development mode can be activated by using the JotunPy live development server.

@@ -64,6 +64,14 @@ header {
         padding-left: 5vw;
         text-align: start;
 
+        a {
+            text-decoration: none;
+            
+            :hover {
+                color: $secondary-colour;
+            }
+        }
+
         p {
             color: $tertiary-colour;
             font-size: 0.75em;
@@ -344,7 +352,7 @@ footer {
           'footer main'
           '. main';
         gap: 10px;
-        grid-template-columns: 1fr 3fr;
+        grid-template-columns: max-content auto;
     }
 
     main {

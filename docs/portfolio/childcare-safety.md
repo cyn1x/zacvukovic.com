@@ -3,7 +3,6 @@ title: Zac Vukovic
 author: Zac Vukovic
 published: 2023-07-11T20:18:47+10:00
 template: default.html
-description: Childcare Safety is a fun VR game for the whole McFamily!
 ---
 
 # Childcare Safety
