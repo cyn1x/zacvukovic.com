@@ -44,14 +44,14 @@ function handleSubmit(formData) {
     }
 }
 
-function sendMessage(formData, captchaValue) {
+async function sendMessage(formData, captchaValue) {
     const contactForm = document.getElementById('contact-form');
     const sendButton = document.getElementById('submit');
     const apiUrl = contactForm.getAttribute('action');
     const successResult = document.getElementById('success-result');
     const errorResult = document.getElementById('error-result');
 
-    fetch(apiUrl, {
+    await fetch(apiUrl, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
