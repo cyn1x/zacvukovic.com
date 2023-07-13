@@ -55,17 +55,16 @@ async function handleLocation() {
         const match = routeToRegexExpression(path, route);
         const uri = route.url.replace(/:\w+/g, match[1]);
         
-        await render(uri);
-        // await fetch(`/search${uri}`).then((res) => {
-        //     if (res.status === 200) {
-        //         render(uri);
-        //         dispatchEvent(path);
-        //     }
-        //     else {
-        //         // This dynamic route does not exist on the server
-        //         render(findStaticRouteByPath(404).url);
-        //     }
-        // });
+        await fetch(`/search${uri}`).then((res) => {
+            if (res.status === 200) {
+                render(uri);
+                dispatchEvent(path);
+            }
+            else {
+                // This dynamic route does not exist on the server
+                render(findStaticRouteByPath(404).url);
+            }
+        });
 
         return;
     }

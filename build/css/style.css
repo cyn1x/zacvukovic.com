@@ -174,6 +174,10 @@ i.fa-bars {
   width: 2em;
 }
 
+.http-status-text {
+  text-align: center;
+}
+
 main {
   flex-grow: 1;
 }
@@ -301,7 +305,6 @@ footer {
   text-align: center;
   margin: 2.5vh 0vw 2.5vh 0vw;
   font-size: 0.75em;
-  display: flex;
   justify-content: center;
   color: #191919;
   vertical-align: top;
@@ -342,6 +345,10 @@ footer a:hover {
   main .portfolio-image-container {
     padding-bottom: 0;
   }
+  main form {
+    margin: auto;
+    width: 80%;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -349,13 +356,11 @@ footer a:hover {
 body {
     height: auto;
   }
-  .links {
-    display: flex;
-  }
   body {
     display: grid;
     grid-template-areas: 'header main' 'footer main' '. main';
     gap: 10px;
+    grid-template-columns: 1fr 3fr;
   }
   main {
     grid-area: main;
@@ -370,16 +375,17 @@ body {
     margin-bottom: 5vh;
   }
   footer {
+    text-align: start;
     grid-area: footer;
     padding: 0;
     margin-bottom: 0;
-    margin-left: 5vw;
+    margin-left: 3vw;
   }
   header {
     grid-area: header;
     display: block;
     margin-top: 5vh;
-    margin-left: 5vh;
+    margin-left: 3vw;
     background-color: white;
     flex-direction: column;
     align-items: start;
@@ -416,6 +422,9 @@ body {
   header i.fa-bars {
     display: none;
   }
+  .links {
+    display: flex;
+  }
   .visual-separator-container {
     display: none;
   }
@@ -428,5 +437,8 @@ body {
   main section #portfolio-container .image:hover {
     transition: all 0.3s ease 0s;
     opacity: 0.9;
+  }
+  main section form {
+    width: 70%;
   }
 }
