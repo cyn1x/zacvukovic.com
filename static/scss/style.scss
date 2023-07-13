@@ -63,13 +63,13 @@ header {
     #logo-container {
         padding-left: 5vw;
         text-align: start;
-
+        
         a {
             text-decoration: none;
-            
-            :hover {
-                color: $secondary-colour;
-            }
+        }
+
+        a:hover {
+            color: $secondary-colour;
         }
 
         p {
@@ -80,8 +80,6 @@ header {
 
     #logo {
         @include logo-font-stack;
-        width: max-content;
-        cursor: pointer;
     }
 
     nav {
@@ -163,7 +161,7 @@ i.fa-bars {
         height: 100%;
         width: 2em;
     }
- }
+}
 
 .http-status-text {
     text-align: center;
@@ -330,7 +328,7 @@ footer {
         .portfolio-image-container {
             padding-bottom: 0;
         }
-        
+
 
         form {
             margin: auto;
@@ -340,6 +338,7 @@ footer {
 }
 
 @media screen and (min-width: 1024px) {
+
     html,
     body {
         height: auto;
@@ -348,15 +347,15 @@ footer {
     body {
         display: grid;
         grid-template-areas:
-          'header main'
-          'footer main'
-          '. main';
+            'header main'
+            'footer main'
+            '. main';
         gap: 10px;
         grid-template-columns: max-content auto;
     }
 
     main {
-        
+
         .links {
             margin-top: 2rem;
             justify-content: center;
@@ -402,21 +401,21 @@ footer {
                 width: 100%;
                 transform: translate(0%);
                 border: none;
-    
+
                 li:first-child {
                     margin-top: 0;
                 }
-    
+
                 li:last-child {
                     margin-bottom: 0;
                     padding-right: 0;
                 }
-    
+
                 li {
                     margin: 0;
                     opacity: 1;
                     margin-bottom: 2rem;
-    
+
                     a {
                         font-size: 1rem;
                     }
@@ -428,16 +427,15 @@ footer {
             display: none;
         }
     }
-    
+
     .links {
         display: flex;
     }
-    
+
     .visual-separator-container {
         display: none;
     }
 }
-
 
 @media screen and (min-width: 1280px) {
     main section {
@@ -449,7 +447,7 @@ footer {
                 opacity: 0.9;
             }
         }
-    
+
         form {
             width: 70%;
         }

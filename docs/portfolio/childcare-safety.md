@@ -7,11 +7,11 @@ template: default.html
 
 # Childcare Safety
 
-Childcare Safety is apart of a series of vignette educational virtual reality apps created with Meta to showcase the power of VR in education. The purpose of this app in particular is to identify and sort hazards in a Childcare environment.<br /><br />
+Childcare Safety is a part of a series of vignette educational virtual reality apps created with Meta to showcase the power of VR in education. The purpose of this app is to identify and sort hazards in a childcare environment.<br /><br />
 
-The app was a remake from the previous version on an old interaction system to our updated platform with a new interaction system, which now had a much more improved user experience and other new features added.<br /><br />
+The app was remade from the previous version, which used an old interaction system, to our updated platform with a new interaction system. This upgrade significantly improved the user experience and introduced new features.<br /><br />
 
-My role as the main app developer was to design and implement flow sequence for the experience, and implement various interactables using the mechanics from our core platform.<br /><br />
+As the main app developer, my role involved designing and implementing the flow sequence for the experience and incorporating various interactables using the mechanics from our core platform.<br /><br />
 
 Childcare Safety is available on the [Oculus App Lab](https://www.oculus.com/experiences/quest/5181967315251271/).<br /><br />
 

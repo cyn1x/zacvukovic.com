@@ -7,9 +7,9 @@ template: default.html
 
 # Canine Anatomy
 
-The purpose of this web app was to innovate 3D anatomy exploration in a way that existing solutions could not. Current solutions would require long load times when changing to various layers of the dog, where this system did that in real time.<br /><br />
+The purpose of this web app was to revolutionize 3D anatomy exploration in a way that existing solutions could not. Unlike current solutions that would involve long load times when switching between different layers of the dog, our system achieved this in real time.<br /><br />
 
-My role was to remake the app in Unity to demonstrate how a more realtime anatomy explorer could make for a better user experience as opposed to previously used off-the-shelf 3D explorers which weren't really suited for anatomical exploration.<br /><br />
+My role was to rebuild the app in Unity to showcase how a real-time anatomy explorer can greatly enhance the user experience compared to the previously used off-the-shelf 3D explorers, which were not well-suited for anatomical exploration.<br /><br />
 
 <div class="iframe-container">
     <iframe class="responsive-iframe" src="https://www.youtube.com/embed/dggbzJRh8ac" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

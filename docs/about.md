@@ -7,11 +7,11 @@ template: default.html
 
 # ABOUT
 
-I am a currently working as a developer who is responsible for developing 3D & XR applications as well as programmable infrastructure provisioning and maintenance to support these applications. I have a very high interest in Software Engineering and Game Development. I obtained the Bachelor of Computer Science (BCompSc) at the University of New England, Armidale. Previous to this, I worked as an IT Professional in the Information Technology industry before making the change to Software Development to pursue a much more creative and technical path.<br /><br />
+I am currently working as a developer, responsible for developing 3D & XR applications, as well as programmable infrastructure provisioning and maintenance to support these applications. My passion lies in Software Engineering and Game Development. I earned a Bachelor of Computer Science (BCompSc) from the University of New England, Armidale. Prior to transitioning into Software Development, I worked as an IT Professional in the Information Technology industry. However, I decided to pursue a more creative and technical path..<br /><br />
 
-I have enjoyed creating things since I was able to do so, from; computer games, music, and computer networks. All areas of the stack are interesting to me; from web development to systems programming, and the communication in between and beyond.<br /><br />
+Creating things has been a lifelong passion of mine, whether it's computer games, music, or computer networks. I find all areas of the stack intriguing, from web development to systems programming, and the communication that occurs in between and beyond.<br /><br />
 
-Check out my [blog](/blog) to see what technologies I'm currently working with and what problems I'm solving with them.
+Feel free to check out my [blog](/blog), where you can discover the technologies I'm currently working with and the problems I'm solving using them
 
 <div class="links">
     <a href="https://github.com/cyn1x">
