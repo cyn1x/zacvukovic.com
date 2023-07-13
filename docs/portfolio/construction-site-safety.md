@@ -7,7 +7,7 @@ template: default.html
 
 # Construction Site Safety
 
-The Construction Site Safety Working at Heights program is reality training app was an initiative by TAFE NSW and icare that highlighted the importance of working safely at heights. The training program was delivered through an immersive virtual reality app.<br /><br />
+The Construction Site Safety Working at Heights virtual reality training app was a joint initiative by TAFE NSW and icare that highlighted the importance of working safely at heights.<br /><br />
 
 My role for this project was mainly focused on the backend. With a growing team and no tooling around the development of immersive applications, I led a project that introduced a scalable CI/CD pipeline that automatically built, tested, and deployed Unity projects to VR headsets.<br /><br />
 
