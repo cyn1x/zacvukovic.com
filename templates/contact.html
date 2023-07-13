@@ -1,0 +1,31 @@
+<section>
+  <h1 id="heading">CONTACT</h1>
+  <form id="contact-form" action="{{ contact_api_url }}" method="POST">
+
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="fname" required>
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lname">
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" name="subject" required>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" required></textarea>
+    
+    <div id="submit-result">
+      <div id="info-result" class="hidden">Click the reCAPTCHA tickbox before attempting to submit.</div>
+      <div id="success-result" class="hidden">Your message has been sent.</div>
+      <div id="error-result" class="hidden">There was an error sending your message. Please try again later.</div>
+    </div>
+
+    <div id="recaptcha" class="g-recaptcha" data-sitekey="{{ recaptcha_site_key }}"></div>
+
+    <input id="submit" type="submit" value="Submit">
+
+  </form>
+</section>

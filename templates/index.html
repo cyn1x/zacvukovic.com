@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>{{ title }}</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/img/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="https://use.typekit.net/qdl2ebq.css">
+</head>
+
+<body>
+  <header>
+    <div id="logo-container">
+      <h1 id="logo">{{ author }}</h1>
+      <p>Software Development Portfolio</p>
+    </div>
+    {% filter indent(width=4,first=False) -%}
+    {% include 'nav.html' %}
+    {%- endfilter %}
+    <div class="links">
+      <a href="https://github.com/cyn1x">
+        <img src="/img/svg/github.svg" alt="">
+      </a>
+      <a href="https://au.linkedin.com/in/zacvukovic/">
+          <img src="/img/svg/linkedin.svg" alt="">
+      </a>
+    </div>
+  </header>
+  <div class="visual-separator-container">
+    <hr class="visual-separator">
+  </div>
+  <main>
+  </main>
+  </script>
+  <div class="visual-separator-container">
+    <hr class="visual-separator">
+  </div>
+  <footer>
+    {% filter indent(width=4,first=False) -%}
+    {% include 'footer.html' %}
+    {%- endfilter %}
+  </footer>
+  <script src="https://kit.fontawesome.com/2b34a96195.js" crossorigin="anonymous" async></script>
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script type="module" src="/js/router.js" defer></script>
+  <script type="module" src="/js/events.js" defer></script>
+  <script type="module" src="/js/index.js" defer></script>
+  <script type="module" src="/js/contact.js" defer></script>
+</body>
+
+</html>

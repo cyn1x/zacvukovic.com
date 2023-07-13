@@ -1,0 +1,449 @@
+@import './base';
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%; // Required to keep the footer at the bottom of the page
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+
+    h1,
+    h2 {
+        @include heading-font-stack;
+    }
+
+    a {
+        color: $secondary-colour;
+    }
+
+    a:hover {
+        transition: all 0.3s ease 0s;
+        color: $quaternary-color;
+    }
+
+    p {
+        @include paragraph-font-stack;
+        font-size: 1em;
+    }
+
+    #info-result {
+        color: black;
+    }
+
+    #success-result {
+        color: green;
+    }
+
+    #error-result {
+        color: red;
+    }
+
+    .hidden {
+        display: none;
+    }
+}
+
+header {
+    @include space-around-and-center;
+    position: sticky;
+    display: flex;
+    top: 0px;
+    z-index: 2;
+    min-height: 10vh;
+    background-color: $primary-colour;
+
+    #logo-container {
+        padding-left: 5vw;
+        text-align: start;
+
+        p {
+            color: $tertiary-colour;
+            font-size: 0.75em;
+        }
+    }
+
+    #logo {
+        @include logo-font-stack;
+        width: max-content;
+        cursor: pointer;
+    }
+
+    nav {
+        padding: 2.5vh 5vw 2.5vh 2.5vw;
+
+        .nav-links {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            transform: translate(100%);
+            z-index: 1;
+            right: 0px;
+            width: 100vw;
+            top: 100%;
+            background-color: $primary-colour;
+            border-top: 1px solid $separator-colour;
+            border-bottom: 1px solid $separator-colour;
+
+            li:first-child {
+                margin-top: 2rem;
+            }
+
+            li:last-child {
+                margin-bottom: 2rem;
+            }
+
+            li {
+                @include heading-font-stack;
+                display: inline-block;
+                list-style: none;
+                font-size: 1.5rem;
+                opacity: 0;
+                margin: 1rem 0 1rem 0;
+
+                a {
+                    text-decoration: none;
+                    transition: all 0.3s ease 0s;
+                    color: $secondary-colour;
+                }
+
+                a:hover {
+                    color: $tertiary-colour;
+                }
+            }
+        }
+    }
+}
+
+.visual-separator-container {
+    width: 100%;
+
+    hr.visual-separator {
+        width: 35%;
+        margin: auto;
+        border-top: 1px solid $separator-colour
+    }
+}
+
+i.fab,
+i.fa-bars {
+    color: $secondary-colour;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.links {
+    display: none;
+    margin-top: 5vh;
+
+    a {
+        margin-right: 1em;
+    }
+
+    a:last-child {
+        margin-right: 0;
+    }
+
+    img {
+        height: 100%;
+        width: 2em;
+    }
+ }
+
+.http-status-text {
+    text-align: center;
+}
+
+main {
+    flex-grow: 1;
+
+    h1 {
+        margin: 2.5vh 0 2.5vh 0;
+        text-align: center;
+        font-size: 2em;
+    }
+
+    article,
+    section {
+        max-width: 90%;
+        padding-bottom: 5vh;
+        margin: auto;
+        text-align: justify;
+
+        .iframe-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 56.25%;
+            /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+        }
+
+        /* Then style the iframe to fit in the container div with full height and width */
+        .responsive-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .portfolio-image-container {
+        padding-bottom: 5vh;
+        text-align: center;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    .portfolio-image-container:last-child {
+        padding-bottom: 0;
+    }
+
+    form {
+        @include paragraph-font-stack;
+        text-align: start;
+    }
+
+    #recaptcha {
+        width: 304px;
+        margin: 0 auto;
+        padding-bottom: 2rem;
+    }
+
+    input[type=text],
+    input[type=email],
+    select,
+    textarea {
+        @include paragraph-font-stack;
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid $border-colour;
+        border-radius: 5px;
+        margin-top: 0.25rem;
+        margin-bottom: 1rem;
+        resize: vertical;
+        font-size: 1rem
+    }
+
+    input[type=submit] {
+        @include paragraph-font-stack;
+        display: block;
+        margin: 0 auto;
+        padding: 1rem 5rem;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        background-color: $secondary-colour;
+        color: $primary-colour;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        background-color: $tertiary-colour;
+    }
+
+    #message {
+        height: 10rem;
+    }
+
+    #submit-result {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+}
+
+footer {
+    @include paragraph-font-stack;
+    @include space-around-and-center;
+    margin: 2.5vh 0vw 2.5vh 0vw;
+    font-size: 0.75em;
+    justify-content: center;
+    color: $secondary-colour;
+    vertical-align: top;
+
+    a:hover {
+        transition: all 0.3s ease 0s;
+        color: $quaternary-color;
+    }
+}
+
+@keyframes navMenuFade {
+    from {
+        transform: translate(100%);
+    }
+
+    to {
+        transform: translate(0%);
+    }
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    main {
+        section {
+            #portfolio-container {
+                display: grid;
+                column-gap: 1rem;
+                row-gap: 4rem;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .portfolio-image-container {
+            padding-bottom: 0;
+        }
+        
+
+        form {
+            margin: auto;
+            width: 80%;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    html,
+    body {
+        height: auto;
+    }
+
+    body {
+        display: grid;
+        grid-template-areas:
+          'header main'
+          'footer main'
+          '. main';
+        gap: 10px;
+        grid-template-columns: 1fr 3fr;
+    }
+
+    main {
+        
+        .links {
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        grid-area: main;
+        margin-top: 5vh;
+
+        h1 {
+            margin-top: 0;
+            margin-bottom: 5vh;
+        }
+    }
+
+    footer {
+        text-align: start;
+        grid-area: footer;
+        padding: 0;
+        margin-bottom: 0;
+        margin-left: 3vw;
+    }
+
+    header {
+        grid-area: header;
+        display: block;
+        margin-top: 5vh;
+        margin-left: 3vw;
+        background-color: $primary-colour;
+        flex-direction: column;
+        align-items: start;
+
+        #logo-container {
+            padding-left: 0;
+        }
+
+        nav {
+            margin-top: 5vh;
+            padding: 0;
+
+            .nav-links {
+                position: static;
+                align-items: start;
+                width: 100%;
+                transform: translate(0%);
+                border: none;
+    
+                li:first-child {
+                    margin-top: 0;
+                }
+    
+                li:last-child {
+                    margin-bottom: 0;
+                    padding-right: 0;
+                }
+    
+                li {
+                    margin: 0;
+                    opacity: 1;
+                    margin-bottom: 2rem;
+    
+                    a {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+
+        i.fa-bars {
+            display: none;
+        }
+    }
+    
+    .links {
+        display: flex;
+    }
+    
+    .visual-separator-container {
+        display: none;
+    }
+}
+
+
+@media screen and (min-width: 1280px) {
+    main section {
+        #portfolio-container {
+            grid-template-columns: 1fr 1fr 1fr;
+
+            .image:hover {
+                transition: all 0.3s ease 0s;
+                opacity: 0.9;
+            }
+        }
+    
+        form {
+            width: 70%;
+        }
+    }
+}

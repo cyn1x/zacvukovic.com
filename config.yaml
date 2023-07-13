@@ -1,0 +1,9 @@
+# Set environment variables to be loaded into Jinja2 variables
+development: {
+  recaptcha_site_key: 6LfYHP0aAAAAAChzYdlmb84WsYlHn7AYnpBOTS0z,
+  contact_api_url: https://ifboivd0ih.execute-api.ap-southeast-2.amazonaws.com/dev/contact
+}
+production: {
+  recaptcha_site_key: 6LeLDP0aAAAAAHsYiUZM3X5hV_08n2NC6fzIrELl,
+  contact_api_url: https://ifboivd0ih.execute-api.ap-southeast-2.amazonaws.com/prod/contact
+}
