@@ -33,6 +33,14 @@ function AddEventListeners() {
             }
         }
     });
+
+    document.addEventListener(
+        "onRender",
+        (e) => {
+            document.body.scrollTo(0, 0);
+        },
+        false
+    );
 }
 
 function ToggleMenu(navMenuBars, navLinksContainer){

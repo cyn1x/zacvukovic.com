@@ -6,49 +6,53 @@
     padding: 0px;
 }
 
-html,
-body {
-    width: 100%;
+html {
     height: 100%; // Required to keep the footer at the bottom of the page
-    overflow-x: hidden;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
 
-    h1,
-    h2 {
-        @include heading-font-stack;
+    body {
+        width: 100%;
+        height: 100%; // Required a second time to keep the footer at the bottom of the page and remember scroll position
+        overflow-x: hidden;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+    
+        h1,
+        h2 {
+            @include heading-font-stack;
+        }
+    
+        a {
+            color: $secondary-colour;
+        }
+    
+        a:hover {
+            transition: all 0.3s ease 0s;
+            color: $quaternary-color;
+        }
+    
+        p {
+            @include paragraph-font-stack;
+            font-size: 1em;
+        }
+    
+        #info-result {
+            color: black;
+        }
+    
+        #success-result {
+            color: green;
+        }
+    
+        #error-result {
+            color: red;
+        }
+    
+        .hidden {
+            display: none;
+        }
     }
 
-    a {
-        color: $secondary-colour;
-    }
-
-    a:hover {
-        transition: all 0.3s ease 0s;
-        color: $quaternary-color;
-    }
-
-    p {
-        @include paragraph-font-stack;
-        font-size: 1em;
-    }
-
-    #info-result {
-        color: black;
-    }
-
-    #success-result {
-        color: green;
-    }
-
-    #error-result {
-        color: red;
-    }
-
-    .hidden {
-        display: none;
-    }
 }
 
 header {
