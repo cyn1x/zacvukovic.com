@@ -24,7 +24,7 @@ async function route(event) {
     if (event.currentTarget.matches(".data-link")) {
         event.preventDefault();
         window.history.pushState({}, "", event.currentTarget.href);
-        handleLocation();
+        await handleLocation();
     }
 }
 
@@ -34,7 +34,7 @@ async function handleLocation() {
     // Check if the requested path matches a static route
     const staticRoute = findStaticRouteByPath(path);
     if (staticRoute) {
-        await render(staticRoute.url)
+        await render(staticRoute.url);
         dispatchEvent(path);
         
         return;
@@ -44,7 +44,7 @@ async function handleLocation() {
     const route = routes.dynamicRoutes.find(route => {
         const match = routeToRegexExpression(path, route);
         if (match) {
-            route.url.replace(/:\w+/g, match[1])
+            route.url.replace(/:\w+/g, match[1]);
             
             return true;
         }
@@ -71,12 +71,13 @@ async function handleLocation() {
     }
     
     // If no route was found, render the 404 page
-    render(findStaticRouteByPath(404).url)
+    render(findStaticRouteByPath(404).url);
 }
 
 async function render(route) {
     const html = await fetch(route).then((data) => data.text());
     document.getElementsByTagName("main")[0].innerHTML = html;
+    dispatchEvent('/render');
 }
 
 window.onpopstate = handleLocation;
