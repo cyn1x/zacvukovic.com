@@ -19,9 +19,9 @@ function addEventListeners() {
 }
 
 function createCaptchaTickbox() {
-    const recaptchaElement = document.getElementById('recaptcha');
-    
-    grecaptcha.render(recaptchaElement);
+    const script = document.createElement('script');
+    script.src = 'https://www.google.com/recaptcha/api.js';
+    document.body.appendChild(script);
 }
 
 function handleSubmit(formData) {
