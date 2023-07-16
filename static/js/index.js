@@ -1,11 +1,11 @@
-function App() {
+function app() {
     window.addEventListener("load", () => {
-        AddEventListeners();
+        addEventListeners();
     });
 }
 
-function AddEventListeners() {
-    const navMenuBars = document.querySelector('.fa-bars');
+function addEventListeners() {
+    const navMenuBars = document.getElementById('menu');
     const navLinksContainer = document.querySelector('.nav-links');
     const navLinksArray = document.querySelectorAll('.nav-links li');
 
@@ -14,22 +14,23 @@ function AddEventListeners() {
         
         link.addEventListener('click', () => {
             if (mobileView) {
-                ToggleMenu(navMenuBars, navLinksContainer);
+                toggleMenu(navLinksContainer);
             }
         });
     });
 
     navMenuBars.addEventListener('click', () => {
-        ToggleMenu(navMenuBars, navLinksContainer);
+        toggleMenu(navLinksContainer);
     });
     
     document.addEventListener('click', (event) => {
-        const menuOpened = navMenuBars.classList.contains('fa-times');
+        const menuBars = document.getElementById('open-icon');
+        const menuOpened = menuBars.classList.contains('hidden');
         const menuBarsClicked = navMenuBars.contains(event.target);
         
         if (menuOpened) {
             if (!menuBarsClicked) {
-                ToggleMenu(navMenuBars, navLinksContainer);
+                toggleMenu(navLinksContainer);
             }
         }
     });
@@ -43,13 +44,23 @@ function AddEventListeners() {
     );
 }
 
-function ToggleMenu(navMenuBars, navLinksContainer){
-    navMenuBars.classList.toggle('fa-times');
+function toggleMenu(navLinksContainer){
+    const menuBars = document.getElementById('open-icon');
+    const closedBars = document.getElementById('close-icon');
 
-    ShowMenuAnimation(navLinksContainer);
+    if (menuBars.classList.contains('hidden')) {
+        menuBars.classList.remove('hidden');
+        closedBars.classList.add('hidden');
+    }
+    else {
+        menuBars.classList.add('hidden');
+        closedBars.classList.remove('hidden');
+    }
+
+    showMenuAnimation(navLinksContainer);
 }
 
-function ShowMenuAnimation(navLinksContainer) {
+function showMenuAnimation(navLinksContainer) {
     const navLinks = document.querySelectorAll('.nav-links li');
 
     controlAppearance(navLinksContainer, `navMenuFade 0.5s ease forwards`);
@@ -64,4 +75,4 @@ function controlAppearance(item, animation) {
     else item.style.animation = `${animation}`;
 }
 
-App();
+app();

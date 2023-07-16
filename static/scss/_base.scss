@@ -6,22 +6,23 @@ $quaternary-color: rgb(225, 0, 0);
 $separator-colour: rgb(225, 225, 225);
 $border-colour: rgb(200, 200, 200);
 
-@mixin logo-font-stack {
-    font-family: bebas-neue-by-fontfabric, sans-serif;
+@font-face {
+    font-family: 'bebas-neue-by-dhamra-type';
     font-style: normal;
     font-weight: 700;
+    src: url('/assets/BebasNeue-Regular.eot?#iefix') format('embedded-opentype'),
+    url('/assets/BebasNeue-Regular.woff2') format('woff2'),
+    url('/assets/BebasNeue-Regular.woff') format('woff'),
+    url('/assets/BebasNeue-Regular.ttf') format('truetype');
+    font-display: swap;
 }
 
-@mixin heading-font-stack {
-    font-family: montserrat, sans-serif;
+@font-face {
+    font-family: 'montserrat', sans-serif;
     font-style: normal;
     font-weight: 400;
-}
-
-@mixin paragraph-font-stack {
-    font-family: montserrat, sans-serif;
-    font-weight: 400;
-    font-style: normal;
+    src: url('/ttf/Montserrat-Regular.ttf') format('truetype');
+    font-display: swap;
 }
 
 @mixin space-around-and-center {

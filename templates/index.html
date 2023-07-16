@@ -11,21 +11,20 @@
   <meta name="author" content="Zac Vukovic">
   <link rel="icon" href="/img/favicon.png" type="image/x-icon">
   <link type="text/css" rel="stylesheet" href="/css/style.css" type="text/css">
-  <link type="text/css" rel="stylesheet" href="https://use.typekit.net/qdl2ebq.css" async>
 </head>
 
 <body>
   <header>
     <div id="logo-container">
       <a href="/">
-        <h1 id="logo">{{ author }}</h1>
+        <div id="logo">{{ author }}</div>
       </a>
       <p>Software Development Portfolio</p>
     </div>
     {% filter indent(width=4,first=False) -%}
     {% include 'nav.html' %}
     {%- endfilter %}
-    <div class="quick-links">
+    <div class="icons quick-links">
       <a href="https://github.com/cyn1x">
         <img src="/img/svg/github.svg" alt="GitHub page">
       </a>
@@ -48,7 +47,6 @@
     {% include 'footer.html' %}
     {%- endfilter %}
   </footer>
-  <script src="https://kit.fontawesome.com/2b34a96195.js" crossorigin="anonymous" async></script>
   <script type="module" src="/js/router.js" defer></script>
   <script type="module" src="/js/events.js" defer></script>
   <script type="module" src="/js/index.js" defer></script>

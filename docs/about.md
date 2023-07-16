@@ -11,9 +11,9 @@ I am currently working as a developer, responsible for developing 3D & XR applic
 
 Creating things has been a lifelong passion of mine, whether it's computer games, music, or computer networks. I find all areas of the stack intriguing, from web development to systems programming, and the communication that occurs in between and beyond.<br /><br />
 
-Feel free to check out my [blog](/blog), where you can discover the technologies I'm currently working with and the problems I'm solving using them
+Feel free to check out my [blog](/blog), where you can discover the technologies I'm currently working with and the problems I'm solving using them<br /><br /><br />
 
-<div class="links">
+<div class="icons">
     <a href="https://github.com/cyn1x">
         <img src="/img/svg/github.svg" alt="">
     </a>

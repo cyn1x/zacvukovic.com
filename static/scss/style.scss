@@ -17,7 +17,8 @@ body {
 
     h1,
     h2 {
-        @include heading-font-stack;
+        font-family: 'montserrat';
+        font-weight: normal;
     }
 
     a {
@@ -30,7 +31,7 @@ body {
     }
 
     p {
-        @include paragraph-font-stack;
+        font-family: 'montserrat';
         font-size: 1em;
     }
 
@@ -79,7 +80,8 @@ header {
     }
 
     #logo {
-        @include logo-font-stack;
+        font-family: 'bebas-neue-by-dhamra-type';
+        font-size: 2em;
     }
 
     nav {
@@ -107,7 +109,7 @@ header {
             }
 
             li {
-                @include heading-font-stack;
+                font-family: 'montserrat';
                 display: inline-block;
                 list-style: none;
                 font-size: 1.5rem;
@@ -138,17 +140,15 @@ header {
     }
 }
 
-i.fab,
-i.fa-bars {
+#menu {
     color: $secondary-colour;
-    font-size: 1.5em;
+    font-size: 0.75em;
     cursor: pointer;
 }
 
-.links,
-.quick-links {
-    display: none;
-    margin-top: 5vh;
+.icons {
+    display: flex;
+    justify-content: center;
 
     a {
         margin-right: 1em;
@@ -164,9 +164,8 @@ i.fa-bars {
     }
 }
 
-.links {
-    display: flex;
-    justify-content: center;
+.quick-links { 
+    display: none;
 }
 
 .http-status-text {
@@ -230,7 +229,7 @@ main {
     }
 
     form {
-        @include paragraph-font-stack;
+        font-family: 'montserrat';
         text-align: start;
     }
 
@@ -244,7 +243,7 @@ main {
     input[type=email],
     select,
     textarea {
-        @include paragraph-font-stack;
+        font-family: 'montserrat';
         width: 100%;
         padding: 1rem;
         border: 1px solid $border-colour;
@@ -256,7 +255,7 @@ main {
     }
 
     input[type=submit] {
-        @include paragraph-font-stack;
+        font-family: 'montserrat';
         display: block;
         margin: 0 auto;
         padding: 1rem 5rem;
@@ -286,9 +285,9 @@ main {
 }
 
 footer {
-    @include paragraph-font-stack;
     @include space-around-and-center;
     margin: 2.5vh 0vw 2.5vh 0vw;
+    font-family: 'montserrat';
     font-size: 0.75em;
     justify-content: center;
     color: $secondary-colour;
@@ -387,14 +386,15 @@ footer {
         margin: auto;
     }
 
+    .quick-links {
+        display: flex;
+        margin-top: 2rem;
+        justify-content: start;
+    }
+
     main {
         grid-area: main;
         margin-top: 5vh;
-
-        .quick-links {
-            margin-top: 2rem;
-            justify-content: center;
-        }
 
         h1 {
             margin-top: 0;
@@ -455,13 +455,9 @@ footer {
             }
         }
 
-        i.fa-bars {
+        #menu {
             display: none;
         }
-    }
-
-    .quick-links {
-        display: flex;
     }
 
     .visual-separator-container {
