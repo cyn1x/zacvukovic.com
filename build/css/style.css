@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'bebas-neue-by-dhamra-type';
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/BebasNeue-Regular.eot?#iefix") format("embedded-opentype"), url("/assets/BebasNeue-Regular.woff2") format("woff2"), url("/assets/BebasNeue-Regular.woff") format("woff"), url("/assets/BebasNeue-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  src: url("/ttf/Montserrat-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
   margin: 0px;
@@ -18,9 +34,8 @@ html h1,
 html h2,
 body h1,
 body h2 {
-  font-family: montserrat, sans-serif;
-  font-style: normal;
-  font-weight: 400;
+  font-family: 'montserrat';
+  font-weight: normal;
 }
 
 html a,
@@ -36,9 +51,7 @@ body a:hover {
 
 html p,
 body p {
-  font-family: montserrat, sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  font-family: 'montserrat';
   font-size: 1em;
 }
 
@@ -93,9 +106,8 @@ header #logo-container p {
 }
 
 header #logo {
-  font-family: bebas-neue-by-fontfabric, sans-serif;
-  font-style: normal;
-  font-weight: 700;
+  font-family: 'bebas-neue-by-dhamra-type';
+  font-size: 2em;
 }
 
 header nav {
@@ -125,9 +137,7 @@ header nav .nav-links li:last-child {
 }
 
 header nav .nav-links li {
-  font-family: montserrat, sans-serif;
-  font-style: normal;
-  font-weight: 400;
+  font-family: 'montserrat';
   display: inline-block;
   list-style: none;
   font-size: 1.5rem;
@@ -155,38 +165,32 @@ header nav .nav-links li a:hover {
   border-top: 1px solid #e1e1e1;
 }
 
-i.fab,
-i.fa-bars {
+#menu {
   color: #191919;
-  font-size: 1.5em;
+  font-size: 0.75em;
   cursor: pointer;
 }
 
-.links,
-.quick-links {
-  display: none;
-  margin-top: 5vh;
+.icons {
+  display: flex;
+  justify-content: center;
 }
 
-.links a,
-.quick-links a {
+.icons a {
   margin-right: 1em;
 }
 
-.links a:last-child,
-.quick-links a:last-child {
+.icons a:last-child {
   margin-right: 0;
 }
 
-.links img,
-.quick-links img {
+.icons img {
   height: 100%;
   width: 2em;
 }
 
-.links {
-  display: flex;
-  justify-content: center;
+.quick-links {
+  display: none;
 }
 
 .http-status-text {
@@ -253,9 +257,7 @@ main .portfolio-image-container:last-child {
 }
 
 main form {
-  font-family: montserrat, sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  font-family: 'montserrat';
   text-align: start;
 }
 
@@ -269,9 +271,7 @@ main input[type=text],
 main input[type=email],
 main select,
 main textarea {
-  font-family: montserrat, sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  font-family: 'montserrat';
   width: 100%;
   padding: 1rem;
   border: 1px solid #c8c8c8;
@@ -283,9 +283,7 @@ main textarea {
 }
 
 main input[type=submit] {
-  font-family: montserrat, sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  font-family: 'montserrat';
   display: block;
   margin: 0 auto;
   padding: 1rem 5rem;
@@ -314,13 +312,11 @@ main #submit-result {
 }
 
 footer {
-  font-family: montserrat, sans-serif;
-  font-weight: 400;
-  font-style: normal;
   justify-content: space-between;
   align-items: center;
   text-align: center;
   margin: 2.5vh 0vw 2.5vh 0vw;
+  font-family: 'montserrat';
   font-size: 0.75em;
   justify-content: center;
   color: #191919;
@@ -403,13 +399,14 @@ body {
     width: 90vw;
     margin: auto;
   }
+  .quick-links {
+    display: flex;
+    margin-top: 2rem;
+    justify-content: start;
+  }
   main {
     grid-area: main;
     margin-top: 5vh;
-  }
-  main .quick-links {
-    margin-top: 2rem;
-    justify-content: center;
   }
   main h1 {
     margin-top: 0;
@@ -460,11 +457,8 @@ body {
   header nav .nav-links li a {
     font-size: 1rem;
   }
-  header i.fa-bars {
+  header #menu {
     display: none;
-  }
-  .quick-links {
-    display: flex;
   }
   .visual-separator-container {
     display: none;
