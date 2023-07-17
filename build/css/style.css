@@ -56,6 +56,7 @@ body p {
   font-weight: normal;
   font-style: normal;
   font-size: 1em;
+  line-height: 1.5;
 }
 
 html #info-result,
