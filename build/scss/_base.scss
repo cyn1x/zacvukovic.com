@@ -1,0 +1,44 @@
+$primary-colour: rgb(255, 255, 255);
+$secondary-colour: rgb(25, 25, 25);
+$tertiary-colour: #595959;
+$quaternary-color: rgb(225, 0, 0);
+
+$separator-colour: rgb(225, 225, 225);
+$border-colour: rgb(200, 200, 200);
+
+@font-face {
+    font-family: 'bebas-neue-by-dhamra-type';
+    font-style: normal;
+    font-weight: normal;
+    src: url('/fonts/BebasNeue-Regular.woff2') format('woff2'),
+    url('/fonts/BebasNeue-Regular.woff') format('woff'),
+    url('/fonts/BebasNeue-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    font-style: normal;
+    font-weight: normal;
+    src: url('/fonts/Montserrat-Regular.woff2') format('woff2'),
+    url('/fonts/Montserrat-Regular.woff') format('woff'),
+    url('/fonts/Montserrat-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+@mixin montserrat-font-normal {
+    font-family: 'montserrat', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin space-around-and-center {
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+@mixin flex-and-center {
+    display: flex;
+    justify-content: center;
+}
