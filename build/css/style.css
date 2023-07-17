@@ -246,7 +246,7 @@ main section .responsive-iframe {
 }
 
 main .portfolio-image-container {
-  padding-bottom: 5vh;
+  padding-bottom: 2.5rem;
   text-align: center;
   animation: fadeIn 0.5s;
 }
@@ -389,11 +389,11 @@ footer a:hover {
   main section #portfolio-container {
     display: grid;
     column-gap: 1rem;
-    row-gap: 4rem;
+    row-gap: 1rem;
     grid-template-columns: 1fr 1fr;
   }
   main .portfolio-image-container {
-    padding-bottom: 0;
+    padding-bottom: 1rem;
   }
   main form {
     margin: auto;
