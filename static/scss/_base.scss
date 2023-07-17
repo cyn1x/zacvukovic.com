@@ -17,15 +17,17 @@ $border-colour: rgb(200, 200, 200);
 }
 
 @font-face {
-    font-family: 'montserrat', sans-serif;
+    font-family: 'montserrat';
     font-style: normal;
     font-weight: normal;
-    src: url('/fonts/Montserrat-Regular.ttf') format('truetype');
+    src: url('/fonts/Montserrat-Regular.woff2') format('woff2'),
+    url('/fonts/Montserrat-Regular.woff') format('woff'),
+    url('/fonts/Montserrat-Regular.ttf') format('truetype');
     font-display: swap;
 }
 
 @mixin montserrat-font-normal {
-    font-family: 'montserrat', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'montserrat', sans-serif;
     font-weight: normal;
     font-style: normal;
 }

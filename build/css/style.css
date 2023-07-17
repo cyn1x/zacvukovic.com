@@ -7,10 +7,10 @@
 }
 
 @font-face {
-  font-family: 'montserrat', sans-serif;
+  font-family: 'montserrat';
   font-style: normal;
   font-weight: normal;
-  src: url("/fonts/Montserrat-Regular.ttf") format("truetype");
+  src: url("/fonts/Montserrat-Regular.woff2") format("woff2"), url("/fonts/Montserrat-Regular.woff") format("woff"), url("/fonts/Montserrat-Regular.ttf") format("truetype");
   font-display: swap;
 }
 
@@ -34,7 +34,7 @@ html h1,
 html h2,
 body h1,
 body h2 {
-  font-family: 'montserrat', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'montserrat', sans-serif;
   font-weight: normal;
   font-style: normal;
 }
@@ -52,7 +52,7 @@ body a:hover {
 
 html p,
 body p {
-  font-family: 'montserrat', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'montserrat', sans-serif;
   font-weight: normal;
   font-style: normal;
   font-size: 1em;
@@ -109,7 +109,7 @@ header #logo-container p {
 }
 
 header #logo {
-  font-family: 'bebas-neue-by-dhamra-type', Copperplate, Papyrus, fantasy;
+  font-family: 'bebas-neue-by-dhamra-type', sans-serif;
   font-weight: normal;
   font-style: normal;
   font-size: 2em;
@@ -142,7 +142,7 @@ header nav .nav-links li:last-child {
 }
 
 header nav .nav-links li {
-  font-family: 'montserrat', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'montserrat', sans-serif;
   font-weight: normal;
   font-style: normal;
   display: inline-block;
@@ -264,7 +264,7 @@ main .portfolio-image-container:last-child {
 }
 
 main form {
-  font-family: 'montserrat', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'montserrat', sans-serif;
   font-weight: normal;
   font-style: normal;
   text-align: start;
@@ -280,7 +280,7 @@ main input[type=text],
 main input[type=email],
 main select,
 main textarea {
-  font-family: 'montserrat', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'montserrat', sans-serif;
   font-weight: normal;
   font-style: normal;
   width: 100%;
@@ -294,7 +294,7 @@ main textarea {
 }
 
 main input[type=submit] {
-  font-family: 'montserrat', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'montserrat', sans-serif;
   font-weight: normal;
   font-style: normal;
   display: block;
@@ -328,7 +328,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  font-family: 'montserrat', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'montserrat', sans-serif;
   font-weight: normal;
   font-style: normal;
   margin: 2.5vh 0vw 2.5vh 0vw;
