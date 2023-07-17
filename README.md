@@ -34,10 +34,9 @@ Development mode can be activated by using the JotunPy live development server.
 
 ### Production
 
-Production mode can be instantiated by using JotunPy to package a site build, and using [SWA CLI](https://github.com/Azure/static-web-apps-cli) to emulate the site's functionality on Azure Static Web Apps.
+Production mode can be instantiated by using JotunPy to package a site build.
 
 ```commandline
 > path\to\jotunpy\venv\Scripts\activate
 > python path\to\jotunpy\ main.py build
-> npx swa start
 ```
