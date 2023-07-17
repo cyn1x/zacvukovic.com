@@ -9,20 +9,25 @@ $border-colour: rgb(200, 200, 200);
 @font-face {
     font-family: 'bebas-neue-by-dhamra-type';
     font-style: normal;
-    font-weight: 700;
-    src: url('/assets/BebasNeue-Regular.eot?#iefix') format('embedded-opentype'),
-    url('/assets/BebasNeue-Regular.woff2') format('woff2'),
-    url('/assets/BebasNeue-Regular.woff') format('woff'),
-    url('/assets/BebasNeue-Regular.ttf') format('truetype');
+    font-weight: normal;
+    src: url('/fonts/BebasNeue-Regular.woff2') format('woff2'),
+    url('/fonts/BebasNeue-Regular.woff') format('woff'),
+    url('/fonts/BebasNeue-Regular.ttf') format('truetype');
     font-display: swap;
 }
 
 @font-face {
     font-family: 'montserrat', sans-serif;
     font-style: normal;
-    font-weight: 400;
-    src: url('/ttf/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    src: url('/fonts/Montserrat-Regular.ttf') format('truetype');
     font-display: swap;
+}
+
+@mixin montserrat-font-normal {
+    font-family: 'montserrat', 'Helvetica', 'Arial', sans-serif;
+    font-weight: normal;
+    font-style: normal;
 }
 
 @mixin space-around-and-center {

@@ -17,8 +17,7 @@ body {
 
     h1,
     h2 {
-        font-family: 'montserrat';
-        font-weight: normal;
+        @include montserrat-font-normal;
     }
 
     a {
@@ -31,7 +30,7 @@ body {
     }
 
     p {
-        font-family: 'montserrat';
+        @include montserrat-font-normal;
         font-size: 1em;
     }
 
@@ -80,7 +79,9 @@ header {
     }
 
     #logo {
-        font-family: 'bebas-neue-by-dhamra-type';
+        font-family: 'bebas-neue-by-dhamra-type', Copperplate, Papyrus, fantasy;
+        font-weight: normal;
+        font-style: normal;
         font-size: 2em;
     }
 
@@ -109,7 +110,7 @@ header {
             }
 
             li {
-                font-family: 'montserrat';
+                @include montserrat-font-normal;
                 display: inline-block;
                 list-style: none;
                 font-size: 1.5rem;
@@ -229,7 +230,7 @@ main {
     }
 
     form {
-        font-family: 'montserrat';
+        @include montserrat-font-normal;
         text-align: start;
     }
 
@@ -243,7 +244,7 @@ main {
     input[type=email],
     select,
     textarea {
-        font-family: 'montserrat';
+        @include montserrat-font-normal;
         width: 100%;
         padding: 1rem;
         border: 1px solid $border-colour;
@@ -255,7 +256,7 @@ main {
     }
 
     input[type=submit] {
-        font-family: 'montserrat';
+        @include montserrat-font-normal;
         display: block;
         margin: 0 auto;
         padding: 1rem 5rem;
@@ -286,8 +287,8 @@ main {
 
 footer {
     @include space-around-and-center;
+    @include montserrat-font-normal;
     margin: 2.5vh 0vw 2.5vh 0vw;
-    font-family: 'montserrat';
     font-size: 0.75em;
     justify-content: center;
     color: $secondary-colour;
