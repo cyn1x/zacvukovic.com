@@ -1,7 +1,6 @@
 ---
 title: Zac Vukovic
 author: Zac Vukovic
-published: 2023-07-11T20:18:32+10:00
 template: default.html
 ---
 
