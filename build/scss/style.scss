@@ -14,25 +14,28 @@ body {
     overflow-y: auto;
     display: flex;
     flex-direction: column;
+    background: var(--bkg-color);
 
     h1,
     h2 {
         @include montserrat-font-normal;
+        color: var(--heading-color);
     }
 
     a {
-        color: $secondary-colour;
+        color: var(--primary-text-color);
     }
 
     a:hover {
         transition: all 0.3s ease 0s;
-        color: $quaternary-color;
+        color: $link-color;
     }
 
     p {
         @include montserrat-font-normal;
         font-size: 1em;
         line-height: 1.5;
+        color: var(--primary-text-color);
     }
 
     #info-result {
@@ -59,23 +62,21 @@ header {
     top: 0px;
     z-index: 2;
     min-height: 10vh;
-    background-color: $primary-colour;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    background-color: var(--bkg-color);
 
     #logo-container {
-        padding-left: 5vw;
         text-align: start;
 
         a {
             text-decoration: none;
-        }
-
-        a:hover {
-            color: $secondary-colour;
+            color: var(--heading-color);
         }
 
         p {
-            color: $tertiary-colour;
             font-size: 0.75em;
+            color: var(--secondary-text-color);
         }
     }
 
@@ -87,7 +88,24 @@ header {
     }
 
     nav {
-        padding: 2.5vh 5vw 2.5vh 2.5vw;
+        display: flex;
+
+        .menu-icons {
+            filter: var(--svg-color);
+        }
+
+        #menu {
+            font-size: 0.75em;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+
+            #theme-icon {
+                position: absolute;
+                top: 0;
+                z-index: -1;
+                opacity: 0;
+            }
+        }
 
         .nav-links {
             position: absolute;
@@ -98,9 +116,9 @@ header {
             right: 0px;
             width: 100vw;
             top: 100%;
-            background-color: $primary-colour;
-            border-top: 1px solid $separator-colour;
-            border-bottom: 1px solid $separator-colour;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            background-color: var(--bkg-color);
 
             li:first-child {
                 margin-top: 2rem;
@@ -120,12 +138,15 @@ header {
 
                 a {
                     text-decoration: none;
-                    transition: all 0.3s ease 0s;
-                    color: $secondary-colour;
                 }
 
-                a:hover {
-                    color: $tertiary-colour;
+                h1 {
+                    color: var(--primary-text-color);
+                    transition: all 0.3s ease 0s;
+                }
+
+                h1:hover {
+                    color: var(--link-hover-color);
                 }
             }
         }
@@ -138,14 +159,8 @@ header {
     hr.visual-separator {
         width: 35%;
         margin: auto;
-        border-top: 1px solid $separator-colour;
+        border: 1px solid var(--border-color);
     }
-}
-
-#menu {
-    color: $secondary-colour;
-    font-size: 0.75em;
-    cursor: pointer;
 }
 
 .icons {
@@ -163,10 +178,11 @@ header {
     img {
         height: 100%;
         width: 2em;
+        filter: var(--svg-color);
     }
 }
 
-.quick-links { 
+.quick-links {
     display: none;
 }
 
@@ -178,7 +194,7 @@ main {
     flex-grow: 1;
 
     h1 {
-        margin: 2.5vh 0 2.5vh 0;
+        margin: 2rem 0 2rem 0;
         text-align: center;
         font-size: 2em;
     }
@@ -220,6 +236,10 @@ main {
             width: 100%;
         }
 
+        img:hover {
+            opacity: 0.9;
+        }
+
         a {
             text-decoration: none;
         }
@@ -240,6 +260,11 @@ main {
         padding-bottom: 2rem;
     }
 
+    label {
+        font-size: 1rem;
+        color: var(--primary-text-color);
+    }
+
     input[type=text],
     input[type=email],
     select,
@@ -247,7 +272,7 @@ main {
         @include montserrat-font-normal;
         width: 100%;
         padding: 1rem;
-        border: 1px solid $border-colour;
+        border: 1px solid var(--border-color);
         border-radius: 5px;
         margin-top: 0.25rem;
         margin-bottom: 1rem;
@@ -263,13 +288,13 @@ main {
         border: none;
         border-radius: 5px;
         font-size: 1rem;
-        background-color: $secondary-colour;
-        color: $primary-colour;
+        background-color: var(--btn-color);
+        color: var(--bkg-color);
         cursor: pointer;
     }
 
     input[type=submit]:hover {
-        background-color: $tertiary-colour;
+        background-color: var(--btn-hover-color);
     }
 
     #message {
@@ -291,12 +316,16 @@ footer {
     margin: 2.5vh 0vw 2.5vh 0vw;
     font-size: 0.75em;
     justify-content: center;
-    color: $secondary-colour;
+    color: var(--secondary-text-color);
     vertical-align: top;
+
+    a {
+        color: var(--secondary-text-color);
+    }
 
     a:hover {
         transition: all 0.3s ease 0s;
-        color: $quaternary-color;
+        color: $link-color;
     }
 }
 
@@ -322,6 +351,30 @@ footer {
     }
 }
 
+@keyframes iconFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-2.75rem);
+    }
+}
+
+@keyframes iconFadeOut {
+    from {
+        opacity: 1;
+        transform: translateX(-2.75rem);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(0);
+    }
+}
+
 @keyframes fadeIn {
     from {
         transform: translateX(50%);
@@ -343,6 +396,42 @@ footer {
     to {
         opacity: 1;
         transform: translateY(0)
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+
+    /* defaults to dark theme */
+    body {
+        --heading-color: #f3f3f2;
+        --primary-text-color: #c2c2bc;
+        --secondary-text-color: #868679;
+        --link-hover-color: #868679;
+        --border-color: #868679;
+        --svg-color: invert(100%) sepia(1%) saturate(1840%) hue-rotate(164deg) brightness(101%) contrast(101%);
+        --bkg-color: #191919;
+        --btn-color: #c2c2bc;
+        --btn-hover-color: #f3f3f2;
+
+        img {
+            filter: brightness(.8) contrast(1.2);
+        }
+    }
+
+    body.light-theme {
+        --heading-color: #0f0f0f;
+        --primary-text-color: #191919;
+        --secondary-text-color: #8a8a8a;
+        --link-hover-color: #9b9b9b;
+        --border-color: #dddddd;
+        --svg-color: invert(7%) sepia(8%) saturate(242%) hue-rotate(314deg) brightness(104%) contrast(93%);
+        --bkg-color: #ffffff;
+        --btn-color: #191919;
+        --btn-hover-color: #595959;
+
+        img {
+            filter: brightness(1) contrast(1.2);
+        }
     }
 }
 
@@ -416,9 +505,10 @@ footer {
         display: block;
         margin-top: 5vh;
         margin-left: 3vw;
-        background-color: $primary-colour;
         flex-direction: column;
         align-items: start;
+        padding-left: 0;
+        padding-right: 0;
 
         #logo-container {
             padding-left: 0;
@@ -456,7 +546,7 @@ footer {
             }
         }
 
-        #menu {
+        #menu-controls {
             display: none;
         }
     }
@@ -483,8 +573,8 @@ footer {
     }
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1440px) {
     body {
-        width: 90vw;
+        width: 1440px;
     }
 }

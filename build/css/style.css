@@ -28,6 +28,7 @@ body {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+  background: var(--bkg-color);
 }
 
 html h1,
@@ -37,11 +38,12 @@ body h2 {
   font-family: 'montserrat', sans-serif;
   font-weight: normal;
   font-style: normal;
+  color: var(--heading-color);
 }
 
 html a,
 body a {
-  color: #191919;
+  color: var(--primary-text-color);
 }
 
 html a:hover,
@@ -57,6 +59,7 @@ body p {
   font-style: normal;
   font-size: 1em;
   line-height: 1.5;
+  color: var(--primary-text-color);
 }
 
 html #info-result,
@@ -88,25 +91,23 @@ header {
   top: 0px;
   z-index: 2;
   min-height: 10vh;
-  background-color: white;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  background-color: var(--bkg-color);
 }
 
 header #logo-container {
-  padding-left: 5vw;
   text-align: start;
 }
 
 header #logo-container a {
   text-decoration: none;
-}
-
-header #logo-container a:hover {
-  color: #191919;
+  color: var(--heading-color);
 }
 
 header #logo-container p {
-  color: #595959;
   font-size: 0.75em;
+  color: var(--secondary-text-color);
 }
 
 header #logo {
@@ -117,7 +118,24 @@ header #logo {
 }
 
 header nav {
-  padding: 2.5vh 5vw 2.5vh 2.5vw;
+  display: flex;
+}
+
+header nav .menu-icons {
+  filter: var(--svg-color);
+}
+
+header nav #menu {
+  font-size: 0.75em;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+header nav #menu #theme-icon {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  opacity: 0;
 }
 
 header nav .nav-links {
@@ -129,9 +147,9 @@ header nav .nav-links {
   right: 0px;
   width: 100vw;
   top: 100%;
-  background-color: white;
-  border-top: 1px solid #e1e1e1;
-  border-bottom: 1px solid #e1e1e1;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bkg-color);
 }
 
 header nav .nav-links li:first-child {
@@ -155,12 +173,15 @@ header nav .nav-links li {
 
 header nav .nav-links li a {
   text-decoration: none;
-  transition: all 0.3s ease 0s;
-  color: #191919;
 }
 
-header nav .nav-links li a:hover {
-  color: #595959;
+header nav .nav-links li h1 {
+  color: var(--primary-text-color);
+  transition: all 0.3s ease 0s;
+}
+
+header nav .nav-links li h1:hover {
+  color: var(--link-hover-color);
 }
 
 .visual-separator-container {
@@ -170,13 +191,7 @@ header nav .nav-links li a:hover {
 .visual-separator-container hr.visual-separator {
   width: 35%;
   margin: auto;
-  border-top: 1px solid #e1e1e1;
-}
-
-#menu {
-  color: #191919;
-  font-size: 0.75em;
-  cursor: pointer;
+  border: 1px solid var(--border-color);
 }
 
 .icons {
@@ -195,6 +210,7 @@ header nav .nav-links li a:hover {
 .icons img {
   height: 100%;
   width: 2em;
+  filter: var(--svg-color);
 }
 
 .quick-links {
@@ -210,7 +226,7 @@ main {
 }
 
 main h1 {
-  margin: 2.5vh 0 2.5vh 0;
+  margin: 2rem 0 2rem 0;
   text-align: center;
   font-size: 2em;
 }
@@ -255,6 +271,10 @@ main .portfolio-image-container img {
   width: 100%;
 }
 
+main .portfolio-image-container img:hover {
+  opacity: 0.9;
+}
+
 main .portfolio-image-container a {
   text-decoration: none;
 }
@@ -276,6 +296,11 @@ main #recaptcha {
   padding-bottom: 2rem;
 }
 
+main label {
+  font-size: 1rem;
+  color: var(--primary-text-color);
+}
+
 main input[type=text],
 main input[type=email],
 main select,
@@ -285,7 +310,7 @@ main textarea {
   font-style: normal;
   width: 100%;
   padding: 1rem;
-  border: 1px solid #c8c8c8;
+  border: 1px solid var(--border-color);
   border-radius: 5px;
   margin-top: 0.25rem;
   margin-bottom: 1rem;
@@ -303,13 +328,13 @@ main input[type=submit] {
   border: none;
   border-radius: 5px;
   font-size: 1rem;
-  background-color: #191919;
-  color: white;
+  background-color: var(--btn-color);
+  color: var(--bkg-color);
   cursor: pointer;
 }
 
 main input[type=submit]:hover {
-  background-color: #595959;
+  background-color: var(--btn-hover-color);
 }
 
 main #message {
@@ -334,8 +359,12 @@ footer {
   margin: 2.5vh 0vw 2.5vh 0vw;
   font-size: 0.75em;
   justify-content: center;
-  color: #191919;
+  color: var(--secondary-text-color);
   vertical-align: top;
+}
+
+footer a {
+  color: var(--secondary-text-color);
 }
 
 footer a:hover {
@@ -363,6 +392,28 @@ footer a:hover {
   }
 }
 
+@keyframes iconFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-2.75rem);
+  }
+}
+
+@keyframes iconFadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(-2.75rem);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(0);
+  }
+}
+
 @keyframes fadeIn {
   from {
     transform: translateX(50%);
@@ -382,6 +433,38 @@ footer a:hover {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  body {
+    --heading-color: #f3f3f2;
+    --primary-text-color: #c2c2bc;
+    --secondary-text-color: #868679;
+    --link-hover-color: #868679;
+    --border-color: #868679;
+    --svg-color: invert(100%) sepia(1%) saturate(1840%) hue-rotate(164deg) brightness(101%) contrast(101%);
+    --bkg-color: #191919;
+    --btn-color: #c2c2bc;
+    --btn-hover-color: #f3f3f2;
+  }
+  body img {
+    filter: brightness(0.8) contrast(1.2);
+  }
+  body.light-theme {
+    --heading-color: #0f0f0f;
+    --primary-text-color: #191919;
+    --secondary-text-color: #8a8a8a;
+    --link-hover-color: #9b9b9b;
+    --border-color: #dddddd;
+    --svg-color: invert(7%) sepia(8%) saturate(242%) hue-rotate(314deg) brightness(104%) contrast(93%);
+    --bkg-color: #ffffff;
+    --btn-color: #191919;
+    --btn-hover-color: #595959;
+  }
+  body.light-theme img {
+    filter: brightness(1) contrast(1.2);
   }
 }
 
@@ -439,9 +522,10 @@ body {
     display: block;
     margin-top: 5vh;
     margin-left: 3vw;
-    background-color: white;
     flex-direction: column;
     align-items: start;
+    padding-left: 0;
+    padding-right: 0;
   }
   header #logo-container {
     padding-left: 0;
@@ -472,7 +556,7 @@ body {
   header nav .nav-links li a {
     font-size: 1rem;
   }
-  header #menu {
+  header #menu-controls {
     display: none;
   }
   .visual-separator-container {
@@ -493,8 +577,8 @@ body {
   }
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1440px) {
   body {
-    width: 90vw;
+    width: 1440px;
   }
 }
