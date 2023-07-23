@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <rss version="2.0">
   <channel>
-    <title>John Smith</title>
-    <link>https://localhost:8000</link>
-    <description>My blog description</description>
+    <title>Zac Vukovic</title>
+    <link>https://zacvukovic.com</link>
+    <description>Technical writings and musings</description>
     <language>en-au</language>
-    <lastBuildDate>Sat, 22 Jul 2023 21:45:46 +1000</lastBuildDate>
+    <lastBuildDate>Sun, 23 Jul 2023 21:30:32 +1000</lastBuildDate>
   </channel>
 </rss>

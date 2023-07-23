@@ -1,7 +1,4 @@
 {
-  "scripts": {
-    "build": "python ../jotunpy/main.py build && cp sitemap.xml ../jotunpy/build/sitemap.xml && cp robots.txt ../jotunpy/build/robots.txt"
-  },
   "devDependencies": {
     "sharp": "^0.32.3"
   }
