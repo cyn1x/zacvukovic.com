@@ -197,6 +197,7 @@ header nav .nav-links li h1:hover {
 .icons {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .icons a {

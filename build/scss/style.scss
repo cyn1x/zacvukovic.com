@@ -166,6 +166,7 @@ header {
 .icons {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 
     a {
         margin-right: 1em;
