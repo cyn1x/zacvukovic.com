@@ -43,14 +43,14 @@ async function handleLocation() {
     }
 
     // Check if the requested path matches a dynamic route
-    const route = routes.dynamicRoutes.find(route => {
+    for (const route in routes.dynamicRoutes) {
         const match = routeToRegexExpression(path, route);
         if (match) {
             route.url.replace(/:\w+/g, match[1]);
 
-            return true;
+            return;
         }
-    });
+    }
 
     // If a dynamic route was found, fetch the data from the server and render the page
     if (route) {
