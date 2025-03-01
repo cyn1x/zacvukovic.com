@@ -6,8 +6,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Zac Vukovic is a professional Software Developer in the New England region of New South Wales, Australia.">
-  <meta name="keywords" content="Zac Vukovic, Zac Madden, Portfolio, Blog">
+  <meta name="description"
+    content="Zac Vukovic is a professional Software Engineer and Game Developer in the New England region of New South Wales, Australia.">
+  <meta name="keywords" content="Zac Vukovic, Software Engineer, Game Developer, Portfolio, Blog">
   <meta name="author" content="Zac Vukovic">
   <link rel="icon" href="/img/favicon.png" type="image/x-icon">
   <link type="text/css" rel="stylesheet" href="/css/style.css" type="text/css">
@@ -17,58 +18,59 @@
   <header>
     <div id="logo-container">
       <a href="/">
-        <div id="logo">Zac Vukovic</div>
+        <div id="logo">~/.zv</div>
       </a>
-      <p>Software Development Portfolio</p>
+      <p>Software Engineer</p>
     </div>
     <nav>
       <ul class="nav-links">
         <li>
           <a href="/portfolio" class="data-link" onclick="route(event)">
-            <h1>PORTFOLIO</h1>
+            <h1>Portfolio</h1>
           </a>
         </li>
         <li>
           <a href="/about" class="data-link" onclick="route(event)">
-            <h1>ABOUT</h1>
+            <h1>About</h1>
           </a>
         </li>
         <li>
-          <a href="/contact" class="data-link" onclick="route(event)">
-            <h1>CONTACT</h1>
+          <a href="/now" class="data-link" onclick="route(event)">
+            <h1>Now</h1>
           </a>
         </li>
         <li>
           <a href="/blog" class="data-link" onclick="route(event)">
-            <h1>BLOG</h1>
+            <h1>Blog</h1>
+          </a>
+        </li>
+        <li>
+          <a href="/contact" class="data-link" onclick="route(event)">
+            <h1>Contact</h1>
           </a>
         </li>
       </ul>
       <div id="menu" class="icons">
-        <div id="menu-controls">
-          <img src="/img/svg/bars-solid.svg" id="open-icon" class="menu-icons" alt="Menu closed icon">
-          <img src="/img/svg/xmark-solid.svg" id="close-icon" class="menu-icons hidden" alt="Menu open icon">
+        <!-- Hack to apply a CSS filter to SVGs without affecting border styling -->
+        <div id="dark-theme-container" class="svg-container theme-icon-container hidden">
+          <img src="/img/svg/bulb-4.svg" id="dark-theme-icon" class="menu-icons" alt="Theme toggle icon">
         </div>
-        <img src="/img/svg/circle-half-stroke-solid.svg" id="theme-icon" class="menu-icons" alt="Theme toggle icon">
+        <div id="light-theme-container" class="svg-container theme-icon-container">
+          <img src="/img/svg/bulb-1.svg" id="light-theme-icon" class="menu-icons" alt="Theme toggle icon">
+        </div>
+        <div id="menu-controls">
+          <div class="svg-container menu-icon-container">
+            <img src="/img/svg/menu-hamburger-1.svg" id="open-icon" class="menu-icons" alt="Menu closed icon">
+          </div>
+          <div class="svg-container menu-icon-container hidden">
+            <img src="/img/svg/xmark.svg" id="close-icon" class="menu-icons hidden" alt="Menu open icon">
+          </div>
+        </div>
       </div>
     </nav>
-    <div class="icons quick-links">
-      <a href="https://github.com/cyn1x" target="_blank" rel="noopener noreferrer">
-        <img src="/img/svg/github.svg" alt="GitHub page">
-      </a>
-      <a href="https://au.linkedin.com/in/zacvukovic/" target="_blank" rel="noopener noreferrer">
-        <img src="/img/svg/linkedin.svg" alt="LinkedIn profile">
-      </a>
-    </div>
   </header>
-  <div class="visual-separator-container">
-    <hr class="visual-separator">
-  </div>
   <main>
   </main>
-  <div class="visual-separator-container">
-    <hr class="visual-separator">
-  </div>
   <footer>
     <span>
       &copy; Zac Vukovic
@@ -78,7 +80,10 @@
   </footer>
   <script type="module" src="/js/router.js" defer></script>
   <script type="module" src="/js/events.js" defer></script>
+  <script type="module" src="/js/animate.js" defer></script>
   <script type="module" src="/js/index.js" defer></script>
+  <script type="module" src="/js/now.js" defer></script>
+  <script type="module" src="/js/portfolio.js" defer></script>
   <script type="module" src="/js/contact.js" defer></script>
 </body>
 
