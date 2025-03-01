@@ -160,10 +160,10 @@ function toggleMenu(navMenu, navLinksContainer) {
 function showMenuAnimation(navLinksContainer) {
     const navLinks = document.querySelectorAll('.nav-links li');
 
-    animate(navLinksContainer, `navMenuFade 0.5s ease forwards`);
+    animate(navLinksContainer, `navMenuFade 0.25s ease-out forwards`);
 
     navLinks.forEach((link, index) => {
-        animate(link, `navLinkFade 0.5s ease forwards ${index / 7 + 0.25}s`);
+        animate(link, `navLinkFade 0.25s ease-out forwards ${index / 7 + 0.25}s`);
     });
 }
 
