@@ -1,7 +1,7 @@
-function Initialize() {
+function initialize() {
     document.addEventListener(
         "contactPage",
-        (e) => {
+        () => {
             createCaptchaTickbox();
             addEventListeners();
         },
@@ -66,14 +66,14 @@ async function sendMessage(formData, captchaValue) {
         })
     }).then((data) => {
         if (data.status === 200) {
-            successResult.classList.remove('hidden')
+            successResult.classList.remove('hidden');
             handleSuccess(formData);
         }
         else {
             errorResult.classList.remove('hidden');
         }
-        sendButton.innerHTML = "Send"
-        sendButton.removeAttribute('disabled')
+        sendButton.innerHTML = "Send";
+        sendButton.removeAttribute('disabled');
     });
 }
 
@@ -82,4 +82,4 @@ function handleSuccess(formData) {
     grecaptcha.reset();
 }
 
-Initialize();
+initialize();

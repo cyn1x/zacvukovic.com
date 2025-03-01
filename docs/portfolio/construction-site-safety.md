@@ -6,13 +6,17 @@ template: default.html
 
 # Construction Site Safety
 
-The Construction Site Safety Working at Heights virtual reality app was a joint initiative by TAFE NSW and icare that highlighted the importance of working safely at heights.<br /><br />
+The Construction Site Safety Working at Heights virtual reality app was a joint initiative by TAFE NSW and icare that highlighted the importance of working safely at heights.
 
-My role for this project was mainly focused on the backend. With a growing team and no tooling around the development of immersive applications, I led a project that introduced a scalable CI/CD pipeline that automatically built, tested, and deployed Unity projects to VR headsets.<br /><br />
+## My Role & Contributions
 
-This application also led to advancements in our core development platform which I have also taken the initiative to help the team continue to scale after the project was completed. Using my previous infrastructure experience, I was able to expand on our user profile systems in Unity and integrate them into our enterprise cloud architecture.<br ><br >
+- <strong>Led Backend & Infrastructure Development:</strong> Recognising the need for better tooling in immersive application development, I spearheaded the implementation of a <strong>scalable CI/CD pipeline</strong>. This system automated the <strong>build, testing, and deployment</strong> of Unity projects directly to VR headsets, significantly improving efficiency for the team.
 
-Construction Site Safety was a <a href="https://good-design.org/projects/tafe-nsw-icare-construction-site-safety-working-heights-program/" target="_blank" rel="noopener noreferrer">2022 Good Design Awards</a> winner.<br /><br />
+- <strong>Enterprise Cloud Integration:</strong> Leveraging my development skills and infrastructure experience, I expanded our <strong>user profile systems in Unity</strong>, integrating them into our <strong>enterprise cloud architecture</strong> to enhance scalability and accessibility.
+
+- <strong>Core Development Platform Enhancements:</strong> This project drove advancements in our internal development tools, and I took the initiative to scale these improvements beyond the project's completion, ensuring long-term benefits for the team.
+
+<strong>Construction Site Safety</strong> was a <a href="https://good-design.org/projects/tafe-nsw-icare-construction-site-safety-working-heights-program/" target="_blank" rel="noopener noreferrer">2022 Good Design Awards</a> winner.
 
 <div class="iframe-container">
     <iframe class="responsive-iframe" src="https://www.youtube.com/embed/DLo8CAm8w1E?start=126" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

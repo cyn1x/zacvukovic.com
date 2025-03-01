@@ -6,24 +6,26 @@ const routeToRegexExpression = (path, route) => path.match(new RegExp(`^${route.
 const routes = {
     staticRoutes: [
         { path: 404, url: "/html/404.html" },
-        { path: '/', url: '/html/portfolio.html' },
+        { path: '/', url: '/html/about.html' },
         { path: '/about', url: '/html/about.html' },
-        { path: '/blog', url: '/html/blog.html' },
+        { path: '/now', url: '/html/now.html' },
+        { path: '/portfolio', url: '/html/portfolio.html' },
         { path: '/contact', url: '/html/contact.html' },
-        { path: '/portfolio', url: '/html/portfolio.html' }
+        { path: '/blog', url: '/html/blog.html' },
     ],
     dynamicRoutes: [
         { path: '/portfolio/:id', url: '/html/portfolio/:id.html' },
         { path: '/blog/:id', url: '/html/blog/:id.html' }
     ]
-}
+};
 
 // Handle all links with the data-link attribute
 async function route(event) {
     event = event || window.event;
     if (event.currentTarget.matches(".data-link")) {
         event.preventDefault();
-        window.history.pushState({}, "", event.currentTarget.href);
+        const href = event.currentTarget.href ? event.currentTarget.href : event.currentTarget.value;
+        window.history.pushState({}, "", href);
         await handleLocation();
     }
 }
@@ -36,7 +38,7 @@ async function handleLocation() {
     if (staticRoute) {
         await render(staticRoute.url);
         dispatchEvent(path);
-        
+
         return;
     }
 
@@ -45,7 +47,7 @@ async function handleLocation() {
         const match = routeToRegexExpression(path, route);
         if (match) {
             route.url.replace(/:\w+/g, match[1]);
-            
+
             return true;
         }
     });
@@ -54,8 +56,8 @@ async function handleLocation() {
     if (route) {
         const match = routeToRegexExpression(path, route);
         const uri = route.url.replace(/:\w+/g, match[1]);
-        
-        const apiUrl = (typeof process !== 'undefined') ? uri : `/search${uri}`
+
+        const apiUrl = (typeof process !== 'undefined') ? uri : `/search${uri}`;
         await fetch(apiUrl).then((res) => {
             if (res.status === 200) {
                 render(uri);
@@ -69,7 +71,7 @@ async function handleLocation() {
 
         return;
     }
-    
+
     // If no route was found, render the 404 page
     render(findStaticRouteByPath(404).url);
 }

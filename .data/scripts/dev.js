@@ -4,7 +4,7 @@ evtSource.onmessage = (event) => {
     console.log('Received event:', event);
     
     if (event.data == 'refresh')
-        refreshPage()
+        refreshPage();
 };
 
 evtSource.onerror = (err) => {

@@ -6,8 +6,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Zac Vukovic is a professional Software Developer in the New England region of New South Wales, Australia.">
-  <meta name="keywords" content="Zac Vukovic, Zac Madden, Portfolio, Blog">
+  <meta name="description"
+    content="Zac Vukovic is a professional Software Engineer and Game Developer in the New England region of New South Wales, Australia.">
+  <meta name="keywords" content="Zac Vukovic, Software Engineer, Game Developer, Portfolio, Blog">
   <meta name="author" content="Zac Vukovic">
   <link rel="icon" href="/img/favicon.png" type="image/x-icon">
   <link type="text/css" rel="stylesheet" href="/css/style.css" type="text/css">
@@ -17,30 +18,16 @@
   <header>
     <div id="logo-container">
       <a href="/">
-        <div id="logo">{{ author }}</div>
+        <div id="logo">~/.zv</div>
       </a>
-      <p>Software Development Portfolio</p>
+      <p>Software Engineer</p>
     </div>
     {% filter indent(width=4,first=False) -%}
     {% include 'nav.html' %}
     {%- endfilter %}
-    <div class="icons quick-links">
-      <a href="https://github.com/cyn1x" target="_blank" rel="noopener noreferrer">
-        <img src="/img/svg/github.svg" alt="GitHub page">
-      </a>
-      <a href="https://au.linkedin.com/in/zacvukovic/" target="_blank" rel="noopener noreferrer">
-        <img src="/img/svg/linkedin.svg" alt="LinkedIn profile">
-      </a>
-    </div>
   </header>
-  <div class="visual-separator-container">
-    <hr class="visual-separator">
-  </div>
   <main>
   </main>
-  <div class="visual-separator-container">
-    <hr class="visual-separator">
-  </div>
   <footer>
     {% filter indent(width=4,first=False) -%}
     {% include 'footer.html' %}
@@ -48,7 +35,10 @@
   </footer>
   <script type="module" src="/js/router.js" defer></script>
   <script type="module" src="/js/events.js" defer></script>
+  <script type="module" src="/js/animate.js" defer></script>
   <script type="module" src="/js/index.js" defer></script>
+  <script type="module" src="/js/now.js" defer></script>
+  <script type="module" src="/js/portfolio.js" defer></script>
   <script type="module" src="/js/contact.js" defer></script>
 </body>
 

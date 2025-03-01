@@ -6,13 +6,19 @@ template: default.html
 
 # Childcare Safety
 
-Childcare Safety is a part of a series of vignette educational virtual reality apps created with Meta to showcase the power of VR in education. The purpose of this app is to identify and sort hazards in a childcare environment.<br /><br />
+<strong>Childcare Safety</strong> is part of a series of <strong>educational VR applications</strong> developed in collaboration with <strong>Meta</strong> to highlight the effectiveness of <strong>virtual reality in education.</strong> This app trains users to <strong>identify and sort hazards</strong> in a childcare environment, enhancing safety awareness through interactive learning.
 
-The app was remade from the previous version, which used an old interaction system, to our updated platform with a new interaction system. This upgrade significantly improved the user experience and introduced new features.<br /><br />
+## My Role & Contributions
 
-As the main app developer, my role involved designing and implementing the flow sequence for the experience and incorporating various interactables using the mechanics from our core platform.<br /><br />
+- <strong>Led the App Development,</strong> designing and implementing the <strong>flow sequence</strong> that guides users through the experience.
 
-Childcare Safety is available on the <a href="https://www.oculus.com/experiences/quest/5181967315251271/" target="_blank" rel="noopener noreferrer">Oculus App Lab</a>.<br /><br />
+- <strong>Rebuilt the Interaction System,</strong> transitioning from an outdated version to a <strong>modernized platform</strong> with improved user experience and expanded features.
+
+- <strong>Integrated Interactive Elements</strong>, leveraging mechanics from our core platform to create engaging, hands-on learning experiences.
+
+This project demonstrated how <strong>VR can enhance safety training</strong> by offering immersive, scenario-based learning environments.
+
+<strong>Childcare Safety</strong> is available on the <a href="https://www.oculus.com/experiences/quest/5181967315251271/" target="_blank" rel="noopener noreferrer">Oculus App Lab</a>.<br /><br />
 
 <div class="iframe-container">
     <iframe class="responsive-iframe" src="https://www.youtube.com/embed/imWYFPDz7dI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
