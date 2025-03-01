@@ -75,10 +75,13 @@ async function handleLocation() {
     // If no route was found, render the 404 page
     render(findStaticRouteByPath(404).url);
 }
+    
 
 async function render(route) {
+    const main = document.getElementsByTagName("main");
+    main[0].innerHTML = "<svg viewBox=\"0 0 100 100\" class=\"loading\"><circle></circle></svg>";
     const html = await fetch(route).then((data) => data.text());
-    document.getElementsByTagName("main")[0].innerHTML = html;
+    main[0].innerHTML = html;
     dispatchEvent('/render');
 }
 
