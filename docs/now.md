@@ -6,7 +6,7 @@ template: default.html
 
 # Now
 
-Inspired by the <a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">"now page"</a>, this page will show what I'm focused on at this point of my life.
+Inspired by the <a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">"now page"</a>, this page will show what I'm focused on at this point in my life.
 
 *Last updated 2025-02-26*
 
@@ -56,6 +56,18 @@ Latest commit: <code id="libcspd-latest-commit">Loading...</code>
 I'm building a chess engine with a Rust backend and TypeScript frontend as an exercise in AI and machine learning. The focus is on implementing search algorithms, evaluation functions, and eventually self-learning techniques to improve gameplay over time.
 
 The core engine was originally built in TypeScript several years ago, but as the complexity of the logic increased, I recognised the need to transition performance-critical components to Rust before introducing AI and machine learning algorithms.
+
+Current features:
+
+- &#x2705; HTML5 Canvas chessboard
+
+**Future plans:**
+
+- &#x1F504; Rust websocket server
+- &#x1F504; Rewrite board logic in Rust
+- &#x23F3; AI opponent (minimax, alpha-beta pruning)
+- &#x23F3; ML-based board evaluation
+- &#x23F3; Reinforcement learning for self-play
 
 Latest commit: <code id="rchess-latest-commit">Loading...</code>
 
