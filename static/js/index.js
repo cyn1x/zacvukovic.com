@@ -15,15 +15,29 @@ function app() {
 
     const prefersDarkTheme = savedPrefs != null ? savedPrefs == "dark" : browserPrefs.matches;
 
+    console.log(savedPrefs);
+    console.log(browserPrefs);
+    console.log(browserPrefs);
+
+    console.log(prefersDarkTheme);
     if (prefersDarkTheme) {
-        document.body.classList.toggle("dark-theme");
-        lightThemeIcon.parentNode.classList.add('hidden'); 
-        darkThemeIcon.parentNode.classList.remove('hidden');
-    } else {
-        document.body.classList.toggle("light-theme");
-        darkThemeIcon.parentNode.classList.add('hidden'); 
+        document.body.classList.remove('light-mode');
+        document.body.classList.add('dark-mode');
         lightThemeIcon.parentNode.classList.remove('hidden');
+        darkThemeIcon.parentNode.classList.add('hidden');
+        localStorage.setItem('theme', 'dark');
+
+        console.log(localStorage);
+
+        return;
     }
+
+    document.body.classList.remove('dark');
+    document.body.classList.add('light-mode');
+    darkThemeIcon.parentNode.classList.remove('hidden');
+    lightThemeIcon.parentNode.classList.add('hidden');
+    localStorage.setItem('theme', 'light');
+    console.log(localStorage);
 }
 
 function addEventListeners() {
@@ -79,21 +93,19 @@ function addEventListeners() {
     );
 }
 
-function toggleTheme() {
-    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+function toggleTheme() { 
+    console.log(document.body.classList);
+    if (document.body.classList.contains('light-mode')) {
+        document.body.classList.remove('light-mode');
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
 
-    if (prefersDarkScheme.matches) {
-        document.body.classList.toggle("light-theme");
-        var theme = document.body.classList.contains("light-theme")
-            ? "light"
-            : "dark";
-    } else {
-        document.body.classList.toggle("dark-theme");
-        theme = document.body.classList.contains("dark-theme")
-            ? "dark"
-            : "light";
+        return;
     }
-    localStorage.setItem("theme", theme);
+
+    document.body.classList.remove('dark-mode');
+    document.body.classList.add('light-mode');
+    localStorage.setItem('theme', 'light');
 }
 
 function animateThemeIcon(id) {
