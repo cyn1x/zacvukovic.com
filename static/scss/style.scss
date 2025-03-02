@@ -386,7 +386,8 @@ main {
 
     // Selfie
     #portrait-container {
-      justify-self: center;
+      // justify-self: center; // Issues with Firefox
+      text-align: center;
       margin-top: 15px;
 
       img {
