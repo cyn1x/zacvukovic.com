@@ -1,6 +1,23 @@
 @import "./base";
 
 :root {
+  // Default to light mode
+  --heading-color: #f3f3f2;
+  --primary-text-color: #c2c2bc;
+  --secondary-text-color: #868679;
+  --link-color: #E581D8;
+  --link-hover-color: #868679;
+  --border-color: #dddddd;
+  --img-border-color: #FFF;
+  --svg-color: invert(70%) sepia(94%) saturate(274%) hue-rotate(115deg) brightness(106%) contrast(96%);
+  --bkg-color: #1E1E2D;
+  --primary-btn-color: #57FAE8;
+  --primary-btn-hover-color: #33CBBA;
+  --primary-btn-text-color: black;
+  --primary-btn-svg-color: invert(0%) sepia(2%) saturate(0%) hue-rotate(239deg) brightness(100%) contrast(100%);
+  --secondary-btn-color: #c2c2bc;
+  --secondary-btn-hover-color: #f3f3f2;
+
   // Loading spinner properties
   --radius: 20;
   --PI: 3.14159265358979;
@@ -15,6 +32,28 @@
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
+}
+
+body.dark-mode {
+  --heading-color: #0f0f0f;
+  --primary-text-color: #191919;
+  --secondary-text-color: #8a8a8a;
+  --link-color: #148DE3;
+  --link-hover-color: #9b9b9b;
+  --border-color: #868679;
+  --img-border-color: #000;
+  --svg-color: invert(30%) sepia(70%) saturate(1101%) hue-rotate(138deg) brightness(97%) contrast(97%);
+  --bkg-color: #FFFFF9;
+  --primary-btn-color: #38B2AC;
+  --primary-btn-hover-color: #4ECEC8;
+  --primary-btn-text-color: white;
+  --primary-btn-svg-color: invert(100%) sepia(100%) saturate(0%) hue-rotate(223deg) brightness(104%) contrast(101%);
+  --secondary-btn-color: #191919;
+  --secondary-btn-hover-color: #595959;
+}
+
+h1.test {
+  color: var(--color-scheme);
 }
 
 html,
@@ -50,7 +89,6 @@ body {
     color: var(--primary-btn-text-color);
 
     font-size: 1rem;
-    text-align: center;
     text-decoration: none;
 
     background-color: var(--primary-btn-color);
@@ -59,8 +97,8 @@ body {
     border-radius: 0.75rem;
 
     display: flex;
+    margin: auto;
     align-items: center;
-    justify-self: center;
     transition-duration: 0.4s;
 
     cursor: pointer;
@@ -386,7 +424,6 @@ main {
 
     // Selfie
     #portrait-container {
-      // justify-self: center; // Issues with Firefox
       text-align: center;
       margin-top: 15px;
 
@@ -754,46 +791,5 @@ footer {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-// Theme properties for light and dark theme
-@media (prefers-color-scheme: dark) {
-
-  /* defaults to dark theme */
-  body {
-    --heading-color: #f3f3f2;
-    --primary-text-color: #c2c2bc;
-    --secondary-text-color: #868679;
-    --link-color: #E581D8;
-    --link-hover-color: #868679;
-    --border-color: #dddddd;
-    --img-border-color: #FFF;
-    --svg-color: invert(70%) sepia(94%) saturate(274%) hue-rotate(115deg) brightness(106%) contrast(96%);
-    --bkg-color: #1E1E2D;
-    --primary-btn-color: #57FAE8;
-    --primary-btn-hover-color: #33CBBA;
-    --primary-btn-text-color: black;
-    --primary-btn-svg-color: invert(0%) sepia(2%) saturate(0%) hue-rotate(239deg) brightness(100%) contrast(100%);
-    --secondary-btn-color: #c2c2bc;
-    --secondary-btn-hover-color: #f3f3f2;
-  }
-
-  body.light-theme {
-    --heading-color: #0f0f0f;
-    --primary-text-color: #191919;
-    --secondary-text-color: #8a8a8a;
-    --link-color: #148DE3;
-    --link-hover-color: #9b9b9b;
-    --border-color: #868679;
-    --img-border-color: #000;
-    --svg-color: invert(30%) sepia(70%) saturate(1101%) hue-rotate(138deg) brightness(97%) contrast(97%);
-    --bkg-color: #FFFFF9;
-    --primary-btn-color: #38B2AC;
-    --primary-btn-hover-color: #4ECEC8;
-    --primary-btn-text-color: white;
-    --primary-btn-svg-color: invert(100%) sepia(100%) saturate(0%) hue-rotate(223deg) brightness(104%) contrast(101%);
-    --secondary-btn-color: #191919;
-    --secondary-btn-hover-color: #595959;
   }
 }
