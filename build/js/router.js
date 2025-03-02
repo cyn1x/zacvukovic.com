@@ -15,7 +15,7 @@ const routes = {
     ],
     dynamicRoutes: [
         { path: '/portfolio/:id', url: '/html/portfolio/:id.html' },
-        { path: '/blog/:id', url: '/html/blog/:id.html' }
+        { path: '/blog/:id', url: '/html/blog/:id.html' },
     ]
 };
 
@@ -43,37 +43,29 @@ async function handleLocation() {
     }
 
     // Check if the requested path matches a dynamic route
-    for (const route in routes.dynamicRoutes) {
-        const match = routeToRegexExpression(path, route);
-        if (match) {
-            route.url.replace(/:\w+/g, match[1]);
+    for (const value of Object.values(routes.dynamicRoutes)) {
 
-            return;
+        const match = routeToRegexExpression(path, value);
+        if (!match) {
+            continue;
         }
-    }
-
-    // If a dynamic route was found, fetch the data from the server and render the page
-    if (route) {
-        const match = routeToRegexExpression(path, route);
-        const uri = route.url.replace(/:\w+/g, match[1]);
-
+        const uri = value.url.replace(/:\w+/g, match[1]);
         const apiUrl = (typeof process !== 'undefined') ? uri : `/search${uri}`;
+
         await fetch(apiUrl).then((res) => {
             if (res.status === 200) {
                 render(uri);
                 dispatchEvent(path);
+
+                return;
             }
-            else {
-                // This dynamic route does not exist on the server
-                render(findStaticRouteByPath(404).url);
-            }
+            
+            // This dynamic route does not exist on the server
+            render(findStaticRouteByPath(404).url);        
         });
 
-        return;
     }
 
-    // If no route was found, render the 404 page
-    render(findStaticRouteByPath(404).url);
 }
     
 
