@@ -1,7 +1,7 @@
 @import "./base";
 
 :root {
-  // Default to light mode
+  // Default to dark mode
   --heading-color: #f3f3f2;
   --primary-text-color: #c2c2bc;
   --secondary-text-color: #868679;
@@ -34,7 +34,7 @@
   padding: 0px;
 }
 
-body.dark-mode {
+body.light-mode {
   --heading-color: #0f0f0f;
   --primary-text-color: #191919;
   --secondary-text-color: #8a8a8a;

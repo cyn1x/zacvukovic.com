@@ -12,32 +12,20 @@ function app() {
     // Prioritise saved theme from cache if already set by user. Otherwise, default to browser theme
     const savedPrefs = localStorage.getItem("theme");
     const browserPrefs = window.matchMedia("(prefers-color-scheme: dark)");
+    const prefersDarkTheme = savedPrefs != null ? savedPrefs == 'dark' : browserPrefs.matches;
 
-    const prefersDarkTheme = savedPrefs != null ? savedPrefs == "dark" : browserPrefs.matches;
-
-    console.log(savedPrefs);
-    console.log(browserPrefs);
-    console.log(browserPrefs);
-
-    console.log(prefersDarkTheme);
     if (prefersDarkTheme) {
-        document.body.classList.remove('light-mode');
-        document.body.classList.add('dark-mode');
-        lightThemeIcon.parentNode.classList.remove('hidden');
-        darkThemeIcon.parentNode.classList.add('hidden');
-        localStorage.setItem('theme', 'dark');
-
-        console.log(localStorage);
+        setNewTheme('dark');
+        darkThemeIcon.parentNode.classList.remove('hidden');
+        lightThemeIcon.parentNode.classList.add('hidden');
 
         return;
-    }
-
-    document.body.classList.remove('dark');
-    document.body.classList.add('light-mode');
-    darkThemeIcon.parentNode.classList.remove('hidden');
-    lightThemeIcon.parentNode.classList.add('hidden');
-    localStorage.setItem('theme', 'light');
-    console.log(localStorage);
+    } 
+    
+    setNewTheme('light');
+    lightThemeIcon.parentNode.classList.remove('hidden');
+    darkThemeIcon.parentNode.classList.add('hidden');
+    
 }
 
 function addEventListeners() {
@@ -93,19 +81,26 @@ function addEventListeners() {
     );
 }
 
-function toggleTheme() { 
-    console.log(document.body.classList);
-    if (document.body.classList.contains('light-mode')) {
+function setNewTheme(newMode) {
+    if (newMode === 'dark') {
         document.body.classList.remove('light-mode');
         document.body.classList.add('dark-mode');
-        localStorage.setItem('theme', 'dark');
+    } else {
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add('light-mode');
+    }
+
+    localStorage.setItem("theme", newMode);
+}
+
+function toggleTheme() { 
+    if (document.body.classList.contains('light-mode')) {
+        setNewTheme('dark');
 
         return;
     }
 
-    document.body.classList.remove('dark-mode');
-    document.body.classList.add('light-mode');
-    localStorage.setItem('theme', 'light');
+    setNewTheme('light');
 }
 
 function animateThemeIcon(id) {
