@@ -16,10 +16,11 @@ I'm working on my own game framework in C, and am currently tidying up the Win32
 
 Current features:
 
-- &#x2705; Sound layer
 - &#x2705; CPU rendering
-- &#x2705; Performance profiling
+- &#x2705; Gamepad and keyboard input
+- &#x2705; Audio controller
 - &#x2705; Memory management
+- &#x2705; Performance profiling
 
 **Future plans:**
 
@@ -60,10 +61,10 @@ The core engine was originally built in TypeScript several years ago, but as the
 Current features:
 
 - &#x2705; HTML5 Canvas chessboard
+- &#x2705; Rust websocket server
 
 **Future plans:**
 
-- &#x1F504; Rust websocket server
 - &#x1F504; Rewrite board logic in Rust
 - &#x23F3; AI opponent (minimax, alpha-beta pruning)
 - &#x23F3; ML-based board evaluation
@@ -73,7 +74,7 @@ Latest commit: <code id="rchess-latest-commit">Loading...</code>
 
 ## Audio Engineering
 
-I have recently been enjoying stripping the guitar tracks from audio files and playing over the top of them, learning how to mix it all together. The current dilemma is figuring out how to emulate tone digitally without having to spend lots of money on physical gear.
+I have recently been enjoying removing the guitar tracks from audio files and playing over the top of them, learning how to mix it all together. The current dilemma is figuring out how to emulate tone digitally without having to spend lots of money on physical gear.
 
 My most recent recording is on <a href="https://www.youtube.com/watch?v=s2X6JcpuwpY" target="_blank" rel="noopener noreferrer">YouTube</a>. This was recorded through an audio interface with a Fender Mexican Stratocaster plugged into a Randall T2 head, which isn't exactly great given the Randall T2 head is geared for high-gain metal.
 
