@@ -10,9 +10,11 @@ template: default.html
 
 ## My Role & Contributions
 
-- <strong>Led the App Development,</strong> designing and implementing the <strong>flow sequence</strong> that guides users through the experience.
+- <strong>Resolved Engine Rendering Bug</strong>, discovering that the framebuffer used to render textures to the hazard camera did not capture all data at the end of each render pass when Vulkan was set as the Graphics API.
 
-- <strong>Rebuilt the Interaction System,</strong> transitioning from an outdated version to a <strong>modernized platform</strong> with improved user experience and expanded features.
+- <strong>Led the App Development,</strong> designing and implementing the flow sequence that guides users through the experience.
+
+- <strong>Rebuilt the Interaction System,</strong> transitioning from an outdated third-party interaction SDK to our custom internal platform with improved user experience and expanded features.
 
 - <strong>Integrated Interactive Elements</strong>, leveraging mechanics from our core platform to create engaging, hands-on learning experiences.
 

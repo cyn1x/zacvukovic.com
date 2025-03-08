@@ -10,7 +10,7 @@ libcspd is a C utility library designed to provide a collection of data structur
 
 ## My Role & Contributions
 
-- <strong>Designed & Implemented Core Data Structures</strong>, including <strong>vectors, linked lists, stacks, queues, and binary trees</strong>.
+- <strong>Designed & Implemented Core Data Structures</strong>, including but not limited to <strong>vectors, linked lists, stacks, queues, and binary trees</strong>.
 
 - <strong>Focused on Performance & Portability</strong>, ensuring efficient memory usage and cross-platform compatibility.
 

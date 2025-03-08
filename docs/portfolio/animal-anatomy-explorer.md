@@ -10,7 +10,7 @@ template: default.html
 
 ## My Role & Contributions
 
-- <strong>Modernized the Interaction System</strong>, transitioning from an outdated version to a new platform with an improved user experience and additional features.
+- <strong>Modernised the Interaction System,</strong> transitioning from an outdated third-party interaction SDK to our custom internal platform with improved user experience and expanded features.
 
 - <strong>Developed Core Mechanics</strong>, contributing to the foundational interactions that allow users to explore and engage with the anatomical models.
 

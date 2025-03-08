@@ -31,7 +31,7 @@ Current features:
 
 ## C Utility Library
 
-I spend a lot of time returning to fundamentals in other disciplines, so why not Computer Science as well? I'm working on <a href="https://github.com/cyn1x/libcspd" target="_blank" rel="noopener noreferrer">libcspd</a> to focus on learning and eventually teaching a plethora of data structures and algorithms. This project has been inspired by <a href="https://github.com/ThePrimeagen/kata-machine" target="_blank" rel="noopener noreferrer">kata-machine</a> by ThePrimeagen which serves as a basic introduction to algorithms.
+I spend a lot of time returning to fundamentals in other disciplines, so why not Computer Science as well? I'm working on <a href="https://github.com/cyn1x/libcspd" target="_blank" rel="noopener noreferrer">libcspd</a> to focus on learning and eventually teaching a plethora of data structures and algorithms. This project has been inspired by kata-machine by ThePrimeagen which serves as a basic introduction to algorithms.
 
 Current features:
 
