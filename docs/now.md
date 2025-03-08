@@ -16,22 +16,24 @@ I'm working on my own game framework in C, and am currently tidying up the Win32
 
 Current features:
 
-- &#x2705; CPU rendering
-- &#x2705; Gamepad and keyboard input
-- &#x2705; Audio controller
-- &#x2705; Memory management
+- &#x2705; Software rendering
+- &#x2705; XInput for gamepad and keyboard input
+- &#x2705; DirectSound audio layer
 - &#x2705; Performance profiling
 
 **Future plans:**
 
-- &#x1F504; Hot reloading 
+- &#x1F504; Update DirectSound to XAudio2
+- &#x1F504; Update XInput to GameInput
+- &#x1F504; Hot reloading
 - &#x23F3; GPU rendering
+- &#x23F3; Memory management system
 
 *Why another engine?* This gets asked a lot, and the answer is to gain a strong fundamental knowledge of the complex architectures in game engines.
 
 ## C Utility Library
 
-I spend a lot of time returning to fundamentals in other disciplines, so why not Computer Science as well? I'm working on <a href="https://github.com/cyn1x/libcspd" target="_blank" rel="noopener noreferrer">libcspd</a> to focus on learning and eventually teaching a plethora of data structures and algorithms. This project has been inspired by kata-machine by ThePrimeagen which serves as a basic introduction to algorithms.
+I spend a lot of time returning to fundamentals in other disciplines, so why not Computer Science as well? I'm working on <a href="https://github.com/cyn1x/libcspd" target="_blank" rel="noopener noreferrer">libcspd</a> to focus on learning and eventually teaching a plethora of data structures and algorithms. This project has been inspired by 'The Last Algorithms Course You'll Ever Need' by ThePrimeagen which serves as an introduction to data structures & algorithms.
 
 Current features:
 
