@@ -8,26 +8,24 @@ template: default.html
 
 Inspired by the <a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">"now page"</a>, this page will show what I'm focused on at this point in my life.
 
-*Last updated 2025-02-26*
+*Last updated 2025-03-08*
 
-## Game Engine Development in C
+## Game Engine Development in C++
 
-I'm working on my own game framework in C, and am currently tidying up the Win32 platform layer. I use the term *framework* here because I'm not interested in a fully fledged engine similar to Unity or Unreal with abstraction layers, but a simple framework which involves programming to leverage.
+I'm working on my own game framework in C++, and am currently prototyping the Win32 platform layer. I use the term *framework* here because I'm not interested in a fully fledged engine similar to Unity or Unreal with abstraction layers, but a simple framework which involves programming to leverage.
 
 Current features:
 
 - &#x2705; Software rendering
-- &#x2705; XInput for gamepad and keyboard input
-- &#x2705; DirectSound audio layer
 - &#x2705; Performance profiling
 
 **Future plans:**
 
-- &#x1F504; Update DirectSound to XAudio2
-- &#x1F504; Update XInput to GameInput
-- &#x1F504; Hot reloading
+- &#x1F504; XAudio2 audio layer
+- &#x23F3; GameInput for input handling
 - &#x23F3; GPU rendering
 - &#x23F3; Memory management system
+- &#x23F3; Hot reloading
 
 *Why another engine?* This gets asked a lot, and the answer is to gain a strong fundamental knowledge of the complex architectures in game engines.
 
@@ -86,6 +84,6 @@ Upcoming covers:
 - 11th Hour - Lamb of God
 - Bodom Beach Terror - Children of Bodom
 
-That's just a few I currently have in mind. If you'd like to see and hear me cover a particular song, please do let me know!
+That's just a few I currently have in mind. If you'd like me to cover a particular song, please do let me know!
 
 I have some old original demos on my <a href="https://soundcloud.com/crackimus" target="_blank" rel="noopener noreferrer">SoundCloud</a> page which were geared for vocals, but never eventuated. At the moment, I'm more focused more on learning from better guitarists, playing precision, and theory.
