@@ -8,26 +8,30 @@ template: default.html
 
 Inspired by the <a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">"now page"</a>, this page will show what I'm focused on at this point in my life.
 
-*Last updated 2025-03-08*
+*Last updated 2025-03-17*
 
 ## Game Engine Development in C++
 
-I'm working on my own game framework in C++, and am currently prototyping the Win32 platform layer. I use the term *framework* here because I'm not interested in a fully fledged engine similar to Unity or Unreal with abstraction layers, but a simple framework which involves programming to leverage.
+I'm working on my own game engine in C++, and am currently prototyping the Windows platform layer. I'm only focusing on Windows for the foreseeable future, which is a pretty obvious choice for game developers when taking a look at the <a href="https://store.steampowered.com/hwsurvey" target="_blank" rel="noopener noreferrer">Steam Hardware & Software Survey</a>. Developing the Linux and MacOS platform layers will only serve as a learning exercise when I feel like exploring the topic of porting games to other platforms.
 
 Current features:
 
 - &#x2705; Software rendering
-- &#x2705; Performance profiling
+- &#x2705; Event system
+- &#x2705; Keyboard and mouse input
 
 **Future plans:**
 
-- &#x1F504; XAudio2 audio layer
-- &#x23F3; GameInput for input handling
-- &#x23F3; GPU rendering
+- &#x1F504; <a href="https://learn.microsoft.com/en-us/windows/win32/direct3d11/atoc-dx-graphics-direct3d-11" target="_blank" rel="noopener noreferrer">DirectX 11</a> renderer
+- &#x23F3; <a href="https://learn.microsoft.com/en-us/windows/win32/xinput/xinput-game-controller-apis-portal" target="_blank" rel="noopener noreferrer">XInput</a> gamepad controls
+- &#x23F3; <a href="https://learn.microsoft.com/en-us/windows/win32/xaudio2/xaudio2-apis-portal" target="_blank" rel="noopener noreferrer">XAudio2</a> audio layer
 - &#x23F3; Memory management system
+- &#x23F3; Performance profiling
 - &#x23F3; Hot reloading
 
 *Why another engine?* This gets asked a lot, and the answer is to gain a strong fundamental knowledge of the complex architectures in game engines.
+
+Latest commit: <code id="iconoclast-latest-commit">Available soon...</code>
 
 ## C Utility Library
 
