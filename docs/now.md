@@ -8,7 +8,7 @@ template: default.html
 
 Inspired by the <a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">"now page"</a>, this page will show what I'm focused on at this point in my life.
 
-*Last updated 2025-03-17*
+*Last updated 2025-03-25*
 
 ## Game Engine Development in C++
 
@@ -35,7 +35,7 @@ Latest commit: <code id="iconoclast-latest-commit">Available soon...</code>
 
 ## C Utility Library
 
-I spend a lot of time returning to fundamentals in other disciplines, so why not Computer Science as well? I'm working on <a href="https://github.com/cyn1x/libcspd" target="_blank" rel="noopener noreferrer">libcspd</a> to focus on learning and eventually teaching a plethora of data structures and algorithms. This project has been inspired by 'The Last Algorithms Course You'll Ever Need' by ThePrimeagen which serves as an introduction to data structures & algorithms.
+I spend a lot of time returning to fundamentals in other disciplines, so why not Computer Science as well? I'm working on <a href="https://github.com/cyn1x/libcspd" target="_blank" rel="noopener noreferrer">libcspd</a> to focus on learning and eventually teaching fundamental computer science concepts while offering a lightweight, reusable codebase for quickly building applications in C.
 
 Current features:
 

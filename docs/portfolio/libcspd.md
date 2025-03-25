@@ -6,7 +6,7 @@ template: default.html
 
 # libcspd
 
-libcspd is a C utility library designed to provide a collection of data structures and algorithms for learning, performance testing, and practical usage. It serves as a resource for mastering fundamental computer science concepts while offering a lightweight, reusable codebase.
+libcspd is a C utility library designed to provide a collection of data structures and algorithms for learning, performance testing, and practical usage. It serves as a resource for mastering fundamental computer science concepts while offering a lightweight, reusable codebase for quickly building applications in C.
 
 ## My Role & Contributions
 
