@@ -8,7 +8,7 @@ template: default.html
 
 Inspired by the <a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">"now page"</a>, this page will show what I'm focused on at this point in my life.
 
-*Last updated 2025-03-17*
+*Last updated 2025-04-20*
 
 ## Game Engine Development in C++
 
@@ -25,6 +25,7 @@ Current features:
 - &#x1F504; <a href="https://learn.microsoft.com/en-us/windows/win32/direct3d11/atoc-dx-graphics-direct3d-11" target="_blank" rel="noopener noreferrer">DirectX 11</a> renderer
 - &#x23F3; <a href="https://learn.microsoft.com/en-us/windows/win32/xinput/xinput-game-controller-apis-portal" target="_blank" rel="noopener noreferrer">XInput</a> gamepad controls
 - &#x23F3; <a href="https://learn.microsoft.com/en-us/windows/win32/xaudio2/xaudio2-apis-portal" target="_blank" rel="noopener noreferrer">XAudio2</a> audio layer
+- &#x23F3; Mathematics library
 - &#x23F3; Memory management system
 - &#x23F3; Performance profiling
 - &#x23F3; Hot reloading

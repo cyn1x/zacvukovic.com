@@ -2,6 +2,7 @@ function initialize() {
     document.addEventListener(
         "nowPage",
         () => {
+            getStatus("https://api.github.com/repos/cyn1x/Iconoclast/commits/main", "iconoclast-latest-commit");
             getStatus("https://api.github.com/repos/cyn1x/libcspd/commits/main", "libcspd-latest-commit");
             getStatus("https://api.github.com/repos/cyn1x/rchess/commits/master", "rchess-latest-commit");
         },
