@@ -32,7 +32,7 @@ Current features:
 
 *Why another engine?* This gets asked a lot, and the answer is to gain a strong fundamental knowledge of the complex architectures in game engines.
 
-Latest commit: <code id="iconoclast-latest-commit">Available soon...</code>
+Latest commit: <code id="iconoclast-latest-commit">Loading...</code>
 
 ## C Utility Library
 
