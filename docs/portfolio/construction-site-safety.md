@@ -10,9 +10,9 @@ The Construction Site Safety Working at Heights virtual reality app was a joint 
 
 ## My Role & Contributions
 
-- <strong>Led Backend & Infrastructure Development:</strong> Recognising the need for better tooling in immersive application development, I spearheaded the implementation of a <strong>scalable CI/CD pipeline</strong>. This system automated the <strong>build, testing, and deployment</strong> of Unity projects directly to VR headsets, significantly improving efficiency for the team.
+- <strong>Led Backend & Infrastructure Development:</strong> Recognising the need for better tooling in immersive application development, I spearheaded the implementation of a scalable CI/CD pipeline. This system automated the build, testing, and deployment of Unity projects directly to VR headsets, significantly improving efficiency for the team.
 
-- <strong>Enterprise Cloud Integration:</strong> Leveraging my development skills and infrastructure experience, I expanded our <strong>user profile systems in Unity</strong>, integrating them into our <strong>enterprise cloud architecture</strong> to enhance scalability and accessibility.
+- <strong>Enterprise Cloud Integration:</strong> Leveraging my development skills and infrastructure experience, I expanded our user profile systems in Unity, integrating them into our enterprise cloud architecture to enhance scalability and accessibility.
 
 - <strong>Core Development Platform Enhancements:</strong> This project drove advancements in our internal development tools, and I took the initiative to scale these improvements beyond the project's completion, ensuring long-term benefits for the team.
 

@@ -6,7 +6,7 @@ template: default.html
 
 # Canine Anatomy
 
-<strong>Canine Anatomy</strong> was developed to revolutionise <strong>3D anatomy exploration</strong> by eliminating the long load times typically associated with switching between different anatomical layers. Unlike conventional solutions, our system achieved this in real time, providing a seamless and interactive learning experience.
+Canine Anatomy was developed to revolutionise 3D anatomy exploration by eliminating the long load times typically associated with switching between different anatomical layers. Unlike conventional solutions, our system achieved this in real time, providing a seamless and interactive learning experience.
 
 ## My Role & Contributions
 
