@@ -91,4 +91,4 @@ Upcoming covers:
 
 That's just a few I currently have in mind. If you'd like me to cover a particular song, please do let me know!
 
-I have some old original demos on my <a href="https://soundcloud.com/crackimus" target="_blank" rel="noopener noreferrer">SoundCloud</a> page which were geared for vocals, but never eventuated. At the moment, I'm more focused more on learning from better guitarists, playing precision, and theory.
+I have some old original demos on my <a href="https://soundcloud.com/crimsonpyre" target="_blank" rel="noopener noreferrer">SoundCloud</a> page which were geared for vocals, but never eventuated. At the moment, I'm more focused more on learning from better guitarists, playing precision, and theory.
