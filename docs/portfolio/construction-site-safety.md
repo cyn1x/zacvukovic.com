@@ -8,13 +8,24 @@ template: default.html
 
 The Construction Site Safety Working at Heights virtual reality app was a joint initiative by TAFE NSW and icare that highlighted the importance of working safely at heights.
 
+
 ## My Role & Contributions
+On this award-winning project, I led critical backend and infrastructure development, implementing scalable solutions and automation that significantly improved our development workflow.
 
-- <strong>Led Backend & Infrastructure Development:</strong> Recognising the need for better tooling in immersive application development, I spearheaded the implementation of a scalable CI/CD pipeline. This system automated the build, testing, and deployment of Unity projects directly to VR headsets, significantly improving efficiency for the team.
+- Led the implementation of a scalable CI/CD pipeline to automate the build, testing, and deployment of Unity projects directly to VR headsets.
 
-- <strong>Enterprise Cloud Integration:</strong> Leveraging my development skills and infrastructure experience, I expanded our user profile systems in Unity, integrating them into our enterprise cloud architecture to enhance scalability and accessibility.
+- Integrated user profile systems and save mechanics into our enterprise cloud architecture to enhance scalability, reliability, and accessibility of user data.
 
-- <strong>Core Development Platform Enhancements:</strong> This project drove advancements in our internal development tools, and I took the initiative to scale these improvements beyond the project's completion, ensuring long-term benefits for the team.
+- Took the initiative to scale advancements in our internal development tools beyond the project's completion, ensuring long-term benefits for the team's overall development process.
+
+### Technologies Used
+
+- Amazon Web Services (AWS): Amazon ECS, API Gateway Lambda, DynamoDB
+- Azure: API Management, Functions, Cosmos DB
+- Google Cloud Platform (GCP): Text-to-Speech
+- CI/CD: Jenkins, Bitbucket (Git)
+- Unity (C#, .NET)
+- Tools: Python, PowerShell, Bash, GroovyScript
 
 <strong>Construction Site Safety</strong> was a <a href="https://good-design.org/projects/tafe-nsw-icare-construction-site-safety-working-heights-program/" target="_blank" rel="noopener noreferrer">2022 Good Design Awards</a> winner.
 

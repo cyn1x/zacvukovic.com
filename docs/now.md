@@ -8,7 +8,7 @@ template: default.html
 
 Inspired by the <a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">"now page"</a>, this page will show what I'm focused on at this point in my life.
 
-*Last updated 2025-04-20*
+*Last updated 2025-05-23*
 
 ## Game Engine Development in C++
 
@@ -30,13 +30,13 @@ Current features:
 - &#x23F3; Performance profiling
 - &#x23F3; Hot reloading
 
-*Why another engine?* This gets asked a lot, and the answer is to gain a strong fundamental knowledge of the complex architectures in game engines.
+*Why another engine?* This gets asked a lot, and the answer is to gain a strong fundamental knowledge of the complex architectures in game and rendering engines.
 
 Latest commit: <code id="iconoclast-latest-commit">Loading...</code>
 
 ## C Utility Library
 
-I spend a lot of time returning to fundamentals in other disciplines, so why not Computer Science as well? I'm working on <a href="https://github.com/cyn1x/libcspd" target="_blank" rel="noopener noreferrer">libcspd</a> to focus on learning and eventually teaching fundamental computer science concepts while offering a lightweight, reusable codebase for quickly building applications in C.
+I spend a lot of time returning to fundamentals in other disciplines, so why not Computer Science as well? I'm working on <a href="https://github.com/cyn1x/libcspd" target="_blank" rel="noopener noreferrer">libcspd</a> to focus on learning and eventually teaching fundamental and advanced computer science concepts while offering a lightweight, reusable codebase for quickly building applications in C.
 
 Current features:
 
@@ -49,8 +49,10 @@ Current features:
 **Future Plans:**
 
 - &#x1F504; Binary Search Tree
-- &#x23F3; Hash map
+- &#x1F504; Hash map
+- &#x1F504; Heap
 - &#x23F3; B-tree
+- &#x23F3; R-tree
 - &#x23F3; AVL Tree
 
 I'm considering integrating a robust testing framework rather than relying on assert statements for more effective testing.
@@ -59,7 +61,7 @@ Latest commit: <code id="libcspd-latest-commit">Loading...</code>
 
 ## Chess Engine in Rust
 
-I'm building a chess engine with a Rust backend and TypeScript frontend as an exercise in AI and machine learning. The focus is on implementing search algorithms, evaluation functions, and eventually self-learning techniques to improve gameplay over time.
+I'm building a chess engine with a Rust backend and TypeScript frontend as an exercise in real-world AI/ML algorithm and optimisation techniques. The focus is on implementing search algorithms, evaluation functions, and eventually self-learning techniques to improve gameplay over time.
 
 The core engine was originally built in TypeScript several years ago, but as the complexity of the logic increased, I recognised the need to transition performance-critical components to Rust before introducing AI and machine learning algorithms.
 

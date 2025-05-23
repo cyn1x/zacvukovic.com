@@ -6,19 +6,19 @@ template: default.html
 
 # Canine Anatomy
 
-Canine Anatomy was developed to revolutionise 3D anatomy exploration by eliminating the long load times typically associated with switching between different anatomical layers. Unlike conventional solutions, our system achieved this in real time, providing a seamless and interactive learning experience.
+Canine Anatomy showcased how real-time 3D interactivity can transform anatomical education beyond what existing solutions offer. Existing solutions often lacked purpose-built interactivity and real-time manipulation of anatomical layers. This system achieved this in real-time.
 
 ## My Role & Contributions
+On the Canine Anatomy project, I rebuilt the application using Unity WebGL to deliver a revolutionary real-time 3D anatomy exploration experience, significantly improving usability and performance over existing third-party solutions.
 
-- <strong>Rebuilt the App in Unity WebGL</strong> to demonstrate how real-time rendering enhances usability over traditional off-the-shelf 3D explorers.
+- Rebuilt the application in Unity WebGL to enable web-based access and demonstrate the potential of real-time rendering to enhance the interactivity and usability of 3D anatomical models for online learning.
 
-- <strong>Optimised Performance</strong> to ensure smooth transitions between anatomical layers without delays.
+- Optimised performance to ensure seamless and instantaneous transitions between different anatomical layers, a critical improvement over the slow loading times of existing solutions.
 
-- <strong>Integrated Unity Addressables</strong> to demonstrate how a downloadable content system could be used for multiple 3D anatomical models.
+- Enhanced the user experience by creating an intuitive and interactive real-time anatomy exploration tool specifically designed for educational applications.
 
-- <strong>Enhanced User Experience</strong> by creating an interactive, real-time anatomy exploration tool better suited for educational applications.
-
-This project showcased how real-time 3D interactivity can transform anatomical education beyond what existing solutions offer.
+### Technologies Used
+Unity: (C#, .NET), WebGL
 
 <div class="iframe-container">
     <iframe class="responsive-iframe" src="https://www.youtube.com/embed/dggbzJRh8ac" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

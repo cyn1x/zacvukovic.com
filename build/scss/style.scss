@@ -67,7 +67,8 @@ body {
   background: var(--bkg-color);
 
   h1,
-  h2 {
+  h2,
+  h3 {
     @include montserrat-font-normal;
     color: var(--heading-color);
   }
@@ -303,7 +304,8 @@ main {
     margin-inline-end: 1.5rem;
     animation: transitionIn 0.75s;
 
-    h2 {
+    h2,
+    h3 {
       margin-block-start: 2rem;
       margin-block-end: 1rem;
     }
