@@ -8,11 +8,11 @@ template: default.html
 
 Inspired by the <a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">"now page"</a>, this page will show what I'm focused on at this point in my life.
 
-*Last updated 2025-05-23*
+*Last updated 2025-06-04*
 
 ## Game Engine Development in C++
 
-I'm working on my own game engine in C++, and am currently prototyping the Windows platform layer. I'm only focusing on Windows for the foreseeable future, which is a pretty obvious choice for game developers when taking a look at the <a href="https://store.steampowered.com/hwsurvey" target="_blank" rel="noopener noreferrer">Steam Hardware & Software Survey</a>. Developing the Linux and MacOS platform layers will only serve as a learning exercise when I feel like exploring the topic of porting games to other platforms.
+I'm working on my own game engine in C++, and am currently prototyping the Windows platform layer. I'm only focusing on Windows for the foreseeable future, which is a pretty obvious choice for game developers when taking a look at the <a href="https://store.steampowered.com/hwsurvey" target="_blank" rel="noopener noreferrer">Steam Hardware & Software Survey</a>. I may explore Linux and MacOS platform layers in the distant future as a learning exercise in porting games to other platforms, but that is not a current priority
 
 Current features:
 
@@ -22,10 +22,12 @@ Current features:
 
 **Future plans:**
 
+- &#x1F504; Multi-Graphics API abstraction layer
 - &#x1F504; <a href="https://learn.microsoft.com/en-us/windows/win32/direct3d11/atoc-dx-graphics-direct3d-11" target="_blank" rel="noopener noreferrer">DirectX 11</a> renderer
+- &#x1F504; OpenGL renderer
 - &#x23F3; <a href="https://learn.microsoft.com/en-us/windows/win32/xinput/xinput-game-controller-apis-portal" target="_blank" rel="noopener noreferrer">XInput</a> gamepad controls
 - &#x23F3; <a href="https://learn.microsoft.com/en-us/windows/win32/xaudio2/xaudio2-apis-portal" target="_blank" rel="noopener noreferrer">XAudio2</a> audio layer
-- &#x23F3; Mathematics library
+- &#x23F3; SIMD Mathematics library
 - &#x23F3; Memory management system
 - &#x23F3; Performance profiling
 - &#x23F3; Hot reloading
@@ -61,7 +63,7 @@ Latest commit: <code id="libcspd-latest-commit">Loading...</code>
 
 ## Chess Engine in Rust
 
-I'm building a chess engine with a Rust backend and TypeScript frontend as an exercise in real-world AI/ML algorithm and optimisation techniques. The focus is on implementing search algorithms, evaluation functions, and eventually self-learning techniques to improve gameplay over time.
+I'm building a <a href="https://www.chessprogramming.org/Bitboards" target="_blank" rel="noopener noreferrer">bitboard</a> chess engine with a Rust backend and TypeScript frontend as an exercise in applied AI/ML algorithms and computer optimisation techniques. The focus is on implementing search algorithms, evaluation functions, and eventually self-learning techniques to improve gameplay over time.
 
 The core engine was originally built in TypeScript several years ago, but as the complexity of the logic increased, I recognised the need to transition performance-critical components to Rust before introducing AI and machine learning algorithms.
 
