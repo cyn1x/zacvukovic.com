@@ -52,10 +52,6 @@ body.light-mode {
   --secondary-btn-hover-color: #595959;
 }
 
-h1.test {
-  color: var(--color-scheme);
-}
-
 html,
 body {
   width: 100%;
@@ -255,6 +251,7 @@ header {
         h1 {
           color: var(--primary-text-color);
           transition: all 0.3s ease 0s;
+          font-size: 1.5rem;
         }
 
         h1:hover {
