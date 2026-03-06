@@ -33,24 +33,12 @@ const routes = {
     ]
 };
 
-// Handle all links with the data-link attribute
-async function route(event) {
-    event = event || window.event;
-    if (event.currentTarget.matches(".data-link")) {
-        event.preventDefault();
-        const href = event.currentTarget.href ? event.currentTarget.href : event.currentTarget.value;
-        window.history.pushState({}, "", href);
-        await handleLocation();
-    }
-}
-
 async function handleLocation() {
     const path = window.location.pathname;
 
     // Check if the requested path matches a static route
     const staticRoute = findStaticRouteByPath(path);
     if (staticRoute) {
-        console.log(staticRoute.url);
         await render(staticRoute.url);
         dispatchEvent(path);
 
@@ -67,11 +55,14 @@ async function handleLocation() {
     const url = (typeof process !== 'undefined') ? uri : `/search${uri}`;
     await fetch(url).then((res) => {
 
-        console.log(res);
-
         if (res.status === 200) {
-            render(uri);
-            dispatchEvent(path);
+            render(uri).then(() => {
+                const hash = window.location.hash;
+                if (hash) {
+                    scrollToHash(hash.slice(1));
+                }
+                dispatchEvent(path);
+            });
 
             return;
         }
@@ -82,7 +73,6 @@ async function handleLocation() {
 
 }
 
-
 async function render(route) {
     const main = document.getElementsByTagName("main");
     main[0].innerHTML = "<svg viewBox=\"0 0 100 100\" class=\"loading\"><circle></circle></svg>";
@@ -92,7 +82,35 @@ async function render(route) {
     dispatchEvent('/render');
 }
 
-window.onpopstate = handleLocation;
-window.route = route;
+function scrollToHash(hash) {
+    if (!hash) return;
+
+    const el = document.getElementsByName(hash)[0];
+    el?.scrollIntoView({ behavior: "smooth" });
+}
+
+window.addEventListener("popstate", async (event) => {
+
+    if (location.hash) {
+        const hash = location.hash.slice(1);
+        scrollToHash(hash);
+        return;
+    }
+
+    await handleLocation();
+});
+
+window.addEventListener("click", async (event) => {
+    const link = event.target.closest("a.data-link");
+    if (!link) return;
+
+    // Handle all links with the `data-link` class name
+
+    event.preventDefault();
+
+    const url = new URL(link.href);
+    window.history.pushState({}, "", url);
+    await handleLocation();
+});
 
 handleLocation();
