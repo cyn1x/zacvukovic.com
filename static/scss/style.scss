@@ -65,7 +65,7 @@ body {
   h1,
   h2,
   h3 {
-    @include montserrat-font-normal;
+    @include font($font-montserrat);
     color: var(--heading-color);
   }
 
@@ -82,20 +82,21 @@ body {
   }
 
   .button {
-    @include montserrat-font-normal;
-    color: var(--primary-btn-text-color);
+    @include font($font-montserrat);
+    display: flex;
+    margin: auto;
+    width: fit-content;
+    align-items: center;
 
-    font-size: 1rem;
-    text-decoration: none;
-
-    background-color: var(--primary-btn-color);
     border: none;
     padding: 14px 32px;
     border-radius: 0.75rem;
 
-    display: flex;
-    margin: auto;
-    align-items: center;
+    font-size: 1rem;
+    text-decoration: none;
+    background-color: var(--primary-btn-color);
+    color: var(--primary-btn-text-color);
+
     transition-duration: 0.4s;
 
     cursor: pointer;
@@ -131,9 +132,8 @@ body {
 }
 
 header {
-  @include space-around-and-center;
+  @include flex(space-between, center);
   position: sticky;
-  display: flex;
   top: 0px;
   z-index: 2;
   margin-block-start: 0.25rem;
@@ -157,13 +157,14 @@ header {
   }
 
   #logo {
-    font-family: "bebas-neue-by-dhamra-type", sans-serif;
+    @include font($font-bebas);
     font-weight: normal;
     font-style: normal;
     font-size: 2em;
   }
 
   nav {
+    text-align: center;
 
     .icons {
       margin-right: 1rem;
@@ -238,7 +239,7 @@ header {
       }
 
       li {
-        @include montserrat-font-normal;
+        @include font($font-montserrat);
         display: inline-block;
         list-style: none;
         opacity: 0;
@@ -307,45 +308,12 @@ main {
       margin-block-end: 1rem;
     }
 
-    // Special case for h2 elements on the about page 
-    .about-heading {
-      display: inline-block;
-      padding-right: 25px;
-      padding-bottom: 0.1rem;
-      margin: 0;
-    }
-
-    .underlined-headers {
-      margin-bottom: 0.5rem;
-    }
-
     ul {
       @include p-font-style;
       display: block;
       list-style-type: disc;
       margin-bottom: 1em;
       padding-inline-start: 40px;
-    }
-
-    // Heading underline text decoration
-    hr {
-      width: 5.25rem;
-    }
-
-    .uncollapsible-content {
-      @include space-around-and-center;
-      display: flex;
-      align-items: center;
-      margin-bottom: 1rem;
-      pointer-events: none;
-
-      h2 {
-        margin: 0;
-      }
-    }
-
-    .portfolio-container {
-      margin-bottom: 2rem;
     }
 
     .iframe-container {
@@ -365,6 +333,61 @@ main {
       right: 0;
       width: 100%;
       height: 100%;
+    }
+  }
+
+  article {
+
+    h1,
+    h2,
+    h3 {
+      @include font($font-faustina);
+      text-align: left;
+    }
+
+    .post-meta {
+      @include font($font-montserrat);
+      font-size: 1em;
+      color: var(--secondary-text-color);
+      margin-bottom: 1.5em;
+
+      .post-date {
+        font-size: 0.75em;
+      }
+    }
+  }
+
+  section {
+
+    // Heading underline text decoration
+    hr {
+      width: 5.25rem;
+    }
+
+    .underlined-headers {
+      margin-bottom: 0.5rem;
+    }
+
+    .uncollapsible-content {
+      @include flex(space-between, center);
+      margin-bottom: 1rem;
+      pointer-events: none;
+
+      h2 {
+        margin: 0;
+      }
+    }
+
+    // Special case for h2 elements in the about page 
+    .about-heading {
+      display: inline-block;
+      padding-right: 25px;
+      padding-bottom: 0.1rem;
+      margin: 0;
+    }
+
+    .portfolio-container {
+      margin-bottom: 2rem;
     }
 
     .sub-section {
@@ -396,7 +419,6 @@ main {
   }
 
   .social-handles {
-    @include montserrat-font-normal;
     @include p-font-style;
     margin-left: 0.6rem;
     color: var(--svg-color);
@@ -409,8 +431,8 @@ main {
 
     #intro-text {
       h1 {
+        @include font($font-m-plus);
         margin: 0;
-        font-family: "m-plus-rounded-1c-bold";
         text-align: left;
         font-size: 1.5rem;
       }
@@ -458,7 +480,7 @@ main {
 
   // Contact form
   form {
-    @include montserrat-font-normal;
+    @include font($font-montserrat);
     text-align: start;
   }
 
@@ -477,7 +499,7 @@ main {
   input[type="email"],
   select,
   textarea {
-    @include montserrat-font-normal;
+    @include font($font-montserrat);
     width: 100%;
     padding: 1rem;
     border: 1px solid var(--border-color);
@@ -489,7 +511,7 @@ main {
   }
 
   input[type="submit"] {
-    @include montserrat-font-normal;
+    @include font($font-montserrat);
     display: block;
     margin: 0 auto;
     padding: 1rem 5rem;
@@ -519,11 +541,10 @@ main {
 }
 
 footer {
-  @include space-around-and-center;
-  @include montserrat-font-normal;
+  @include flex(center, space-between, center);
+  @include font($font-montserrat);
   margin: 2.5vh 0vw 2.5vh 0vw;
   font-size: 0.75em;
-  justify-content: center;
   color: var(--secondary-text-color);
   vertical-align: top;
 
@@ -540,8 +561,7 @@ footer {
 @media screen and (min-width: 760px) {
 
   header {
-    @include flex-and-center;
-    display: flex;
+    @include flex(center, center);
     flex-direction: row;
     margin: 0;
     margin-top: 0.25rem;
@@ -551,8 +571,7 @@ footer {
     }
 
     nav {
-      @include space-around-and-center;
-      display: flex;
+      @include flex(space-between, center);
       padding: 0;
       width: 660px;
 

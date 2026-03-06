@@ -1,0 +1,42 @@
+@font-face {
+  font-family: "M PLUS Rounded 1c";
+  font-style: normal;
+  font-weight: 700;
+  src:
+    // url("/fonts/MPLUSRounded1c/MPLUSRounded1c-Bold.woff2") format("woff2"),
+    // url("/fonts/MPLUSRounded1c/MPLUSRounded1c-Bold.woff") format("woff"),
+    url("/fonts/MPLUSRounded1c/MPLUSRounded1c-Bold.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url("/fonts/BebasNeue/BebasNeue-Regular.woff2") format("woff2"),
+    url("/fonts/BebasNeue/BebasNeue-Regular.woff") format("woff"),
+    url("/fonts/BebasNeue/BebasNeue-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url("/fonts/Montserrat/Montserrat-Regular.woff2") format("woff2"),
+    url("/fonts/Montserrat/Montserrat-Regular.woff") format("woff"),
+    url("/fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Faustina";
+  font-weight: 600;
+  src:
+    url("/fonts/Faustina/Faustina-SemiBold.woff2") format("woff2"),
+    url("/fonts/Faustina/Faustina-SemiBold.woff") format("woff"),
+    url("/fonts/Faustina/Faustina-SemiBold.ttf") format("truetype");
+  font-display: swap;
+}
