@@ -29,7 +29,7 @@ const routes = {
     ],
     dynamicRoutes: [
         { path: '/portfolio/:id', url: '/html/portfolio/:id.html' },
-        { path: '/blog/:year/:id', url: '/html/blog/:year/:id.html' },
+        { path: '/blog/:id/:slug', url: '/html/blog/:id/:slug.html' },
     ]
 };
 
