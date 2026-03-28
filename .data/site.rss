@@ -5,6 +5,13 @@
     <link>https://zacvukovic.com</link>
     <description>Technical writings and musings</description>
     <language>en-au</language>
-    <lastBuildDate>Sun, 23 Jul 2023 21:30:32 +1000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Mar 2026 23:22:56 +1100</lastBuildDate>
+    <item>
+      <title>The Day a SoundCloud Rapper Ruined my Tidal Experience</title>
+      <link>https://zacvukovic.com/blog/001/the-day-a-soundcloud-rapper-ruined-my-tidal-experience.html</link>
+      <description>A technical analysis of streaming service metadata structure.</description>
+      <pubDate>Sat, 28 Mar 2026 23:22:56 +1100</pubDate>
+      <guid>https://zacvukovic.com/blog/001/the-day-a-soundcloud-rapper-ruined-my-tidal-experience.html</guid>
+    </item>
   </channel>
 </rss>

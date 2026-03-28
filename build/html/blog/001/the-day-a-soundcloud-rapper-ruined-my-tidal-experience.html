@@ -1,0 +1,361 @@
+<article id="post">
+  <h1 class="post-heading">The Day a SoundCloud Rapper Ruined my Tidal Experience</h1>
+  <div class="post-meta">
+    <span class="post-description">
+      A technical analysis of streaming service metadata structure.
+    </span>
+    <br />
+    <span class="post-date">
+      <strong>March 28, 2026, 11:27 PM AEDT (UTC+11:00)</strong>
+    </span>
+  </div>
+  <!-- Abbreviations -->
+<!-- Abbreviations -->
+
+<div class="callout--info">
+    <p><strong>TL;DR</strong></p>
+    <p>
+        A real-world example showing how fundamental database design constraints can negatively impact product user experience.
+    </p>
+    <p><strong>Key Points</strong></p>
+    <ul>
+        <li>
+            Multiple artist profiles share the same unique identifier, uncovered via API reverse engineering.
+        </li>
+        <li>
+            Fixing the issue is straightforward in concept, but complex in implementation at scale.
+        </li>
+        <li>
+            Propose a three-tier resolution framework: identity, remediation, and governance.
+        </li>
+        <li>
+            Data complexity and scale challenges accelerate even faster in the post-AI landscape.
+        </li>
+    </ul>
+</div>
+
+<p><a href="#Problem">Skip to content</a></p>
+<p>I was at the gym listening to metal when suddenly, an autotuned SoundCloud rapper started screaming in my ear about the usual clichés. My immediate reaction was, "what the f*** is this s***?"</p>
+<p>I freaked out thinking I somehow accidentally polluted my playlist, or I had been navigated to some algorithmic "popular music" feed after an album ended. Unexpectedly, it turned out to be a subtle, but very concerning flaw under the surface involving artist metadata, that fundamentally affected my onboarding experience as a new user to the platform.</p>
+<p>Naturally, I went down a rabbit hole trying to figure out what happened, and more importantly, <em>why</em>. When I noticed what was actually going on, I was confused as to why a well-known music streaming service that prides itself on quality by offering higher bitrates, better royalties, and a better listening experience, could ship a metadata bug capable of merging unrelated artists into a single identity.</p>
+<h2>Introduction</h2>
+<p>I first moved over to Tidal after an album from an artist I listen to was removed from Spotify, with no official explanation. On top of that, some of the remaining albums even lost their cover art. There seem to be two main theories on why this happened: record label disputes, or politically motivated censorship efforts, the latter being mostly amplified in some online communities.</p>
+<figure class="figure--narrow">
+    <picture>
+        <source type="image/webp" media="(width < 800px)" 
+            srcset="/img/content/blog/001/PXL_20250802_032246801 (512).webp">
+        <source type="image/webp" media="(width >= 800px)"
+            srcset="/img/content/blog/001/PXL_20250802_032246801.webp">
+        <source type="image/jpeg" media="(width < 800px)"
+            srcset="/img/content/blog/001/PXL_20250802_032246801 (512).jpg">
+        <source type="image/jpeg" media="(width >= 800px)"
+            srcset="/img/content/blog/001/PXL_20250802_032246801.jpg">
+        <img src="/img/content/blog/001/PXL_20250802_032246801.jpg" alt="Snowfall in Armidale on 2nd August, 2025.">
+    </picture>
+    <figcaption>Snowfall of this magnitude calls for some black metal. It's definitely seasonal per se, akin to how punk rock cleanses the air of boring, tired old political slogans when it's time to line up at a polling booth to get my name ticked off.</figcaption>
+</figure>
+
+<p>Physical media certainly is a viable option to opt out of having your listening habits dictated by big tech. I have somewhere between 150 to 200 CDs that I've ripped to local storage for self-hosted streaming. That said, paid streaming services have completely changed the way I discover new music.</p>
+<p>I can't stand podcasts, and only really listen to the odd episode with intent. Most of my passive audio listening time is dominated by music; either the albums I've spun countless times, or whatever the curated feeds conjure algorithmically. This method has become increasingly valuable since leaving my hometown over a decade ago, and not having the option of hanging out in record stores and ask for recommendations. Without curation feeds, I would have likely never discovered my guilty pleasure of power metal beyond the legendary band, Blind Guardian.</p>
+<p>Anyway, I saw Tidal had more expensive subscription tiers than Spotify, thanks to offering higher quality bitrates above 320 kbps and more royalties paid to artists. So I thought, <em>why not</em>?</p>
+<h2>Premise</h2>
+<p>That listening incident at the gym almost ruined my training session. It led me to log my first support request with Tidal back in March 2023. Credit where it's due, the Tidal Support Team were very communicative throughout the entire mediation process with the Content Team, consistently responding quickly to complaints about questionable feature rollouts. </p>
+<p>One example was the "Live Sessions" feature which introduced a social aspect to the app, promoting what other users are listening to. That pissed me off, because it opens the door to some "influenzer" wanting to push official Top 40 playlists and grift unsuspecting listeners with "content" they don't need. There's already enough noise on the internet as it is. I don't want a "social" feature in my music streaming application any more than I need Wi-Fi functionality for my household appliances. These days, that argument even extends to embedding AI agents in them. Thankfully, Tidal added an option to disable that "social" feature for people who aren't chronically online.</p>
+<figure class="figure--narrow">
+    <picture>
+        <source type="image/webp" media="(width < 800px)" 
+            srcset="/img/content/blog/001/2026-03-15 18_02_18- (Small).webp">
+        <source type="image/webp" media="(width >= 800px)"
+            srcset="/img/content/blog/001/2026-03-15 18_02_18- .webp">
+        <source type="image/png" media="(width < 800px)"
+            srcset="/img/content/blog/001/2026-03-15 18_02_18- (Small).png">
+        <source type="image/png" media="(width >= 800px)"
+            srcset="/img/content/blog/001/2026-03-15 18_02_18-.png">
+        <img src="/img/content/blog/001/2026-03-15 18_02_18-.png" alt="Screenshot of an email showing Tidal had a fix for 'Live Sessions' within 7 days of complain">
+    </picture>
+    <figcaption>The 'We heard you' is really telling of how many users roasted them about this feature!</figcaption>
+</figure>
+
+<h2 name="Problem">Problem Statement</h2>
+<p>I wanted to check out a new Slayer album and noticed an unusual presence of EPs that clearly didn't belong to Slayer. This motivated me to look at various artists, and it appeared to me that this issue was very widespread across the entire streaming platform. </p>
+<blockquote class="blockquote--quote">
+    <p class="blockquote__text blockquote__text--quoted">
+        I dont trust anyone that doesn't like Slayer.
+    </p>
+    <p class="blockquote__text blockquote__text--credit">
+        Mike Patton
+    </p>
+</blockquote>
+
+<p>I also checked the previous artists that I had logged support requests about, and noticed that the bug had returned. The Tidal Content Team seems to be playing whack-a-mole, and doing their best efforts to manually resolve the issue per artist. However, it looks like backend routines behind the scenes just make the bug reappear.</p>
+<figure>
+    <picture>
+        <source type="image/webp" media="(width < 800px)" 
+            srcset="/img/content/blog/001/Screenshot 2025-12-18 205008 (Small).webp">
+        <source type="image/webp" media="(width >= 800px)"
+            srcset="/img/content/blog/001/Screenshot 2025-12-18 205008.webp">
+        <source type="image/jpeg" media="(width < 800px)"
+            srcset="/img/content/blog/001/Screenshot 2025-12-18 205008 (Small).png">
+        <source type="image/jpeg" media="(width >= 800px)"
+            srcset="/img/content/blog/001/Screenshot 2025-12-18 205008.jpg">
+        <img src="/img/content/blog/001/Screenshot 2025-12-18 205008.jpg" alt="Artist profile page for the Thrash Metal band, Slayer.">
+    </picture>
+    <figcaption>Clearly, there most recent album and two most recent EPs don't belong to Slayer.</figcaption>
+</figure>
+
+<p>Given stellar support from Tidal in the past, I assumed there were some architectural challenges behind the lingering bug. I looked at other artists to test whether this was a one-off with Slayer, starting with Marduk. I looked at the data being received from the Tidal servers, and confirmed that multiple distinct artists sharing the same name are being returned under the same artist <code>id</code> key. The images below show two individual albums that belong to two different artists who share the name "Marduk", and also share the same <code>id</code> key.</p>
+<div class="callout--success">
+    <p><strong>The Basics</strong></p>
+    <p class="blockquote__text">
+        In database systems, ensuring uniqueness among entries involves setting a unique identifier (ID), mostly commonly denoted <code class="code--inline">id</code>, against each record. If a user tries to query the database to create a new record with an ID that already exists in the database, then the query will fail. Imagine if two people with the same name shared the same ID in a hospital's database, and how this opens up the possibility for clinical errors.
+    </p>
+</div>
+
+<p>I saved the JSON response from when I first looked into this in June 2025. So, let's have a look and see what this would look like under the hood. I searched for an artist using the search bar and investigated the JSON response data that was sent back to my browser after clicking "Marduk" from the results.</p>
+<div class="callout--info">
+    <p><strong>Datasets</strong></p>
+    <p>
+        The response received contains 4,096 lines of JSON, and has the following structure:
+    </p>
+    <ol>
+        <li>
+            The <code class="code--inline">header</code> (209 lines): request metadata and the artist biography that is shown in the app via <strong>More → Bio</strong>.
+        </li>
+        <li>
+            The <code class="code--inline">item</code> (48 lines): core artist information. Notably, there is only <strong>one</strong> artist here, which already hints at merged identities.
+        </li>
+        <li>
+            <code class="code--inline">items</code> (3,839 lines): the bulk of the data, including albums and tracks associated with this single shared `id` key.
+        </li>
+    </ol>
+    <span class="callout__text">I've made the dataset available for download below.</span>
+    <a class="icons download--inline" href="/json/blog/001/res_20250628_231412.json" target="_blank" rel="noopener noreferrer"><span class="download__text">API response</span> <img src="/img/svg/download-solid-full.svg" alt=""></a>
+    <span class="callout__text">Retrieved 25th of June, 2025.</span>
+</div>
+
+<p>To make the problem concrete, I compared a real Marduk album listed on Wikipedia (Panzer Division Marduk)<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> and an unrelated release (<em>Chronos</em>) that does not belong to the band. Using the JSON response above, I pulled two albums out for comparison; one that is listed in the discography, and one that is not.</p>
+<div class="split-layout">
+
+
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ALBUM&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">56246454</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Frontschwein&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;artists&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">24059</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Marduk&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+
+
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ALBUM&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">432771978</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Chronos&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;artists&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">24059</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Marduk&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+
+</div>
+
+<p>The data confirms that both listings are linked to the same <code>id</code> in the backend. This raises a deeper concern than just poor UX: what prevents a bad actor from registering under a famous artist name and uploading audio to capture their streams? My best guess is that Tidal's backend automatically creates a new artist record based only on a name match. The term for this in computer programming is called a logic error<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. In other words, the system is doing exactly what it was programmed to do, just in the wrong way.</p>
+<p>The diagram below illustrates how the data in the JSON request is related, visually reinforcing the flaw we confirmed earlier. There are many more keys in each table, though I've stripped it down for illustration purposes.</p>
+<figure class="figure--narrow">
+    <picture>
+        <source type="image/webp" 
+            srcset="/img/content/blog/001/EntityRelationshipDiagram.drawio.webp">
+        <source type="image/jpeg"
+            srcset="/img/content/blog/001/EntityRelationshipDiagram.drawio.jpg">
+        <img src="/img/content/blog/001/EntityRelationshipDiagram.drawio.png" alt="Visualisation of the database using a diagram created with draw.io.">
+    </picture>
+    <figcaption>Entity-relationship model deduced from JSON data.</figcaption>
+</figure>
+
+<p>So far, we've only touched on surface-level UX problems with merged artist profiles. There's another issue under the surface which isn't immediately apparent, and that's algorithmic recommendations. Streaming services tailor your feeds based on your activity. For Tidal in particular, I haven't had the best experience with My New Arrivals and My Daily Discovery playlists due to merged artist profiles. When I first started using the platform, it was very off-putting having completely irrelevant genres of music appear out of nowhere.</p>
+<div class="callout--info">
+    <p><strong>Side Note</strong></p>
+    <p>
+        I completely forgot about this after my initial sleuthing, only to be reminded of it later that year in December 2025. I thought, <i>'surely it's fixed by now?'</i>, and no, no it wasn't.
+        I took another look at the API response which shows some changes in how the data is structured - just not the changes I wanted.
+    </p>
+    <p>
+        Looking at this dataset, we can see that a new key named <code class="code--inline">biography</code> in the <code class="code--inline">header</code> details Marduk's biography. Objectively, this looks like a better spot for it rather than the array of `items` that contains albums and tracks.
+    </p>
+    <span class="callout__text">I've also made the dataset available for download below.</span>
+    <a class="icons download--inline" href="/json/blog/001/res_20260118_105151.json" target="_blank" rel="noopener noreferrer"><span class="download__text">API response</span> <img src="/img/svg/download-solid-full.svg" alt=""></a>
+    <span class="callout__text">Retrieved 18th of January, 2026.</span>
+</div>
+
+<p>I obviously am operating in my own capacity, and don't have any information about Tidal's streaming architecture. That said, based on the API responses, The system appears to treat artist name as the primary identity key (or a strong match key) in some ingestion or merge pipeline, whether its a different artist with the same name.<br />
+Now that the problem has been identified and detailed, the question remains. <em>How would you fix it?</em></p>
+<h2 name="Solution">The Solution</h2>
+<p>The root cause is simple. It is that Tidal treats canonical artist names as identity. The resolution is equally simple. Stop doing that. The implementation? That is a massive engineering undertaking at scale. Every artist must have a unique, immutable identifier. New artist entities should never be created or matched purely on display name, because names are not unique and are not stable over time. However, that only prevents the problem from getting worse. It doesn't address the existing damage where artist profiles that have already been merged, sometimes repeatedly, by backend routines that appear to revert the data back into an incorrect state. The question now becomes, <em>how would the currently merged artist profiles be split into separate artists?</em></p>
+<p>A small but important clue suggests that Tidal has already started moving in the right direction. Rather than logging another support request to test the theory, we can take anecdotal evidence from a forum post<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> where a user raises the issue of an artist profile by the name "Eagles”, has been merged with another profile of the same name. The first request I logged back in March 2023 for an artist reverted back to an incorrect state, whereas now, searching for "Eagles” produces multiple separate artist results with the same name but different artist IDs. </p>
+<figure>
+    <picture>
+        <source type="image/webp" media="(width < 800px)" 
+            srcset="/img/content/blog/001/2026-01-23 22_02_00-TIDAL (Small).webp">
+        <source type="image/webp" media="(width >= 800px)"
+            srcset="/img/content/blog/001/2026-01-23 22_02_00-TIDAL.webp">
+        <source type="image/jpeg" media="(width < 800px)"
+            srcset="/img/content/blog/001/2026-01-23 22_02_00-TIDAL (Small).jpg">
+        <source type="image/jpeg" media="(width >= 800px)"
+            srcset="/img/content/blog/001/2026-01-23 22_02_00-TIDAL.jpg">
+        <img src="/img/content/blog/001/2026-01-23 22_02_00-TIDAL.jpg" alt="Tidal search results showing separated artist profiles with the same name, &quot;Eagles&quot;">
+    </picture>
+    <figcaption>Tidal search result showing two separate profiles for the artist name "Eagles".</figcaption>
+</figure>
+
+<p>That tells us the most fundamental change is already possible - name collisions can be represented as separate entities. The remaining challenge is migrating legacy merged profiles into this model. Given I've never seen a database of this scale, here's how I would go about it anyway. To keep thoughts organised, I'm going to use the Three-Layered Architecture<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup> model as an analogy to separate concerns.</p>
+<ol>
+<li>Identity Layer</li>
+<li>Remediation Layer</li>
+<li>Governance Layer</li>
+</ol>
+<h3>Identity Layer: Who owns What?</h3>
+<p>Establishing the identity layer is the most fundamental step. Let's think of it this way:</p>
+<ol>
+<li>Identity (who the artist <em>is</em>)</li>
+<li>Metadata (what the artist <em>has produced</em>)</li>
+<li>Attribution (who claims ownership of <em>what</em>)</li>
+</ol>
+<p>If identity is the entity (the artist), and metadata is the content (the releases), then attribution is the relationship between them.</p>
+<p>Now, before I mention anything about <em>standards</em>, I'll drop one of my favourite xkcd comics<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup> down below.</p>
+<figure>
+    <picture>
+        <source type="image/webp"
+            srcset="/img/content/blog/001/standards_2x.webp">
+        <source type="image/png"
+            srcset="/img/content/blog/001/standards_2x.png">
+        <img src="/img/content/blog/001/standards_2x.png" alt="xkcd comic 927: &quot;Standards&quot;">
+    </picture>
+    <figcaption>Humorous depiction by xkcd of what generally happens after an attempt to create <i>the one <s>ring</s> ISO Unicorn to rule them all.</i></figcaption>
+</figure>
+
+<p>When faring forth as a proprietor into a new domain, I believe it's a good idea to take a look around and understand what problems already exist, and what problems have already been solved. I did just that, and learned about <abbr title="Digital Data Exchange">DDEX</abbr><sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>. Now, I'm not saying "use standards", but we're allowed to see how existing problems have been solved and think, <em>that's actually a good idea</em>.</p>
+<p>What I understand about <abbr title="Digital Data Exchange">DDEX</abbr>, is that it doesn't want to be yet another competing standard, but guidelines on how to best leverage the chaos that already exists; be it tried and trusted methods of managing digital metadata, or why certain standards can help define authoritative external identifiers. <abbr title="Digital Data Exchange">DDEX</abbr> states that the only reliable data point to uniquely identify and disambiguate artists and other parties is to use an identifier such as <abbr title="International Standard Name Identifier">ISNI</abbr><sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup> <sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup>.</p>
+<p>This works in theory, but no one is incentivised to use an <abbr title="International Standard Name Identifier">ISNI</abbr>, and no one is punished for not using one either. This is why its best to use a separate internal identifier for each artist in a database to differentiate them within the platform. The external identifiers are useful for other things, which will be detailed in the <strong>Remediation Layer</strong> section that follows. </p>
+<p>Instead of waiting for the perfect standard to be invented, we can look at what guidelines exists and use our best judgement to implement or discard them. A more realistic approach could be to <em>support</em> <abbr title="Digital Data Exchange">DDEX</abbr>, rather than fully <em>adopt</em> it. For example, many record labels may have a specific message and file format for transmitting metadata to streaming platforms<sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup>, so it might make sense to <em>support</em> these.</p>
+<p>This is just an example how one can go about defining their identity (and governance) layer. Given that the <abbr title="Digital Data Exchange">DDEX</abbr> list of registered members contains most, if not all major music streaming services, it would be very well worth looking into for existing platforms who want to define their own provenance rules.</p>
+<h3>Remediation Layer: Fixing the Damage</h3>
+<p>The infrastructure we're working with should have isolated application environments<sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup> at a bare minimum. There's plenty of documentation around on this well known practice, so I won't go into that topic any further. We'll assume this is the case, so we can create a sandbox environment to iterate on theoretical ideas, translating them to concrete solutions. The sandbox environment should be reset each day to the current state of what the production database is presenting to the outside world, e.g. </p>
+<ul>
+<li>The Tidal desktop app. </li>
+<li>The Tidal mobile app. </li>
+</ul>
+<p>Avoiding a migration strategy that leaves the remnants of the migration behind will introduce unnecessary legacy complexity. An example of such remnants would be a mapping layer for merged artist profiles so that users don't lose references to their favourite artist in playlists. I don't believe this is necessary, since this side effect seems less invasive than a merged artist profile. A simple approach for splitting merged artist profiles would be to have the most popular artist keep the existing identifier, and move the other duplicate artist(s) over to a new identifier.</p>
+<p>The various standards that were mentioned in the <strong>Identity Layer</strong> section earlier are likely to be more useful to help distinguish artists contained in merged artist profiles as opposed to their canonical names. We can achieve this by developing an algorithm for calculating <em>confidence scores</em> for determining <em>attribution signal strength</em> to determine who belongs to what in a merged artist profile.</p>
+<p><strong>High signal</strong> <br />
+We can leverage existing standards to distinguish artists. Some of these standards are as follows. </p>
+<ul>
+<li><abbr title="International Standard Name Identifier">ISNI</abbr><sup id="fnref2:7"><a class="footnote-ref" href="#fn:7">7</a></sup>: Identifier to uniquely identify public identities (mentioned in the <strong>Identity Layer</strong> section)</li>
+<li><abbr title="International Standard Recording Code">ISRC</abbr><sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup>: Identifier to uniquely identify recordings. This may be a good substitute if an <abbr title="International Standard Name Identifier">ISNI</abbr> is not present.</li>
+</ul>
+<p><strong>Medium signal</strong> <br />
+Failing <em>high signal</em> unique identifiers, we can look for other information which would provide some confidence with a margin of error. It would be best to triage these for manual review if the confidence isn't high enough. </p>
+<ul>
+<li><abbr title="International Standard Musical Work Code">ISWC</abbr><sup id="fnref:12"><a class="footnote-ref" href="#fn:12">12</a></sup>: Unique identifier for musical works. I've placed this in the <em>medium signal</em> category due to the risk of duplications<sup id="fnref:13"><a class="footnote-ref" href="#fn:13">13</a></sup>.</li>
+<li><abbr title="Interested Parties Information">IPN</abbr><sup id="fnref2:13"><a class="footnote-ref" href="#fn:13">13</a></sup> <sup id="fnref:14"><a class="footnote-ref" href="#fn:14">14</a></sup></li>
+<li>Labels: Compare all releases with the label assigned to that release. </li>
+</ul>
+<p><strong>Weak signal</strong> <br />
+As a last resort, we can use artist names, albums, and track listings to match. Combining all of the information would give us a signal that is good enough, but should be triaged for manual review. </p>
+<ul>
+<li>Artist listings. </li>
+<li>Album listings. </li>
+<li>Track listings. </li>
+</ul>
+<p>These algorithms can become quite complex over time and need some trial and error, but this initial blueprint shows the idea behind how high confidence scores can speed up the automation processThese algorithms can become quite complex over time and need some trial and error, but this initial blueprint shows the idea behind how high confidence scores can speed up the automation process.</p>
+<h3>Governance Layer: Preventing Regressions</h3>
+<p>Artist metadata is not constant, and subject to change at any given point. If the artist already has an <abbr title="International Standard Name Identifier">ISNI</abbr>, then don't make a provider by giving them acronyms that they're likely going to ignore anyway. This information should be prefilled either in the system where the representative of said provider inputs information, or downloads a file format to populate and ingest into an automated system.</p>
+<p>Place the responsibility of metadata accuracy on the provider. For example, Spotify states the following<sup id="fnref:15"><a class="footnote-ref" href="#fn:15">15</a></sup>.</p>
+<div class="callout--info">
+    <p>
+        Your music's metadata controls how your songs and releases appear on Spotify. We display your music exactly as it's delivered to us, so it's important to get your metadata right.
+    </p>
+    <p>
+        Your metadata is set by your label or distributor before they deliver your music to us.
+    </p>
+    <p>
+        To fix any problems with your music's metadata, your label or distributor needs to send an update to us with the right info.
+    </p>
+</div>
+
+<p>There are only so many permutations an automated system can account for, so the responsibility does have to be placed back onto the provider to input the correct information. As you can see, this can get quite complex. However, for a streaming service to continue to innovate in the space and stay the course in a highly competitive landscape, it's a non-negotiable.</p>
+<p>This isn't a perfect blueprint, and it shouldn't be. Identity repair at this scale requires iteration, feedback, and a willingness to treat metadata not as an afterthought, but as an integral single source of truth.</p>
+<h2 name="References">Summary</h2>
+<p>This needs to be fixed before AI "artists” start creating account names for real artists, and uploading AI slop that further degrades the UX for users who rely on curated feeds for discovering the new and the old. Unsurprisingly, It looks like its already started happening, as reported on by the <abbr title="Australian Broadcasting Corporation">ABC</abbr><sup id="fnref:16"><a class="footnote-ref" href="#fn:16">16</a></sup>. Artists appear to be paid by stream, which incentivises prompt monkeys to take advantage of this flaw to throw s*** at the wall until something sticks.</p>
+<p>Music taste is entirely subjective, so I don't care if people want to generate music using LLMs and call themselves artists. I just don't want to be forced to listen to it because the curation algorithm thinks two artists with the same name are related. Tidal counts a single listen, no matter how long in duration, as a single play count. This will pollute the curation algorithm for users with slop they aren't interested in.</p>
+<p>I don't have access to "the bank of mum and dad" to buy a farm and tinker away on some obscure Linux distro to implement my own streaming service. But I am interested in whether modern ML patterns in conjunction with whatever "AI” actually means this week, could power a recommendation layer for a self‑hosted library built entirely from purchased music.</p>
+<p>For now, I'll go ahead and queue up <a href="https://tidal.com/playlist/748f403b-c05f-464f-a410-95e523d66852"><em>Slayer: Kerry King's Pissed Off Playlist</em></a> on Tidal and look forward to the day I have time to keep building out my homelab and a self‑hosted streaming solution for my ever‑growing CD collection.</p>
+<h2 id="references__heading" name="References">References</h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Marduk. (n.d.). In <em>Wikipedia</em>. Retrieved January 18, 2026, from https://en.wikipedia.org/wiki/Marduk_(band)#Studio_albums&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Logic error. (n.d.). In <em>Wikipedia</em>. Retrieved March 28, 2026, from https://en.wikipedia.org/wiki/Logic_error&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>WillVT. (2025, May 11). Fake AI albums on Tidal? [Forum thread]. AudioKarma. https://audiokarma.org/forums/threads/fake-ai-albums-on-tidal.1086004/&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Multitier architecture. (n.d.). In <em>Wikipedia</em>. Retrieved March 28, 2026, from https://en.wikipedia.org/wiki/Multitier_architecture&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>Munroe, R. (2011). <em>Standards</em> [Webcomic]. xkcd. https://xkcd.com/927/&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p><abbr title="Digital Data Exchange">DDEX</abbr>. (n.d.). <em>Purpose</em>. https://ddex.net/about-ddex/purpose/&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p>International Standard Name Identifier. (n.d.). In <em>Wikipedia</em>. Retrieved January 31, 2026, from https://en.wikipedia.org/wiki/International_Standard_Name_Identifier&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p>Canonical spellings for names. (n.d.). <abbr title="Digital Data Exchange">DDEX</abbr> Knowledge Base. Retrieved January 31, 2026, from https://kb.ddex.net/implementing-each-standard/best-practices-for-all-ddex-standards/guidance-on-contributors,-artists-and-writers/canonical-spellings-for-names/&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p><abbr title="Digital Data Exchange">DDEX</abbr>. (n.d.). In <em>Wikipedia</em>. Retrieved January 31, 2026, from https://en.wikipedia.org/wiki/<abbr title="Digital Data Exchange">DDEX</abbr>&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:10">
+<p>Deployment environment. (n.d.). In <em>Wikipedia</em>. Retrieved March 28, 2026, from https://en.wikipedia.org/wiki/Deployment_environment#Environments&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:11">
+<p>International Standard Recording Code. (n.d.). In <em>Wikipedia</em>. Retrieved January 31, 2026, from https://en.wikipedia.org/wiki/International_Standard_Recording_Code&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:12">
+<p>International Standard Musical Work Code. (n.d.). In <em>Wikipedia</em>. Retrieved January 31, 2026, from https://en.wikipedia.org/wiki/International_Standard_Musical_Work_Code&#160;<a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:13">
+<p>CLIP. (2025, December 9). <em>What is an <abbr title="Interested Parties Information">IPN</abbr>?</em> https://goclip.org/en/music/getting-credited-and-paid/what-is-an-ipn&#160;<a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 13 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:13" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+<li id="fn:14">
+<p>Interested Parties Information. (n.d.). In <em>Wikipedia</em>. Retrieved January 31, 2026, from https://en.wikipedia.org/wiki/Interested_Parties_Information&#160;<a class="footnote-backref" href="#fnref:14" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+</li>
+<li id="fn:15">
+<p>Spotify. (n.d.). <em>Music metadata guidelines</em>. Spotify Support. Retrieved January 31, 2026, from https://support.spotify.com/us/artists/article/metadata-formatting-guidelines/&#160;<a class="footnote-backref" href="#fnref:15" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+</li>
+<li id="fn:16">
+<p>Lallo, M. (2025, June 16). <em>'It's so dystopian': AI streaming fraud is on the rise. This Grammy nominee is fighting back</em>. <abbr title="Australian Broadcasting Corporation">ABC</abbr> News. https://www.abc.net.au/news/2025-06-16/spotify-ai-music-streaming-fraud-sweet-enoughs-paul-bender/105408242&#160;<a class="footnote-backref" href="#fnref:16" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+</article>

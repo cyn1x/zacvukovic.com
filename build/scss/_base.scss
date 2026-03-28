@@ -1,56 +1,82 @@
-@font-face {
-  font-family: "m-plus-rounded-1c-bold";
-  font-style: normal;
-  font-weight: normal;
-  src:
-    // url("/fonts/Montserrat-Regular.woff2") format("woff2"),
-    // url("/fonts/Montserrat-Regular.woff") format("woff"),
-    url("/fonts/MPLUSRounded1c-Bold.ttf") format("truetype");
-  font-display: swap;
+@import "./fonts";
+
+/* Font Variables */
+$font-bebas: "Bebas Neue", sans-serif;
+$font-faustina: "Faustina", sans-serif;
+$font-gelasio: "Gelasio", "serif";
+$font-inter: "Inter", sans-serif;
+$font-m-plus: "M PLUS Rounded 1c", sans-serif;
+$font-montserrat: "Montserrat", sans-serif;
+$font-space-grotesk: "Space Grotesk", sans-serif;
+
+/* Generic Font Mixin */
+@mixin font($family, $weight: 400, $style: normal) {
+  font-family: $family;
+  font-weight: $weight;
+  font-style: $style;
 }
 
-@font-face {
-  font-family: "bebas-neue-by-dhamra-type";
-  font-style: normal;
-  font-weight: normal;
-  src:
-    url("/fonts/BebasNeue-Regular.woff2") format("woff2"),
-    url("/fonts/BebasNeue-Regular.woff") format("woff"),
-    url("/fonts/BebasNeue-Regular.ttf") format("truetype");
-  font-display: swap;
+/* Paragraph Styling */
+@mixin p-font-style($size: 1em,
+  $line-height: 1.5,
+  $color: var(--primary-text-color)) {
+  @include font($font-inter);
+  font-size: $size;
+  line-height: $line-height;
+  color: $color;
 }
 
-@font-face {
-  font-family: "montserrat";
-  font-style: normal;
-  font-weight: normal;
-  src:
-    url("/fonts/Montserrat-Regular.woff2") format("woff2"),
-    url("/fonts/Montserrat-Regular.woff") format("woff"),
-    url("/fonts/Montserrat-Regular.ttf") format("truetype");
-  font-display: swap;
-}
-
-@mixin montserrat-font-normal {
-  font-family: "montserrat", sans-serif;
-  font-weight: normal;
-  font-style: normal;
-}
-
-@mixin space-around-and-center {
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-}
-
-@mixin flex-and-center {
+/* Flex Utility */
+@mixin flex($justify: flex-start,
+  $align: stretch,
+  $direction: row) {
   display: flex;
-  justify-content: center;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
 }
 
-@mixin p-font-style {
-  @include montserrat-font-normal;
-  font-size: 1em;
-  line-height: 1.5;
-  color: var(--primary-text-color);
+@mixin blockquote-layout($width: 100%,
+  $margin: 1.5rem auto,
+  $padding: 1rem 1rem,
+  $border-left: 4px solid) {
+  width: $width;
+  margin: $margin;
+  padding: $padding;
+  border-left: $border-left;
+  border-radius: 0.25em;
+}
+
+@mixin blockquote-colors() {
+  color: var(--blockquote-text-color);
+  background: var(--blockquote-bg-color);
+  border-color: var(--blockquote-border-color);
+}
+
+@mixin callout-layout() {
+  @include blockquote-layout();
+}
+
+@mixin callout-success-colors() {
+  color: var(--callout-text-success);
+  background: var(--callout-bg-success);
+  border-color: var(--callout-border-success);
+}
+
+@mixin callout-info-colors() {
+  color: var(--callout-text-info);
+  background: var(--callout-bg-info);
+  border-color: var(--callout-border-info);
+}
+
+@mixin callout-warning-colors() {
+  color: var(--callout-text-warning);
+  background: var(--callout-bg-warning);
+  border-color: var(--callout-border-warning);
+}
+
+@mixin callout-error-colors() {
+  color: var(--callout-text-error);
+  background: var(--callout-bg-error);
+  border-color: var(--callout-border-error);
 }
