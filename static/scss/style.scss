@@ -10,7 +10,7 @@
   --border-color: #dddddd;
   --img-border-color: #FFF;
   --svg-color: invert(70%) sepia(94%) saturate(274%) hue-rotate(115deg) brightness(106%) contrast(96%);
-  --bkg-color: #1E1E2D;
+  --bg-color: #1E1E2D;
   --primary-btn-color: #57FAE8;
   --primary-btn-hover-color: #33CBBA;
   --primary-btn-text-color: black;
@@ -18,7 +18,30 @@
   --secondary-btn-color: #c2c2bc;
   --secondary-btn-hover-color: #f3f3f2;
 
-  // Loading spinner properties
+  // Block quote style properties
+  --blockquote-bg-color: #2A2A3C;
+  --blockquote-text-color: #C7C7D9;
+  --blockquote-border-color: #4A4A6A;
+
+  // Callout boxes that convey technical information in levels of difficulty
+  --callout-bg-success: #24352E;
+  --callout-bg-info: #243044;
+  --callout-bg-warning: #3A321F;
+  --callout-bg-error: #3A2424;
+  --callout-border-success: #4C8F6A;
+  --callout-border-info: #4A6FA5;
+  --callout-border-warning: #C49A3A;
+  --callout-border-error: #B44A4A;
+  --callout-text-success: #A8D3B9;
+  --callout-text-info: #AFC7E8;
+  --callout-text-warning: #E8D7A4;
+  --callout-text-error: #E3B4B4;
+
+  // Code elements to convey programming language syntax
+  --code-bg: #2A2A2A;
+  --code-fg: #E6E6E6;
+
+  // Loading spinner style properties
   --radius: 20;
   --PI: 3.14159265358979;
   --circumference: calc(var(--PI) * var(--radius) * 2px);
@@ -43,13 +66,34 @@ body.light-mode {
   --border-color: #868679;
   --img-border-color: #000;
   --svg-color: invert(30%) sepia(70%) saturate(1101%) hue-rotate(138deg) brightness(97%) contrast(97%);
-  --bkg-color: #FFFFF9;
+  --bg-color: #FFFFF9;
   --primary-btn-color: #38B2AC;
   --primary-btn-hover-color: #4ECEC8;
   --primary-btn-text-color: white;
   --primary-btn-svg-color: invert(100%) sepia(100%) saturate(0%) hue-rotate(223deg) brightness(104%) contrast(101%);
   --secondary-btn-color: #191919;
   --secondary-btn-hover-color: #595959;
+
+  // Block quote style properties
+  --blockquote-bg-color: #FFFBEF;
+  --blockquote-text-color: #6A604C;
+  --blockquote-border-color: #D6C7A8;
+
+  // Block quotes that convey technical information in levels of difficulty
+  --callout-bg-success: #E9F5EE;
+  --callout-bg-info: #EEF5FF;
+  --callout-bg-warning: #FFF7E3;
+  --callout-bg-error: #FBECEC;
+  --callout-border-info: #7AA2D2;
+  --callout-text-success: #2F5A42;
+  --callout-text-info: #2F4A6A;
+  --callout-text-warning: #6A5520;
+  --callout-text-error: #6A2E2E;
+
+  // Code elements to convey programming language syntax
+  --code-bg: #F4F4F4;
+  --code-fg: #333;
+
 }
 
 html,
@@ -60,16 +104,19 @@ body {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  background: var(--bkg-color);
+  background: var(--bg-color);
 
   h1,
   h2,
-  h3 {
-    @include font($font-montserrat);
+  h3,
+  h4,
+  h5,
+  h6 {
     color: var(--heading-color);
   }
 
   a {
+    @include p-font-style;
     color: var(--link-color);
   }
 
@@ -79,6 +126,45 @@ body {
 
   p {
     @include p-font-style;
+  }
+
+  /*!
+   * Source: https://css-tricks.com/styling-code-in-and-out-of-blocks/
+   * Author: CSS-Tricks (Chris Coyier)
+   * License: CC BY-NC-SA 4.0 (https://css-tricks.com/license/)
+   * Retrieved: 2023-01-06
+   * Notes: Minor modifications to fit site theme (colors, spacing)
+   */
+  p>code,
+  ol>code,
+  li>code,
+  dd>code,
+  td>code {
+    background: var(--code-bg);
+    color: var(--code-fg);
+    word-wrap: break-word;
+    box-decoration-break: clone;
+    padding: .1rem .3rem .2rem;
+    border-radius: .2rem;
+  }
+
+  scrollbar-color: #666 #201c29;
+
+  .split-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .codehilite {
+    border-radius: .5rem;
+    display: block;
+    white-space: pre;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
+    max-width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
   }
 
   .button {
@@ -139,7 +225,7 @@ header {
   margin-block-start: 0.25rem;
   margin-block-end: 0.25rem;
 
-  background-color: var(--bkg-color);
+  background-color: var(--bg-color);
 
   #logo-container {
     text-align: start;
@@ -165,6 +251,13 @@ header {
 
   nav {
     text-align: center;
+
+    h1,
+    h2,
+    h3 {
+      @include font($font-inter);
+      color: var(--heading-color);
+    }
 
     .icons {
       margin-right: 1rem;
@@ -225,7 +318,7 @@ header {
       top: 100%;
       border: 1px solid var(--border-color);
       border-radius: 10px;
-      background-color: var(--bkg-color);
+      background-color: var(--bg-color);
       width: 50%;
       margin-right: 0.5rem;
       margin-top: 0.25rem;
@@ -269,10 +362,20 @@ header {
 // SVG icons
 .icons {
   display: flex;
+  white-space: nowrap;
 
   img {
     width: 1.5rem;
     filter: var(--svg-color);
+  }
+}
+
+// Download links
+.download--inline {
+  padding-bottom: 10em;
+
+  .download__text {
+    margin-right: 0.4em;
   }
 }
 
@@ -302,20 +405,28 @@ main {
     margin-inline-end: 1.5rem;
     animation: transitionIn 0.75s;
 
+    /* Default font for <article> and <section> */
+    h1,
+    h2,
+    h3 {
+      @include font($font-space-grotesk);
+    }
+
     h2,
     h3 {
       margin-block-start: 2rem;
       margin-block-end: 1rem;
     }
 
+    ol,
     ul {
       @include p-font-style;
       display: block;
-      list-style-type: disc;
       margin-bottom: 1em;
       padding-inline-start: 40px;
     }
 
+    // Set the <iframe> aspect ratio to 16:9
     .iframe-container {
       position: relative;
       overflow: hidden;
@@ -324,7 +435,7 @@ main {
       /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
     }
 
-    /* Then style the iframe to fit in the container div with full height and width */
+    // Then style the <iframe> to fit in the container div with full height and width
     .responsive-iframe {
       position: absolute;
       top: 0;
@@ -336,37 +447,43 @@ main {
     }
   }
 
-  article {
+  section#about {
 
-    h1,
-    h2,
-    h3 {
-      @include font($font-faustina);
-      text-align: left;
+    .about-heading {
+      position: relative;
+      /* Space between heading and border */
+      padding-bottom: 0.2rem;
+      /* space between heading and paragraph */
+      margin-bottom: 0.5rem;
     }
 
-    .post-meta {
-      @include font($font-montserrat);
-      font-size: 1em;
-      color: var(--secondary-text-color);
-      margin-bottom: 1.5em;
-
-      .post-date {
-        font-size: 0.75em;
-      }
-    }
-  }
-
-  section {
-
-    // Heading underline text decoration
-    hr {
+    .about-heading::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
       width: 5.25rem;
+      height: 0.25rem;
+      background-color: var(--border-color);
     }
 
     .underlined-headers {
       margin-bottom: 0.5rem;
     }
+
+  }
+
+  section#about,
+  section#now {
+
+    h1,
+    h2,
+    h3 {
+      @include font($font-m-plus);
+    }
+  }
+
+  section#portfolio {
 
     .uncollapsible-content {
       @include flex(space-between, center);
@@ -378,20 +495,159 @@ main {
       }
     }
 
-    // Special case for h2 elements in the about page 
-    .about-heading {
-      display: inline-block;
-      padding-right: 25px;
-      padding-bottom: 0.1rem;
-      margin: 0;
-    }
-
     .portfolio-container {
       margin-bottom: 2rem;
     }
 
     .sub-section {
       margin-bottom: 2rem;
+    }
+  }
+
+  section#blog,
+  section#contact {
+
+    h1,
+    h2,
+    h3 {
+      @include font($font-faustina);
+    }
+  }
+
+  article#post {
+
+    h1,
+    h2,
+    h3 {
+      @include font($font-faustina);
+      text-align: left;
+    }
+
+    figure {
+      display: block;
+      margin: 2rem auto;
+
+      img {
+        width: 100%
+      }
+
+      figcaption {
+        @include font($font-montserrat);
+        line-height: 1.25em;
+        font-size: 0.9rem;
+        text-align: center;
+        color: var(--secondary-text-color);
+      }
+    }
+
+    .figure--narrow {
+      width: 80%;
+    }
+
+    .blockquote--quote {
+      @include blockquote-layout($width: 80%);
+      @include blockquote-colors();
+
+      .blockquote__text {
+        @include font($font-gelasio, $style: italic);
+        text-align: center;
+      }
+
+      .blockquote__text--credit {
+        @include font($font-gelasio, $style: normal);
+        margin-bottom: 0;
+        text-align: right;
+      }
+
+      .blockquote__text--credit::before {
+        content: "\2014\0020";
+      }
+    }
+
+    .blockquote__text--quoted {
+      position: relative;
+      line-height: 2;
+      /* tighten the first line */
+      padding-top: 0em;
+      /* space for the top quote */
+      padding-bottom: 0.5em;
+      /* space for the bottom quote */
+    }
+
+    .blockquote__text--quoted::before,
+    .blockquote__text--quoted::after {
+      position: absolute;
+      font-size: 2em;
+      line-height: 1;
+    }
+
+    .blockquote__text--quoted::before {
+      content: "\201c";
+      top: 0;
+      left: 0;
+    }
+
+    .blockquote__text--quoted::after {
+      content: "\201d";
+      bottom: -0.5em;
+      right: 0;
+    }
+
+    .post-meta {
+      @include font($font-inter);
+      font-size: 1em;
+      color: var(--secondary-text-color);
+      margin-bottom: 1.5em;
+
+      .post-date {
+        font-size: 0.75em;
+      }
+    }
+
+    #references__heading {
+      margin-bottom: 0.5rem;
+    }
+
+    .footnote {
+
+      hr {
+        margin-bottom: 0.5rem;
+      }
+
+      .footnote-backref:last-of-type:not(:only-of-type) {
+        margin-left: 0.5rem;
+      }
+    }
+
+    .footnote-ref {
+      text-decoration: none;
+    }
+
+    .callout__text {
+      @include p-font-style;
+    }
+
+    .callout--success,
+    .callout--info,
+    .callout--warning,
+    .callout--error {
+      @include callout-layout();
+    }
+
+    .callout--success {
+      @include callout-success-colors();
+    }
+
+    .callout--info {
+      @include callout-info-colors();
+    }
+
+    .callout--warning {
+      @include callout-warning-colors();
+    }
+
+    .callout--error {
+      @include callout-error-colors();
     }
   }
 
@@ -519,7 +775,7 @@ main {
     border-radius: 5px;
     font-size: 1rem;
     background-color: var(--secondary-btn-color);
-    color: var(--bkg-color);
+    color: var(--bg-color);
     cursor: pointer;
   }
 
@@ -549,6 +805,7 @@ footer {
   vertical-align: top;
 
   a {
+    @include font($font-montserrat);
     color: var(--secondary-text-color);
   }
 
@@ -625,6 +882,14 @@ footer {
   main {
     width: 600px;
     align-self: center;
+
+    article,
+    section {
+      .split-layout {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
 
     section {
       .portfolio-container {
