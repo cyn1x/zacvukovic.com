@@ -53,11 +53,11 @@ I first moved over to Tidal after an album from an artist I listen to was remove
 <figure class="figure--narrow">
     <picture>
         <source type="image/webp" media="(width < 800px)" 
-            srcset="/img/content/blog/001/PXL_20250802_032246801 (512).webp">
+            srcset="/img/content/blog/001/PXL_20250802_032246801_(512).webp">
         <source type="image/webp" media="(width >= 800px)"
             srcset="/img/content/blog/001/PXL_20250802_032246801.webp">
         <source type="image/jpeg" media="(width < 800px)"
-            srcset="/img/content/blog/001/PXL_20250802_032246801 (512).jpg">
+            srcset="/img/content/blog/001/PXL_20250802_032246801_(512).jpg">
         <source type="image/jpeg" media="(width >= 800px)"
             srcset="/img/content/blog/001/PXL_20250802_032246801.jpg">
         <img src="/img/content/blog/001/PXL_20250802_032246801.jpg" alt="Snowfall in Armidale on 2nd August, 2025.">
@@ -80,14 +80,14 @@ One example was the "Live Sessions" feature which introduced a social aspect to 
 <figure class="figure--narrow">
     <picture>
         <source type="image/webp" media="(width < 800px)" 
-            srcset="/img/content/blog/001/2026-03-15 18_02_18- (Small).webp">
+            srcset="/img/content/blog/001/2026-03-15_18_02_18-_(Small).webp">
         <source type="image/webp" media="(width >= 800px)"
-            srcset="/img/content/blog/001/2026-03-15 18_02_18- .webp">
+            srcset="/img/content/blog/001/2026-03-15_18_02_18-.webp">
         <source type="image/png" media="(width < 800px)"
-            srcset="/img/content/blog/001/2026-03-15 18_02_18- (Small).png">
+            srcset="/img/content/blog/001/2026-03-15_18_02_18-_(Small).png">
         <source type="image/png" media="(width >= 800px)"
-            srcset="/img/content/blog/001/2026-03-15 18_02_18-.png">
-        <img src="/img/content/blog/001/2026-03-15 18_02_18-.png" alt="Screenshot of an email showing Tidal had a fix for 'Live Sessions' within 7 days of complain">
+            srcset="/img/content/blog/001/2026-03-15_18_02_18-.png">
+        <img src="/img/content/blog/001/2026-03-15_18_02_18-.png" alt="Screenshot of an email showing Tidal had a fix for 'Live Sessions' within 7 days of complain">
     </picture>
     <figcaption>The 'We heard you' is really telling of how many users roasted them about this feature!</figcaption>
 </figure>
@@ -110,14 +110,14 @@ I also checked the previous artists that I had logged support requests about, an
 <figure>
     <picture>
         <source type="image/webp" media="(width < 800px)" 
-            srcset="/img/content/blog/001/Screenshot 2025-12-18 205008 (Small).webp">
+            srcset="/img/content/blog/001/Screenshot_2025-12-18_205008_(Small).webp">
         <source type="image/webp" media="(width >= 800px)"
-            srcset="/img/content/blog/001/Screenshot 2025-12-18 205008.webp">
+            srcset="/img/content/blog/001/Screenshot_2025-12-18_205008.webp">
         <source type="image/jpeg" media="(width < 800px)"
-            srcset="/img/content/blog/001/Screenshot 2025-12-18 205008 (Small).png">
+            srcset="/img/content/blog/001/Screenshot_2025-12-18_205008_(Small).jpg">
         <source type="image/jpeg" media="(width >= 800px)"
-            srcset="/img/content/blog/001/Screenshot 2025-12-18 205008.jpg">
-        <img src="/img/content/blog/001/Screenshot 2025-12-18 205008.jpg" alt="Artist profile page for the Thrash Metal band, Slayer.">
+            srcset="/img/content/blog/001/Screenshot_2025-12-18_205008.jpg">
+        <img src="/img/content/blog/001/Screenshot_2025-12-18_205008.jpg" alt="Artist profile page for the Thrash Metal band, Slayer.">
     </picture>
     <figcaption>Clearly, there most recent album and two most recent EPs don't belong to Slayer.</figcaption>
 </figure>
@@ -235,14 +235,14 @@ A small but important clue suggests that Tidal has already started moving in the
 <figure>
     <picture>
         <source type="image/webp" media="(width < 800px)" 
-            srcset="/img/content/blog/001/2026-01-23 22_02_00-TIDAL (Small).webp">
+            srcset="/img/content/blog/001/2026-01-23_22_02_00-TIDAL_(Small).webp">
         <source type="image/webp" media="(width >= 800px)"
-            srcset="/img/content/blog/001/2026-01-23 22_02_00-TIDAL.webp">
+            srcset="/img/content/blog/001/2026-01-23_22_02_00-TIDAL.webp">
         <source type="image/jpeg" media="(width < 800px)"
-            srcset="/img/content/blog/001/2026-01-23 22_02_00-TIDAL (Small).jpg">
+            srcset="/img/content/blog/001/2026-01-23_22_02_00-TIDAL_(Small).jpg">
         <source type="image/jpeg" media="(width >= 800px)"
-            srcset="/img/content/blog/001/2026-01-23 22_02_00-TIDAL.jpg">
-        <img src="/img/content/blog/001/2026-01-23 22_02_00-TIDAL.jpg" alt="Tidal search results showing separated artist profiles with the same name, &quot;Eagles&quot;">
+            srcset="/img/content/blog/001/2026-01-23_22_02_00-TIDAL.jpg">
+        <img src="/img/content/blog/001/2026-01-23_22_02_00-TIDAL.jpg" alt="Tidal search results showing separated artist profiles with the same name, &quot;Eagles&quot;">
     </picture>
     <figcaption>Tidal search result showing two separate profiles for the artist name "Eagles".</figcaption>
 </figure>
