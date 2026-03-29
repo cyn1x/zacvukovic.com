@@ -41,7 +41,6 @@ async function handleLocation() {
     if (staticRoute) {
         await render(staticRoute.url);
         dispatchEvent(path);
-
         return;
     }
 
@@ -53,24 +52,17 @@ async function handleLocation() {
     }
 
     const url = (typeof process !== 'undefined') ? uri : `/search${uri}`;
-    await fetch(url).then((res) => {
+    const res = await fetch(url);
 
-        if (res.status === 200) {
-            render(uri).then(() => {
-                const hash = window.location.hash;
-                if (hash) {
-                    scrollToHash(hash.slice(1));
-                }
-                dispatchEvent(path);
-            });
+    if (res.status === 200) {
+        await render(uri);
+        const hash = window.location.hash;
+        if (hash) scrollToHash(hash.slice(1));
+        dispatchEvent(path);
+        return;
+    }
 
-            return;
-        }
-
-        // This dynamic route does not exist on the server
-        render(findStaticRouteByPath(404).url);
-    });
-
+    await render(findStaticRouteByPath(404).url);
 }
 
 async function render(route) {
