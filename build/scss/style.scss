@@ -616,6 +616,10 @@ main {
       .footnote-backref:last-of-type:not(:only-of-type) {
         margin-left: 0.5rem;
       }
+
+      li p {
+        overflow-wrap: anywhere;
+      }
     }
 
     .footnote-ref {

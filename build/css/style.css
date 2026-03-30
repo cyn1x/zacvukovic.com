@@ -715,6 +715,10 @@ main article#post .footnote .footnote-backref:last-of-type:not(:only-of-type) {
   margin-left: 0.5rem;
 }
 
+main article#post .footnote li p {
+  overflow-wrap: anywhere;
+}
+
 main article#post .footnote-ref {
   text-decoration: none;
 }
