@@ -6,7 +6,7 @@
     </span>
     <br />
     <span class="post-date">
-      <strong>March 28, 2026, 11:27 PM AEDT (UTC+11:00)</strong>
+      <strong>Saturday, 28 March 2026, 23:27 AEDT (UTC+11:00)</strong>
     </span>
   </div>
   <!-- Abbreviations -->
@@ -43,11 +43,11 @@
 <figure class="figure--narrow">
     <picture>
         <source type="image/webp" media="(width < 800px)" 
-            srcset="/img/content/blog/001/PXL_20250802_032246801 (512).webp">
+            srcset="/img/content/blog/001/PXL_20250802_032246801_(512).webp">
         <source type="image/webp" media="(width >= 800px)"
             srcset="/img/content/blog/001/PXL_20250802_032246801.webp">
         <source type="image/jpeg" media="(width < 800px)"
-            srcset="/img/content/blog/001/PXL_20250802_032246801 (512).jpg">
+            srcset="/img/content/blog/001/PXL_20250802_032246801_(512).jpg">
         <source type="image/jpeg" media="(width >= 800px)"
             srcset="/img/content/blog/001/PXL_20250802_032246801.jpg">
         <img src="/img/content/blog/001/PXL_20250802_032246801.jpg" alt="Snowfall in Armidale on 2nd August, 2025.">
@@ -64,14 +64,14 @@
 <figure class="figure--narrow">
     <picture>
         <source type="image/webp" media="(width < 800px)" 
-            srcset="/img/content/blog/001/2026-03-15 18_02_18- (Small).webp">
+            srcset="/img/content/blog/001/2026-03-15_18_02_18-_(Small).webp">
         <source type="image/webp" media="(width >= 800px)"
-            srcset="/img/content/blog/001/2026-03-15 18_02_18- .webp">
+            srcset="/img/content/blog/001/2026-03-15_18_02_18-.webp">
         <source type="image/png" media="(width < 800px)"
-            srcset="/img/content/blog/001/2026-03-15 18_02_18- (Small).png">
+            srcset="/img/content/blog/001/2026-03-15_18_02_18-_(Small).png">
         <source type="image/png" media="(width >= 800px)"
-            srcset="/img/content/blog/001/2026-03-15 18_02_18-.png">
-        <img src="/img/content/blog/001/2026-03-15 18_02_18-.png" alt="Screenshot of an email showing Tidal had a fix for 'Live Sessions' within 7 days of complain">
+            srcset="/img/content/blog/001/2026-03-15_18_02_18-.png">
+        <img src="/img/content/blog/001/2026-03-15_18_02_18-.png" alt="Screenshot of an email showing Tidal had a fix for 'Live Sessions' within 7 days of complain">
     </picture>
     <figcaption>The 'We heard you' is really telling of how many users roasted them about this feature!</figcaption>
 </figure>
@@ -91,14 +91,14 @@
 <figure>
     <picture>
         <source type="image/webp" media="(width < 800px)" 
-            srcset="/img/content/blog/001/Screenshot 2025-12-18 205008 (Small).webp">
+            srcset="/img/content/blog/001/Screenshot_2025-12-18_205008_(Small).webp">
         <source type="image/webp" media="(width >= 800px)"
-            srcset="/img/content/blog/001/Screenshot 2025-12-18 205008.webp">
+            srcset="/img/content/blog/001/Screenshot_2025-12-18_205008.webp">
         <source type="image/jpeg" media="(width < 800px)"
-            srcset="/img/content/blog/001/Screenshot 2025-12-18 205008 (Small).png">
+            srcset="/img/content/blog/001/Screenshot_2025-12-18_205008_(Small).jpg">
         <source type="image/jpeg" media="(width >= 800px)"
-            srcset="/img/content/blog/001/Screenshot 2025-12-18 205008.jpg">
-        <img src="/img/content/blog/001/Screenshot 2025-12-18 205008.jpg" alt="Artist profile page for the Thrash Metal band, Slayer.">
+            srcset="/img/content/blog/001/Screenshot_2025-12-18_205008.jpg">
+        <img src="/img/content/blog/001/Screenshot_2025-12-18_205008.jpg" alt="Artist profile page for the Thrash Metal band, Slayer.">
     </picture>
     <figcaption>Clearly, there most recent album and two most recent EPs don't belong to Slayer.</figcaption>
 </figure>
@@ -202,22 +202,22 @@
     <span class="callout__text">Retrieved 18th of January, 2026.</span>
 </div>
 
-<p>I obviously am operating in my own capacity, and don't have any information about Tidal's streaming architecture. That said, based on the API responses, The system appears to treat artist name as the primary identity key (or a strong match key) in some ingestion or merge pipeline, whether its a different artist with the same name.<br />
-Now that the problem has been identified and detailed, the question remains. <em>How would you fix it?</em></p>
+<p>I obviously am operating in my own capacity, and don't have any information about Tidal's streaming architecture. That said, based on the API responses, The system appears to treat artist name as the primary identity key (or a strong match key) in some ingestion or merge pipeline, whether its a different artist with the same name.</p>
+<p>Now that the problem has been identified and detailed, the question remains. <em>How would you fix it?</em></p>
 <h2 name="Solution">The Solution</h2>
 <p>The root cause is simple. It is that Tidal treats canonical artist names as identity. The resolution is equally simple. Stop doing that. The implementation? That is a massive engineering undertaking at scale. Every artist must have a unique, immutable identifier. New artist entities should never be created or matched purely on display name, because names are not unique and are not stable over time. However, that only prevents the problem from getting worse. It doesn't address the existing damage where artist profiles that have already been merged, sometimes repeatedly, by backend routines that appear to revert the data back into an incorrect state. The question now becomes, <em>how would the currently merged artist profiles be split into separate artists?</em></p>
 <p>A small but important clue suggests that Tidal has already started moving in the right direction. Rather than logging another support request to test the theory, we can take anecdotal evidence from a forum post<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> where a user raises the issue of an artist profile by the name "Eagles”, has been merged with another profile of the same name. The first request I logged back in March 2023 for an artist reverted back to an incorrect state, whereas now, searching for "Eagles” produces multiple separate artist results with the same name but different artist IDs. </p>
 <figure>
     <picture>
         <source type="image/webp" media="(width < 800px)" 
-            srcset="/img/content/blog/001/2026-01-23 22_02_00-TIDAL (Small).webp">
+            srcset="/img/content/blog/001/2026-01-23_22_02_00-TIDAL_(Small).webp">
         <source type="image/webp" media="(width >= 800px)"
-            srcset="/img/content/blog/001/2026-01-23 22_02_00-TIDAL.webp">
+            srcset="/img/content/blog/001/2026-01-23_22_02_00-TIDAL.webp">
         <source type="image/jpeg" media="(width < 800px)"
-            srcset="/img/content/blog/001/2026-01-23 22_02_00-TIDAL (Small).jpg">
+            srcset="/img/content/blog/001/2026-01-23_22_02_00-TIDAL_(Small).jpg">
         <source type="image/jpeg" media="(width >= 800px)"
-            srcset="/img/content/blog/001/2026-01-23 22_02_00-TIDAL.jpg">
-        <img src="/img/content/blog/001/2026-01-23 22_02_00-TIDAL.jpg" alt="Tidal search results showing separated artist profiles with the same name, &quot;Eagles&quot;">
+            srcset="/img/content/blog/001/2026-01-23_22_02_00-TIDAL.jpg">
+        <img src="/img/content/blog/001/2026-01-23_22_02_00-TIDAL.jpg" alt="Tidal search results showing separated artist profiles with the same name, &quot;Eagles&quot;">
     </picture>
     <figcaption>Tidal search result showing two separate profiles for the artist name "Eagles".</figcaption>
 </figure>
@@ -281,7 +281,7 @@ As a last resort, we can use artist names, albums, and track listings to match. 
 <li>Album listings. </li>
 <li>Track listings. </li>
 </ul>
-<p>These algorithms can become quite complex over time and need some trial and error, but this initial blueprint shows the idea behind how high confidence scores can speed up the automation processThese algorithms can become quite complex over time and need some trial and error, but this initial blueprint shows the idea behind how high confidence scores can speed up the automation process.</p>
+<p>These algorithms can become quite complex over time and need some trial and error, but this initial blueprint shows the idea behind how high confidence scores can speed up the automation process.</p>
 <h3>Governance Layer: Preventing Regressions</h3>
 <p>Artist metadata is not constant, and subject to change at any given point. If the artist already has an <abbr title="International Standard Name Identifier">ISNI</abbr>, then don't make a provider by giving them acronyms that they're likely going to ignore anyway. This information should be prefilled either in the system where the representative of said provider inputs information, or downloads a file format to populate and ingest into an automated system.</p>
 <p>Place the responsibility of metadata accuracy on the provider. For example, Spotify states the following<sup id="fnref:15"><a class="footnote-ref" href="#fn:15">15</a></sup>.</p>

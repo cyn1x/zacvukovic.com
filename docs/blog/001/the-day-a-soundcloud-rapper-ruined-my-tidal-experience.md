@@ -224,6 +224,7 @@ So far, we've only touched on surface-level UX problems with merged artist profi
 </div>
 
 I obviously am operating in my own capacity, and don't have any information about Tidal's streaming architecture. That said, based on the API responses, The system appears to treat artist name as the primary identity key (or a strong match key) in some ingestion or merge pipeline, whether its a different artist with the same name.
+
 Now that the problem has been identified and detailed, the question remains. *How would you fix it?*
 
 ## The Solution {: name='Solution'}
@@ -317,7 +318,7 @@ As a last resort, we can use artist names, albums, and track listings to match. 
 - Album listings. 
 - Track listings. 
 
-These algorithms can become quite complex over time and need some trial and error, but this initial blueprint shows the idea behind how high confidence scores can speed up the automation processThese algorithms can become quite complex over time and need some trial and error, but this initial blueprint shows the idea behind how high confidence scores can speed up the automation process.
+These algorithms can become quite complex over time and need some trial and error, but this initial blueprint shows the idea behind how high confidence scores can speed up the automation process.
 
 ### Governance Layer: Preventing Regressions
 

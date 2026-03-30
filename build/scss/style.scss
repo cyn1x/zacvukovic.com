@@ -566,9 +566,8 @@ main {
 
     .blockquote__text--quoted {
       position: relative;
-      line-height: 2;
       /* tighten the first line */
-      padding-top: 0em;
+      padding-top: 0.5em;
       /* space for the top quote */
       padding-bottom: 0.5em;
       /* space for the bottom quote */
