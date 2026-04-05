@@ -8,7 +8,7 @@ template: now.html
 
 Inspired by the ["now page"](https://nownownow.com/about){: target="_blank" rel="noopener noreferrer"}, this page will show what I'm focused on at this point in my life.
 
-*Last updated 2026-03-28*
+*Last updated 2026-04-05*
 
 ## Game Engine
 
@@ -44,7 +44,7 @@ I have some old original demos on my [SoundCloud](https://soundcloud.com/crimson
 
 ## Blog
 
-I finally published my [first blog post](/blog/001/the-day-a-soundcloud-rapper-ruined-my-tidal-experience) and plan to write more with no fixed schedule, especially given how much slop is on the internet right now. Some topics I have in mind for my next articles:
+I finally published my [first blog post](/blog/001/the-day-a-soundcloud-rapper-ruined-my-tidal-experience) and plan to write more with no fixed schedule. I only like to speak when something is worth saying, especially given how much slop is on the internet right now. Some topics I have in mind for upcoming articles:
 
 - Technical and Political Bottlenecks in Innovation Teams
-
+- A Case for the Specialist Generalist in a Post-AI World
