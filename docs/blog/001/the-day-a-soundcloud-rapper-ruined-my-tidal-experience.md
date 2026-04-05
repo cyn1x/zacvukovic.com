@@ -122,7 +122,7 @@ I also checked the previous artists that I had logged support requests about, an
     <figcaption>Clearly, there most recent album and two most recent EPs don't belong to Slayer.</figcaption>
 </figure>
 
-Given stellar support from Tidal in the past, I assumed there were some architectural challenges behind the lingering bug. I looked at other artists to test whether this was a one-off with Slayer, starting with Marduk. I looked at the data being received from the Tidal servers, and confirmed that multiple distinct artists sharing the same name are being returned under the same artist `id` key. The images below show two individual albums that belong to two different artists who share the name "Marduk", and also share the same `id` key.
+Given stellar support from Tidal in the past, I assumed there were some architectural challenges behind the lingering bug. I looked at other artists to test whether this was a one-off with Slayer, starting with Marduk. I looked at the data being received from the Tidal servers, and confirmed that multiple distinct artists sharing the same name are being returned under the same artist `id` key.
 
 <div class="callout--success">
     <p><strong>The Basics</strong></p>
