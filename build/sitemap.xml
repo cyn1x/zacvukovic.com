@@ -2,62 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://www.zacvukovic.com/</loc>
+        <loc>https://zacvukovic.com/</loc>
         <priority>1.0</priority>
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://www.zacvukovic.com/about</loc>
+        <loc>https://zacvukovic.com/about</loc>
         <priority>1.0</priority>
         <changefreq>yearly</changefreq>
     </url>
     <url>
-        <loc>https://www.zacvukovic.com/now</loc>
+        <loc>https://zacvukovic.com/now</loc>
         <priority>0.8</priority>
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://www.zacvukovic.com/blog</loc>
+        <loc>https://zacvukovic.com/blog</loc>
         <priority>0.9</priority>
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://www.zacvukovic.com/blog/001/the-day-a-soundcloud-rapper-ruined-my-tidal-experience</loc>
+        <loc>https://zacvukovic.com/blog/001/the-day-a-soundcloud-rapper-ruined-my-tidal-experience</loc>
         <priority>0.7</priority>
         <changefreq>never</changefreq>
     </url>
     <url>
-        <loc>https://www.zacvukovic.com/portfolio</loc>
+        <loc>https://zacvukovic.com/portfolio</loc>
         <priority>0.8</priority>
         <changefreq>yearly</changefreq>
     </url>
     <url>
-        <loc>https://www.zacvukovic.com/portfolio/construction-site-safety</loc>
+        <loc>https://zacvukovic.com/portfolio/construction-site-safety</loc>
         <priority>0.6</priority>
         <changefreq>yearly</changefreq>
     </url>
     <url>
-        <loc>https://www.zacvukovic.com/portfolio/animal-anatomy-explorer</loc>
+        <loc>https://zacvukovic.com/portfolio/animal-anatomy-explorer</loc>
         <priority>0.6</priority>
         <changefreq>yearly</changefreq>
     </url>
     <url>
-        <loc>https://www.zacvukovic.com/portfolio/childcare-safety</loc>
+        <loc>https://zacvukovic.com/portfolio/childcare-safety</loc>
         <priority>0.6</priority>
         <changefreq>yearly</changefreq>
     </url>
     <url>
-        <loc>https://www.zacvukovic.com/portfolio/canine-anatomy</loc>
+        <loc>https://zacvukovic.com/portfolio/canine-anatomy</loc>
         <priority>0.6</priority>
         <changefreq>yearly</changefreq>
     </url>
     <url>
-        <loc>https://www.zacvukovic.com/portfolio/libcspd</loc>
+        <loc>https://zacvukovic.com/portfolio/libcspd</loc>
         <priority>0.6</priority>
         <changefreq>yearly</changefreq>
     </url>
     <url>
-        <loc>https://www.zacvukovic.com/contact</loc>
+        <loc>https://zacvukovic.com/contact</loc>
         <priority>0.3</priority>
         <changefreq>never</changefreq>
     </url>
