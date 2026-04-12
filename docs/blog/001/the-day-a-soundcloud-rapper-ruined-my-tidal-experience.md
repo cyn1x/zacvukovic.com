@@ -119,7 +119,7 @@ I also checked the previous artists that I had logged support requests about, an
             srcset="/img/content/blog/001/Screenshot_2025-12-18_205008.jpg">
         <img src="/img/content/blog/001/Screenshot_2025-12-18_205008.jpg" alt="Artist profile page for the Thrash Metal band, Slayer.">
     </picture>
-    <figcaption>Clearly, there most recent album and two most recent EPs don't belong to Slayer.</figcaption>
+    <figcaption>Clearly, the first and third album, and the three most recent EPs don't belong to Slayer.</figcaption>
 </figure>
 
 Given stellar support from Tidal in the past, I assumed there were some architectural challenges behind the lingering bug. I looked at other artists to test whether this was a one-off with Slayer, starting with Marduk. I looked at the data being received from the Tidal servers, and confirmed that multiple distinct artists sharing the same name are being returned under the same artist `id` key.
@@ -146,7 +146,7 @@ I saved the JSON response from when I first looked into this in June 2025. So, l
             The <code class="code--inline">item</code> (48 lines): core artist information. Notably, there is only <strong>one</strong> artist here, which already hints at merged identities.
         </li>
         <li>
-            <code class="code--inline">items</code> (3,839 lines): the bulk of the data, including albums and tracks associated with this single shared `id` key.
+            <code class="code--inline">items</code> (3,839 lines): the bulk of the data, including albums and tracks associated with this single shared <code>id</code> key.
         </li>
     </ol>
     <span class="callout__text">I've made the dataset available for download below.</span>
