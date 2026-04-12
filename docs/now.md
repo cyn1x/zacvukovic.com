@@ -8,7 +8,7 @@ template: now.html
 
 Inspired by the ["now page"](https://nownownow.com/about){: target="_blank" rel="noopener noreferrer"}, this page will show what I'm focused on at this point in my life.
 
-*Last updated 2026-04-05*
+*Last updated 2026-04-12*
 
 ## Game Engine
 
