@@ -17,7 +17,7 @@ function getStatus(url, id) {
             const repo = document.getElementById(id);
             createLink(repo, data);
         })
-        .catch(error => console.error("Error fetching latest commit:", error));
+        .catch(error => console.error("Error fetching latest commit: ", error));
 }
 
 function createLink(latestCommit, data) {

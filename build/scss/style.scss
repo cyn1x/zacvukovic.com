@@ -116,7 +116,7 @@ body {
   }
 
   a {
-    @include p-font-style;
+    font-family: inherit;
     color: var(--link-color);
   }
 
@@ -146,6 +146,10 @@ body {
     box-decoration-break: clone;
     padding: .1rem .3rem .2rem;
     border-radius: .2rem;
+  }
+
+  code {
+    @include font($font-firacode);
   }
 
   scrollbar-color: #666 #201c29;
