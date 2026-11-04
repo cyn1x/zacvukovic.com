@@ -35,7 +35,7 @@ function handleSubmit(formData) {
     errorResult.classList.add('hidden');
 
     const invalidCaptcha = captcha.value === "" || captcha.value === null || captcha.value === undefined;
-    
+
     if (!invalidCaptcha) {
         sendMessage(formData, captcha.value);
     }
