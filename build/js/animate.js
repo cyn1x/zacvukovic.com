@@ -7,7 +7,7 @@ function animate(element, animation) {
         element.style.animation = "";
         return;
     }
-    element.style.animation = `${animation}`; 
+    element.style.animation = `${animation}`;
 }
 
 function waitForAnimation(node) {

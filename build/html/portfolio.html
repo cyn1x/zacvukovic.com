@@ -1,19 +1,26 @@
 <section id="portfolio">
   <h1>Portfolio</h1>
-  <!-- Custom content dropdown -->
-  <div class="content-dropdown">
+  <p class="portfolio__note">Much of my current work is under NDA, so I keep public projects to my earlier XR work and
+    personal projects.</p>
+  <div class="filters" role="group" aria-label="Filter projects">
+    <button class="chip" data-filter="all" aria-pressed="true">All</button>
+    <button class="chip" data-filter="xr" aria-pressed="false">XR</button>
+    <button class="chip" data-filter="sys" aria-pressed="false">Systems</button>
+  </div>
+
+  <div class="dropdown">
     <!-- Collapse controls should always be visible -->
-    <div class="uncollapsible-content">
-      <h2>Software Development</h2>
+    <div class="static-content">
+      <h2>XR work <span class="group__range">2022–23</span></h2>
       <div class="icons">
         <img src="/img/svg/chevron-down-solid.svg" alt="">
       </div>
     </div>
-    <!-- All content that should be collapsed. Place directly under the content-dropdown div -->
-    <div class="collapsible-content">
-      <div class="portfolio-container">
-        <div class="portfolio-image-container">
-          <a href="/portfolio/construction-site-safety" class="data-link">
+    <!-- Everything that collapses goes inside .dynamic-content -->
+    <div class="dynamic-content">
+      <div class="card-grid">
+        <a href="/portfolio/construction-site-safety" class="card data-link" data-cat="xr">
+          <div class="card__media">
             <picture>
               <source type="image/webp"
                 srcset="/img/content/portfolio/57566685_229238708979964_135629702452955353_n-640.webp">
@@ -22,11 +29,15 @@
               <img src="/img/content/portfolio/57566685_229238708979964_135629702452955353_n-640.jpg"
                 alt="Construction Site Safety trailer cover image">
             </picture>
-            <p class="caption">Construction Site Safety</p>
-          </a>
-        </div>
-        <div class="portfolio-image-container">
-          <a href="/portfolio/animal-anatomy-explorer" class="data-link">
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Construction Site Safety</h3>
+            <p class="card__role">Led the CI/CD pipeline and enterprise integration.</p>
+            <div class="card__meta"><span>Shipped</span><span>2022</span><span class="tag tag--xr">XR</span></div>
+          </div>
+        </a>
+        <a href="/portfolio/animal-anatomy-explorer" class="card data-link" data-cat="xr">
+          <div class="card__media">
             <picture>
               <source type="image/webp"
                 srcset="/img/content/portfolio/38974914_3333385170282635_6335682228742734686_n-640.webp">
@@ -35,11 +46,15 @@
               <img src="/img/content/portfolio/38974914_3333385170282635_6335682228742734686_n-640.jpg"
                 alt="Animal Anatomy Explorer trailer cover image">
             </picture>
-            <p class="caption">Animal Anatomy Explorer</p>
-          </a>
-        </div>
-        <div class="portfolio-image-container">
-          <a href="/portfolio/childcare-safety" class="data-link">
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Animal Anatomy Explorer</h3>
+            <p class="card__role">Rebuilt the interaction system and learning flow.</p>
+            <div class="card__meta"><span>Shipped</span><span>2022–23</span><span class="tag tag--xr">XR</span></div>
+          </div>
+        </a>
+        <a href="/portfolio/childcare-safety" class="card data-link" data-cat="xr">
+          <div class="card__media">
             <picture>
               <source type="image/webp"
                 srcset="/img/content/portfolio/57572946_817796705866846_13120011266682234_n-640.webp">
@@ -48,11 +63,15 @@
               <img src="/img/content/portfolio/57572946_817796705866846_13120011266682234_n-640.jpg"
                 alt="Childcare Safety trailer cover image">
             </picture>
-            <p class="caption">Childcare Safety</p>
-          </a>
-        </div>
-        <div class="portfolio-image-container">
-          <a href="/portfolio/canine-anatomy" class="data-link">
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Childcare Safety</h3>
+            <p class="card__role">Lead developer; fixed a Vulkan render-pass bug.</p>
+            <div class="card__meta"><span>Shipped</span><span>2022–23</span><span class="tag tag--xr">XR</span></div>
+          </div>
+        </a>
+        <a href="/portfolio/canine-anatomy" class="card data-link" data-cat="xr">
+          <div class="card__media">
             <picture>
               <source type="image/webp"
                 srcset="/img/content/portfolio/38982523_507951583455511_1634936866669068288_n-640.webp">
@@ -61,31 +80,47 @@
               <img src="/img/content/portfolio/38982523_507951583455511_1634936866669068288_n-640.jpg"
                 alt="Canine Anatomy trailer cover image">
             </picture>
-            <p class="caption">Canine Anatomy</p>
-          </a>
-        </div>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Canine Anatomy</h3>
+            <p class="card__role">Rebuilt in Unity WebGL for instant layer switching.</p>
+            <div class="card__meta"><span>Shipped</span><span>2022–23</span><span class="tag tag--xr">XR</span></div>
+          </div>
+        </a>
       </div>
     </div>
   </div>
-  <div class="content-dropdown">
-    <div class="uncollapsible-content">
+
+  <div class="dropdown">
+    <div class="static-content">
       <h2>Personal Projects</h2>
       <div class="icons">
         <img src="/img/svg/chevron-down-solid.svg" alt="">
       </div>
     </div>
-    <div class="collapsible-content">
-      <div class="portfolio-container">
-        <div class="portfolio-image-container">
-          <a href="/portfolio/libcspd" class="data-link">
-            <picture>
-              <source type="image/webp" srcset="/img/content/portfolio/libcspd-640.webp">
-              <source type="image/jpeg" srcset="/img/content/portfolio/libcspd-640.jpg">
-              <img src="/img/content/portfolio/libcspd-640.jpg" alt="libcspd cover image">
-            </picture>
-            <p class="caption">libcspd</p>
-          </a>
-        </div>
+    <div class="dynamic-content">
+      <div class="card-grid">
+        <a href="/portfolio/libcspd" class="card data-link" data-cat="sys">
+          <div class="card__media card__media--sys">
+            <h3 class="card__title card__title--display">libcspd</h3>
+          </div>
+          <div class="card__body">
+            <p class="card__role">C standard library with data structures and algorithms.</p>
+            <div class="card__meta"><span>Open source</span><span>Active</span><span class="tag tag--sys">Systems</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://github.com/cyn1x/jotunpy" target="_blank" rel="noopener noreferrer" class="card"
+          data-cat="sys">
+          <div class="card__media card__media--sys">
+            <h3 class="card__title card__title--display">JotunPy</h3>
+          </div>
+          <div class="card__body">
+            <p class="card__role">A static site generator with live reload. It builds this site.</p>
+            <div class="card__meta"><span>Open source</span><span>Active</span><span class="tag tag--sys">Systems</span>
+            </div>
+          </div>
+        </a>
       </div>
     </div>
   </div>

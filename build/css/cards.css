@@ -1,0 +1,271 @@
+/* Font definitions */
+@font-face {
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/BebasNeue/BebasNeue-Regular.woff2") format("woff2"), url("/fonts/BebasNeue/BebasNeue-Regular.woff") format("woff"), url("/fonts/BebasNeue/BebasNeue-Regular.ttf") format("truetype");
+  font-display: swap; }
+
+@font-face {
+  font-family: "Faustina";
+  font-weight: 600;
+  src: url("/fonts/Faustina/Faustina-SemiBold.woff2") format("woff2"), url("/fonts/Faustina/Faustina-SemiBold.woff") format("woff"), url("/fonts/Faustina/Faustina-SemiBold.ttf") format("truetype");
+  font-display: swap; }
+
+@font-face {
+  font-family: "Fira Code";
+  src: url("/fonts/FiraCode/FiraCode-Regular.woff2") format("woff2"), url("/fonts/FiraCode/FiraCode-Regular.woff") format("woff"), url("/fonts/FiraCode/FiraCode-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400; }
+
+@font-face {
+  font-family: "Gelasio";
+  font-style: italic;
+  font-weight: 400;
+  src: url("/fonts/Gelasio/Gelasio-Italic.woff2") format("woff2"), url("/fonts/Gelasio/Gelasio-Italic.woff") format("woff"), url("/fonts/Gelasio/Gelasio-Italic.ttf") format("truetype");
+  font-display: swap; }
+
+@font-face {
+  font-family: "Gelasio";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/Gelasio/Gelasio-Bold.woff2") format("woff2"), url("/fonts/Gelasio/Gelasio-Bold.woff") format("woff"), url("/fonts/Gelasio/Gelasio-Bold.ttf") format("truetype");
+  font-display: swap; }
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/Inter/Inter-Regular.woff2") format("woff2"), url("/fonts/Inter/Inter-Regular.woff") format("woff"), url("/fonts/Inter/Inter-Regular.ttf") format("truetype");
+  font-display: swap; }
+
+@font-face {
+  font-family: "M PLUS Rounded 1c";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/MPLUSRounded1c/MPLUSRounded1c-Bold.woff2") format("woff2"), url("/fonts/MPLUSRounded1c/MPLUSRounded1c-Bold.woff") format("woff"), url("/fonts/MPLUSRounded1c/MPLUSRounded1c-Bold.ttf") format("truetype");
+  font-display: swap; }
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/Montserrat/Montserrat-Regular.woff2") format("woff2"), url("/fonts/Montserrat/Montserrat-Regular.woff") format("woff"), url("/fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
+  font-display: swap; }
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/SpaceGrotesk/SpaceGrotesk-Regular.woff2") format("woff2"), url("/fonts/SpaceGrotesk/SpaceGrotesk-Regular.woff") format("woff"), url("/fonts/SpaceGrotesk/SpaceGrotesk-Regular.ttf") format("truetype");
+  font-display: swap; }
+
+/* Font Variables */
+/* Generic Font Mixin */
+/* Paragraph Styling */
+/* Flex Utility */
+main section#portfolio [hidden] {
+  display: none !important; }
+
+main section#portfolio .portfolio__note {
+  max-width: 52ch;
+  margin: 0 auto 1.5rem;
+  text-align: center;
+  color: var(--secondary-text-color); }
+
+main section#portfolio .filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem; }
+
+main section#portfolio .chip {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--blockquote-border-color);
+  border-radius: 0.25em;
+  background: transparent;
+  color: var(--primary-text-color);
+  font-size: 0.85rem;
+  cursor: pointer; }
+
+main section#portfolio .chip[aria-pressed="true"] {
+  background: var(--heading-color);
+  border-color: var(--heading-color);
+  color: var(--bg-color); }
+
+main section#portfolio .group__range {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-left: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--secondary-text-color); }
+
+main section#portfolio .card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem; }
+
+main section#portfolio .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  overflow: hidden;
+  border: 1px solid var(--blockquote-border-color);
+  border-radius: 0.25em;
+  background: var(--blockquote-bg-color);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.2s; }
+
+main section#portfolio a.card:hover {
+  border-color: var(--link-color); }
+
+main section#portfolio a.card:focus-visible,
+main section#portfolio .chip:focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px; }
+
+main section#portfolio .card__media {
+  aspect-ratio: 16 / 9;
+  overflow: hidden; }
+
+main section#portfolio .card__media picture,
+main section#portfolio .card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; }
+
+main section#portfolio .card__media--xr,
+main section#portfolio .card__media--ent,
+main section#portfolio .card__media--sys {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: stretch;
+  padding: 1rem;
+  border-left: 4px solid; }
+
+main section#portfolio .card__media--xr {
+  background: var(--callout-bg-info);
+  border-color: var(--callout-border-info); }
+
+main section#portfolio .tag--xr {
+  background: var(--callout-bg-info);
+  border-color: var(--callout-border-info);
+  color: var(--callout-text-info); }
+
+main section#portfolio .card__media--ent {
+  background: var(--callout-bg-success);
+  border-color: var(--callout-border-success); }
+
+main section#portfolio .tag--ent {
+  background: var(--callout-bg-success);
+  border-color: var(--callout-border-success);
+  color: var(--callout-text-success); }
+
+main section#portfolio .card__media--sys {
+  background: var(--callout-bg-warning);
+  border-color: var(--callout-border-warning); }
+
+main section#portfolio .tag--sys {
+  background: var(--callout-bg-warning);
+  border-color: var(--callout-border-warning);
+  color: var(--callout-text-warning); }
+
+main section#portfolio .card__title {
+  margin: 0;
+  font-size: 1.05rem; }
+
+main section#portfolio .card__title--display {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.9rem;
+  line-height: 1; }
+
+main section#portfolio .card__subtitle {
+  margin: 0.4rem 0 0;
+  font-size: 0.92rem; }
+
+main section#portfolio .card__steps {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.9rem 0 0;
+  padding: 0;
+  list-style: none; }
+  main section#portfolio .card__steps li {
+    position: relative;
+    padding: 0.35rem 0.7rem;
+    border: 1px solid var(--callout-border-info);
+    border-radius: 0.25em;
+    background: var(--blockquote-bg-color);
+    color: var(--heading-color);
+    font-size: 0.85rem; }
+
+main section#portfolio .card__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex: 1;
+  gap: 0.6rem;
+  padding: 0.9rem 1rem 1rem; }
+
+main section#portfolio .card__role {
+  margin: 0;
+  font-size: 0.92rem; }
+
+main section#portfolio .card__meta {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.75rem;
+  margin-top: auto;
+  font-size: 0.8rem;
+  color: var(--secondary-text-color); }
+
+main section#portfolio .tag {
+  padding: 0.1rem 0.5rem;
+  border: 1px solid;
+  border-radius: 0.25em;
+  font-weight: 500; }
+
+@media (prefers-reduced-motion: reduce) {
+  main section#portfolio .card {
+    transition: none; } }
+
+@media screen and (min-width: 760px) {
+  main section#portfolio .card-grid {
+    grid-template-columns: 1fr 1fr; }
+  main section#portfolio .card--wide {
+    grid-column: 1 / -1; }
+  main section#portfolio .card--wide .card__media {
+    aspect-ratio: 3 / 1; }
+  main section#portfolio .card__steps {
+    column-gap: 1.5rem; }
+    main section#portfolio .card__steps li + li::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      width: 1.5rem;
+      border-top: 2px solid var(--callout-border-info); } }

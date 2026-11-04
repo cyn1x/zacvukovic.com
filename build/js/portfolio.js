@@ -4,15 +4,16 @@ function initialize() {
     document.addEventListener(
         "portfolioPage",
         () => {
-            addEventListenrers();  
+            addEventListeners();
+            addFilterListeners();
         },
         false
     );
 }
 
-function addEventListenrers() {
-    const contentDropdowns = document.querySelectorAll('.content-dropdown');
-    
+function addEventListeners() {
+    const contentDropdowns = document.querySelectorAll('.dropdown');
+
     contentDropdowns.forEach(dropdown => {
 
         dropdown.addEventListener('click', (e) => {
@@ -24,12 +25,36 @@ function addEventListenrers() {
     });
 }
 
+function addFilterListeners() {
+    const chips = document.querySelectorAll('.chip');
+    const cards = document.querySelectorAll('.card');
+    const groups = document.querySelectorAll('.dropdown');
+
+    chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+            const filter = chip.dataset.filter;
+
+            chips.forEach(c => c.setAttribute('aria-pressed', String(c === chip)));
+
+            cards.forEach(card => {
+                const categories = card.dataset.cat.split(' ');
+                card.hidden = !(filter === 'all' || categories.includes(filter));
+            });
+
+            // Hide a whole group when none of its cards match
+            groups.forEach(group => {
+                group.hidden = !group.querySelector('.card:not([hidden])');
+            });
+        });
+    });
+}
+
 function animateChevron(element) {
     for (const child of element.children) {
         if (child.classList.contains("icons")) {
             const target = child.children[0];
 
-            if (target.classList.contains('rotated')) { 
+            if (target.classList.contains('rotated')) {
                 target.style.animation = `resetRotateDropdownIcon 0.25s ease forwards`;
                 target.classList.remove('rotated');
                 return;
@@ -45,7 +70,7 @@ function animateChevron(element) {
 function collapseContent(dropdown) {
     dropdown.style.pointerEvents = 'none';
     for (const child of dropdown.children) {
-        if (child.classList.contains("collapsible-content")) {
+        if (child.classList.contains("dynamic-content")) {
             animateDropdown(child);
         }
     }
@@ -58,8 +83,8 @@ function animateDropdown(collapsible) {
     else {
         collapsible.style.animation = `dropdownFadeOut 0.25s ease forwards`;
     }
-        
-    waitForAnimation(collapsible).then( () => {
+
+    waitForAnimation(collapsible).then(() => {
         collapsible.classList.toggle("hidden");
         collapsible.parentNode.style.pointerEvents = 'auto';
     });
