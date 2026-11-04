@@ -10,7 +10,7 @@
   --border-color: #dddddd;
   --img-border-color: #FFF;
   --svg-color: invert(70%) sepia(94%) saturate(274%) hue-rotate(115deg) brightness(106%) contrast(96%);
-  --bg-color: #1E1E2D;
+  --bg-color: #161614;
   --primary-btn-color: #57FAE8;
   --primary-btn-hover-color: #33CBBA;
   --primary-btn-text-color: black;
@@ -19,7 +19,7 @@
   --secondary-btn-hover-color: #f3f3f2;
 
   // Block quote style properties
-  --blockquote-bg-color: #2A2A3C;
+  --blockquote-bg-color: ##252523;
   --blockquote-text-color: #C7C7D9;
   --blockquote-border-color: #4A4A6A;
 
@@ -38,7 +38,7 @@
   --callout-text-error: #E3B4B4;
 
   // Code elements to convey programming language syntax
-  --code-bg: #2A2A2A;
+  --code-bg: #252523;
   --code-fg: #E6E6E6;
 
   // Loading spinner style properties
@@ -152,7 +152,7 @@ body {
     @include font($font-firacode);
   }
 
-  scrollbar-color: #666 #201c29;
+  scrollbar-color: #666 #161614;
 
   .split-layout {
     display: grid;
