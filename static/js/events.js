@@ -5,20 +5,20 @@ const portfolioPageEvent = new Event("portfolioPage");
 
 function dispatchEvent(uri) {
     switch (uri) {
-    case '/render':
-        document.dispatchEvent(onRenderEvent);
-        break;
-    case '/portfolio':
-        document.dispatchEvent(portfolioPageEvent);
-        break;
-    case '/now':
-        document.dispatchEvent(nowPageEvent);
-        break;
-    case '/contact':
-        document.dispatchEvent(contactPageEvent);
-        break;
-    default:
-        break;
+        case '/render':
+            document.dispatchEvent(onRenderEvent);
+            break;
+        case '/portfolio':
+            document.dispatchEvent(portfolioPageEvent);
+            break;
+        case '/now':
+            document.dispatchEvent(nowPageEvent);
+            break;
+        case '/contact':
+            document.dispatchEvent(contactPageEvent);
+            break;
+        default:
+            break;
     }
 }
 

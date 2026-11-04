@@ -489,7 +489,7 @@ main {
 
   section#portfolio {
 
-    .uncollapsible-content {
+    .static-content {
       @include flex(space-between, center);
       margin-bottom: 1rem;
       pointer-events: none;
@@ -497,10 +497,6 @@ main {
       h2 {
         margin: 0;
       }
-    }
-
-    .portfolio-container {
-      margin-bottom: 2rem;
     }
 
     .sub-section {
@@ -719,28 +715,6 @@ main {
     }
   }
 
-  .portfolio-image-container:last-child {
-    padding-bottom: 0;
-  }
-
-  // Project portfolio image links
-  .portfolio-image-container {
-    padding-bottom: 2rem;
-    text-align: center;
-
-    img {
-      width: 100%;
-    }
-
-    img:hover {
-      opacity: 0.6;
-    }
-
-    a {
-      text-decoration: none;
-    }
-  }
-
   // Contact form
   form {
     @include font($font-montserrat);
@@ -898,19 +872,6 @@ footer {
       }
     }
 
-    section {
-      .portfolio-container {
-        display: grid;
-        column-gap: 1rem;
-        row-gap: 1rem;
-        grid-template-columns: 1fr 1fr;
-        padding-bottom: 0;
-      }
-    }
-
-    .portfolio-image-container {
-      padding-bottom: 1rem;
-    }
   }
 
   #menu-controls {
@@ -1083,3 +1044,5 @@ footer {
     transform: translateY(0);
   }
 }
+
+@import "cards.scss";

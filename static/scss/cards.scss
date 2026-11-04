@@ -1,0 +1,222 @@
+// Portfolio cards. Add `@import "./cards";` at the END of style.scss.
+// Needs the mixins and font variables from _base.scss.
+
+@import "_base.scss";
+
+$card-tones: (
+  xr: info,
+  ent: success,
+  sys: warning
+);
+
+main section#portfolio {
+  [hidden] {
+    display: none !important;
+  }
+
+  .portfolio__note {
+    max-width: 52ch;
+    margin: 0 auto 1.5rem;
+    text-align: center;
+    color: var(--secondary-text-color);
+  }
+
+  // Filter chips
+  .filters {
+    @include flex(center, center);
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .chip {
+    @include font($font-inter, 500);
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--blockquote-border-color);
+    border-radius: 0.25em;
+    background: transparent;
+    color: var(--primary-text-color);
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+
+  .chip[aria-pressed="true"] {
+    background: var(--heading-color);
+    border-color: var(--heading-color);
+    color: var(--bg-color);
+  }
+
+  // The existing dropdown headings gain a date range
+  .group__range {
+    @include font($font-inter);
+    margin-left: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--secondary-text-color);
+  }
+
+  // Grid
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  // Card
+  .card {
+    @include flex(flex-start, stretch, column);
+    overflow: hidden;
+    border: 1px solid var(--blockquote-border-color);
+    border-radius: 0.25em;
+    background: var(--blockquote-bg-color);
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 0.2s;
+  }
+
+  a.card:hover {
+    border-color: var(--link-color);
+  }
+
+  a.card:focus-visible,
+  .chip:focus-visible {
+    outline: 2px solid var(--link-color);
+    outline-offset: 2px;
+  }
+
+  .card__media {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+
+  .card__media picture,
+  .card__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  // Typographic card: no artwork needed
+  .card__media--xr,
+  .card__media--ent,
+  .card__media--sys {
+    @include flex(flex-end, stretch, column);
+    padding: 1rem;
+    border-left: 4px solid;
+  }
+
+  @each $cat, $tone in $card-tones {
+    .card__media--#{$cat} {
+      background: var(--callout-bg-#{$tone});
+      border-color: var(--callout-border-#{$tone});
+    }
+
+    .tag--#{$cat} {
+      background: var(--callout-bg-#{$tone});
+      border-color: var(--callout-border-#{$tone});
+      color: var(--callout-text-#{$tone});
+    }
+  }
+
+  // Overrides the section-level h3 margins and font
+  .card__title {
+    margin: 0;
+    font-size: 1.05rem;
+  }
+
+  .card__title--display {
+    @include font($font-bebas);
+    font-size: 1.9rem;
+    line-height: 1;
+  }
+
+  .card__subtitle {
+    margin: 0.4rem 0 0;
+    font-size: 0.92rem;
+  }
+
+  .card__steps {
+    @include flex(flex-start, stretch, row);
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0.9rem 0 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      position: relative;
+      padding: 0.35rem 0.7rem;
+      border: 1px solid var(--callout-border-info);
+      border-radius: 0.25em;
+      background: var(--blockquote-bg-color);
+      color: var(--heading-color);
+      font-size: 0.85rem;
+    }
+  }
+
+  .card__body {
+    @include flex(flex-start, stretch, column);
+    flex: 1;
+    gap: 0.6rem;
+    padding: 0.9rem 1rem 1rem;
+  }
+
+  .card__role {
+    margin: 0;
+    font-size: 0.92rem;
+  }
+
+  .card__meta {
+    @include font($font-inter);
+    @include flex(flex-start, center, row);
+    flex-wrap: wrap;
+    gap: 0.4rem 0.75rem;
+    margin-top: auto;
+    font-size: 0.8rem;
+    color: var(--secondary-text-color);
+  }
+
+  .tag {
+    padding: 0.1rem 0.5rem;
+    border: 1px solid;
+    border-radius: 0.25em;
+    font-weight: 500;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card {
+      transition: none;
+    }
+  }
+}
+
+@media screen and (min-width: 760px) {
+  main section#portfolio {
+    .card-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .card--wide {
+      grid-column: 1 / -1;
+    }
+
+    .card--wide .card__media {
+      aspect-ratio: 3 / 1;
+    }
+
+    // Connector lines between steps only when they sit on one row
+    .card__steps {
+      column-gap: 1.5rem;
+
+      li+li::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        width: 1.5rem;
+        border-top: 2px solid var(--callout-border-info);
+      }
+    }
+  }
+}
