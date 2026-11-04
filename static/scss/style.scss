@@ -379,6 +379,7 @@ header {
   padding-bottom: 10em;
 
   .download__text {
+    @include font($font-montserrat);
     margin-right: 0.4em;
   }
 }
